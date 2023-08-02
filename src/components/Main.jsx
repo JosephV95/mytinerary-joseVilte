@@ -6,7 +6,7 @@ function Main() {
     <section>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-8">
+          <div className="col-7">
             <h3>Find the perfect destination</h3>
             <p>
               Our app will help you find the perfect path for your next trip.
@@ -15,7 +15,7 @@ function Main() {
             </p>
             <button type="button">View More</button>
           </div>
-          <div className="col-1">
+          <div className="col-3">
             <img src={reactLogo} alt="imgReact" />
           </div>
         </div>
