@@ -1,0 +1,16 @@
+nav{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: .5rem 0;
+}
+
+nav .navText a{
+    text-decoration: none;
+    padding: 0 .5rem;
+}
+
+nav .navText button{
+    padding: .3rem .5rem;
+}
