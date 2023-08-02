@@ -1,10 +1,11 @@
 import reactLogo from "../assets/react.svg";
+import "./main.css"
 
 function Main() {
   return (
     <section>
       <div className="container">
-        <div className="row">
+        <div className="row justify-content-center">
           <div className="col-8">
             <h3>Find the perfect destination</h3>
             <p>
@@ -14,7 +15,7 @@ function Main() {
             </p>
             <button type="button">View More</button>
           </div>
-          <div className="col-4">
+          <div className="col-1">
             <img src={reactLogo} alt="imgReact" />
           </div>
         </div>
