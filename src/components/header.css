@@ -1,0 +1,13 @@
+header{
+    position: absolute;
+    width: 100%;
+    padding: .5rem 0;
+}
+
+/* h3{
+    display: inline;
+} */
+
+header nav button{
+    padding: .3rem .5rem;
+}
