@@ -33,10 +33,10 @@ function Main() {
             </button>
           </div>
           <div className="row my-5">
-          <div className="col-12">
+          {/* <div className="col-12"> */}
             <h3 className="text-center">Popular Mytineraries</h3>
             <Slider/>
-          </div>
+          {/* </div> */}
         </div>
         </div>
       </section>

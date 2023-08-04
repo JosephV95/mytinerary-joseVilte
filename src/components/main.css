@@ -22,7 +22,7 @@ section{
 
 #caro1, #caro2, #caro3 {
     width: 100vw;
-    height: 25vh;
+    height: 100vh;
 }
 #caro1 {
     background-color: red;
