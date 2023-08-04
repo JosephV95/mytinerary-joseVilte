@@ -5,3 +5,23 @@ section{
     align-items: center;
     
 }
+
+.article{
+    background-color: rgb(189, 184, 182);
+    border-radius: 1rem;
+    
+}
+
+#caro1, #caro2, #caro3 {
+    width: 100vw;
+    height: 25vh;
+}
+#caro1 {
+    background-color: red;
+}
+#caro2 {
+    background-color: blue;
+}
+#caro3 {
+    background-color: rgb(68, 247, 28);
+}
