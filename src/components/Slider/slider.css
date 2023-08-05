@@ -5,17 +5,34 @@
     border-radius: 50%;
 }
 
-.img-caro{
-    height: auto;
+.sliderItem{
+    position: relative;
+    max-height: 270px;
+    min-height: 210px;
     display: flex;
     justify-content: center;
-    align-content: center;
+    /* align-self: center; */
+    
 }
-.img-caro img{
-    width: 80%;
-    height: 100%;
-    object-fit: contain;
+.sliderItem img{
+    width: 100%;
+    object-fit: cover;
     /* object-position: center; */
+    border-radius: 10px;
+}
+.sliderItem .text-img{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    text-align: center;
+    line-height: 0.2;
+    /* font-size: .9rem; */
+    color: white;
+    padding: 0;
+}
+.sliderItem .text-img h5{
+    font-size: 1.1rem;
 }
 
 .item4Carousel{
