@@ -1,14 +1,14 @@
 export default function Nav() {
   return (
     <nav>
-      <ul className="nav justify-content-end">
+      <ul className="nav d-flex justify-content-end align-items-center">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">
+          <a className=" active" aria-current="page" href="#">
             Home
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <a className="" href="#">
             Cities
           </a>
         </li>

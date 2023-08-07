@@ -2,6 +2,8 @@ header{
     /* position: absolute; */
     width: 100%;
     padding: .5rem 0;
+    background-color: brown;
+    color: white;
 }
 
 /* h3{
@@ -10,4 +12,9 @@ header{
 
 header nav button{
     padding: .3rem .5rem;
+}
+header nav a{
+    text-decoration: none;
+    color: white;
+    padding: 0 1rem;
 }
