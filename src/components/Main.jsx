@@ -23,11 +23,11 @@ function Main() {
               </div>
             </div>
             <div className="col-md-4 hero-img d-flex justify-content-center p-1">
-              <img src="../kioto pagoda.jpg" alt="imgLogo" />
+              <img src="https://images.theconversation.com/files/271802/original/file-20190430-136800-n73r21.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" alt="imgLogo" />
             </div>
           </div>
 
-          <div className="row justify-content-center">
+          <div className="row justify-content-center my-5">
             <button className="btn btn-danger" type="button">
               Call to Action
             </button>
