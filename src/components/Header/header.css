@@ -6,10 +6,6 @@ header{
     color: white;
 }
 
-/* h3{
-    display: inline;
-} */
-
 header nav button{
     padding: .3rem .5rem;
 }
@@ -17,4 +13,15 @@ header nav a{
     text-decoration: none;
     color: white;
     padding: 0 1rem;
+}
+
+header img{
+    /* display: inline; */
+    height: 2rem;
+}
+
+@media only screen and (max-width: 430px) {  
+    header h3 {
+        display: none;
+    }
 }
