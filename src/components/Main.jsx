@@ -23,7 +23,7 @@ function Main() {
               </div>
             </div>
             <div className="col-md-4 hero-img d-flex justify-content-center p-1">
-              <img src="https://images.theconversation.com/files/271802/original/file-20190430-136800-n73r21.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" alt="imgLogo" />
+              <img src="https://images.theconversation.com/files/271802/original/file-20190430-136800-n73r21.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" alt="imgHero" />
             </div>
           </div>
 
@@ -34,7 +34,7 @@ function Main() {
           </div>
           <div className="row my-5">
           {/* <div className="col-12"> */}
-            <h3 className="text-center">Popular Mytineraries</h3>
+            <h3 className="text-center py-2">Popular Mytineraries</h3>
             <Slider/>
           {/* </div> */}
         </div>
