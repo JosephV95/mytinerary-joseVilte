@@ -5,12 +5,12 @@ import "./main.css";
 function Main() {
   return (
     <>
-      <section>
-        <h4> <i>Find your perfect trip, designed by insiders who know and love their cities! </i></h4>
+      <section className="py-4">
+        <h4 className="my-4 text-center px-3"> <i>Find your perfect trip, designed by insiders who know and love their cities! </i></h4>
         <div className="container">
-          <div className="row hero  justify-content-center align-items-center ">
-            <div className="hero-article col-md-8 ">
-              <div className=" p-3 my-2">
+          <div className="row hero  justify-content-center align-items-center my-4">
+            <div className="hero-article col-md-8">
+              <div className=" p-3 my-3">
                 <h3>Find the perfect destination</h3>
                 <p>
                   Our app will help you find the perfect path for your next

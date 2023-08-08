@@ -1,5 +1,5 @@
 section{
-    background-color: rgb(253, 244, 175);
+    background-color: rgb(249, 242, 186);
     /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@ section{
 } */
 
 .hero .hero-article{
-    background-color: rgb(189, 184, 182);
+    background-color: rgb(246, 151, 151);
     border-radius: 1rem;
 }
 .hero .hero-img img{

@@ -1,14 +1,14 @@
 import "./App.css";
-import Layout from "./layouts/Layout";
+import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 
 
 function App() {
   return (
     <>
-      <Layout>
+      <MainLayout>
         <Home />
-      </Layout>
+      </MainLayout>
     </>
   );
 }
