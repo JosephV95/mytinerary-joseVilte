@@ -16,11 +16,10 @@ header nav a{
 }
 
 header img{
-    /* display: inline; */
-    height: 2rem;
+    height: 2.5rem;
 }
 
-@media only screen and (max-width: 430px) {  
+@media only screen and (max-width: 440px) {  
     header h3 {
         display: none;
     }
