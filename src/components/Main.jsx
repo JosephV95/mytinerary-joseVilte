@@ -1,3 +1,4 @@
+import CallToAction from "./CallToAction/CallToAction";
 import Slider from "./Slider/Slider";
 import "./main.css";
 
@@ -27,11 +28,8 @@ function Main() {
             </div>
           </div>
 
-          <div className="row justify-content-center my-5">
-            <button className="btn btn-danger" type="button">
-              Call to Action
-            </button>
-          </div>
+          <CallToAction />
+
           <div className="row my-5">
           {/* <div className="col-12"> */}
             <h3 className="text-center py-2">Popular Mytineraries</h3>
