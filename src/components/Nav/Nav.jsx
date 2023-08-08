@@ -1,16 +1,14 @@
+import { Link as PageRouter } from "react-router-dom";
+
 export default function Nav() {
   return (
     <nav>
       <ul className="nav d-flex justify-content-end align-items-center">
         <li className="nav-item">
-          <a className=" active" aria-current="page" href="#">
-            Home
-          </a>
+          <PageRouter to={'/'}>Home</PageRouter>
         </li>
         <li className="nav-item">
-          <a className="" href="#">
-            Cities
-          </a>
+          <PageRouter to={'/cities'} >Cities</PageRouter>
         </li>
 
         <button className="btn btn-primary" type="button">
