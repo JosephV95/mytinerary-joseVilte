@@ -1,6 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 import "./slider.css";
-import SliderItem from "./SliderItem";
+import CarouselItem from "./CarouselItem";
 
 export default function Slider() {
   let data = [
@@ -27,41 +27,17 @@ export default function Slider() {
         <div className="col-md-9">
           <Carousel>
             <Carousel.Item interval={3000}>
-              <div className="container  item4Carousel">
-                <div className="row justify-content-center">
-                  {
-                   data1.map((each, key)=>
-                    <SliderItem key={key} nation={each.nation} city={each.city} img={each.img} />
-                  )}
-                  
-                </div>
-              </div>
+              <CarouselItem unarray={data1}/>
+            </Carousel.Item>
+
+            <Carousel.Item interval={3000}>
+              <CarouselItem unarray={data2}/>
+            </Carousel.Item>
+
+            <Carousel.Item interval={3000}>
+              <CarouselItem unarray={data3}/>
             </Carousel.Item>
             
-            <Carousel.Item interval={3000}>
-              <div className="container  item4Carousel">
-                <div className="row justify-content-center">
-                  {
-                   data2.map((each, key)=>
-                    <SliderItem key={key} nation={each.nation} city={each.city} img={each.img} />
-                  )}
-                  
-                </div>
-              </div>
-            </Carousel.Item>
-
-            <Carousel.Item interval={3000}>
-              <div className="container  item4Carousel">
-                <div className="row justify-content-center">
-                  {
-                   data3.map((each, key)=>
-                    <SliderItem key={key} nation={each.nation} city={each.city} img={each.img} />
-                  )}
-                  
-                </div>
-              </div>
-            </Carousel.Item>
-
           </Carousel>
         </div>
       </div>
