@@ -5,31 +5,18 @@ section{
     flex-direction: column;
     align-items: center;
 }
-
-/* .hero{
-    background-color: blueviolet;
-} */
+section h4{
+    color: rgb(33, 33, 33);
+    text-shadow: 0 0 2px yellow, 0 0 3px rgb(255, 68, 0);
+    font-size: 1.6rem;
+}
 
 .hero .hero-article{
-    background-color: rgb(246, 151, 151);
+    background-color: rgb(250, 175, 175);
     border-radius: 1rem;
 }
 .hero .hero-img img{
     object-fit: contain;
     max-width: 80%;
     border-radius: .5rem;
-}
-
-#caro1, #caro2, #caro3 {
-    width: 100vw;
-    height: 100vh;
-}
-#caro1 {
-    background-color: red;
-}
-#caro2 {
-    background-color: blue;
-}
-#caro3 {
-    background-color: rgb(68, 247, 28);
 }
