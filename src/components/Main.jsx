@@ -2,7 +2,6 @@ import CallToAction from "./CallToAction/CallToAction";
 import Slider from "./Slider/Slider";
 import "./main.css";
 
-
 function Main() {
   return (
     <>
@@ -31,15 +30,11 @@ function Main() {
           <CallToAction />
 
           <div className="row my-5">
-          {/* <div className="col-12"> */}
-            <h3 className="text-center py-2">Popular Mytineraries</h3>
+            <h3 className="text-center py-2 fw-bold">Popular MyTineraries!</h3>
             <Slider/>
-          {/* </div> */}
         </div>
         </div>
       </section>
-
-      
     </>
   );
 }

@@ -4,6 +4,7 @@ header{
     padding: .5rem 0;
     background-color: brown;
     color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 header nav button{

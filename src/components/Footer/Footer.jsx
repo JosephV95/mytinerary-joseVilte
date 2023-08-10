@@ -14,7 +14,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="col-sm-5 col-md-4 pb-2">
-          <div className="text-center">2023 - My Tinerary</div>
+          <div className="text-center ">2023 - My Tinerary</div>
         </div>
         <div className="col-sm-5 col-md-4 d-flex justify-content-center align-items-center " >
             <p className="fw-bold">Follow us:

@@ -1,8 +1,12 @@
 
 export default function Cities() {
   return (
-    <div>
-        <h1>Sitio en Construcción</h1>
+    <div className="container-fluid bg-info">
+      <div className="row">
+        <div className="col-12  h-100 text-center">
+          <h2>Site under construction</h2>
+        </div>
+      </div>
     </div>
   )
 }

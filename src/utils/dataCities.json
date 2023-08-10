@@ -1,14 +1,14 @@
 [
-    {"nation":"rudy", "city":"Kioto", "img":"https://pbs.twimg.com/media/EnxX4tlXcAAC3ui.jpg"},
-    {"nation":"Japón", "city":"Akihabara", "img":"https://pbs.twimg.com/media/DvaS0VSWkAAPvbZ.jpg"},
-    {"nation":"Japón", "city":"Kioto Pagoda", "img":"https://wordery.com/jackets/b96f7e73/mushoku-tensei-jobless-reincarnation-manga-vol-11-rifujin-na-magonote-9781645057406.jpg"},
-    {"nation":"Ingland", "city":"Big Ben", "img":"https://somoskudasai.com/wp-content/uploads/2020/05/EZBgn41U0AAHbcg.jpg"},
-    {"nation":"Ingland", "city":"Big Ben", "img":"https://pbs.twimg.com/media/D1vv4bVX0AE2Fws.jpg"},
-    {"nation":"Ingland", "city":"Big Ben", "img":"https://somoskudasai.com/wp-content/uploads/2020/05/EZBgn41U0AAHbcg.jpg"},
-    {"nation":"Suiza", "city":"Muslisbury", "img":"../kioto.jpg"},
-    {"nation":"Japón", "city":"Akihabara", "img":"../Akihabara.jpg"},
-    {"nation":"Japón", "city":"Akihabara", "img":"https://static.okian.ro/media/catalog/product/import/9781642751192.jpg"},
-    {"nation":"Japón", "city":"Akihabara", "img":"../Akihabara.jpg"},
-    {"nation":"Japón", "city":"Kioto", "img":"../Akihabara.jpg"},
-    {"nation":"Japón", "city":"Kioto", "img":"../Akihabara.jpg"}
+    {"nation":"Japan", "city":"Kioto", "img":"../Kioto.jpg"},
+    {"nation":"China", "city":"Shanghái", "img":"https://viajes.nationalgeographic.com.es/medio/2019/03/27/shnaghai_527bc86f_1280x720.jpg"},
+    {"nation":"Japan", "city":"Akihabara", "img":"../Akihabara.jpg"},
+    {"nation":"Japan", "city":"Nagoya", "img":"https://www.japonalternativo.com/wp-content/uploads/2021/07/lugares-turisticos-en-nagoya.jpg"},
+    {"nation":"Japan", "city":"Tokyo", "img":"https://vivirafuera.intriper.com/wp-content/uploads/2021/07/Como-es-vivir-en-Tokio-Japon-768x512.jpg"},
+    {"nation":"Egypt", "city":"Cairo", "img":"https://www.civitatis.com/f/egipto/egipto/guia/el-cairo-m.jpg"},
+    {"nation":"England", "city":"London", "img":"https://media.cntraveler.com/photos/571f9be4afc531496352d2a9/master/w_5124,h_3425,c_limit/GettyImages-174726708.jpg"},
+    {"nation":"Philippines", "city":"Manila", "img":"https://a.cdn-hotels.com/gdcs/production23/d1313/7cf8e4c8-6785-48d6-b6ae-491827835bb1.jpg"},
+    {"nation":"Russia", "city":"Moscow", "img":"https://periodistasviajeros.com/wp-content/uploads/2019/09/Plaza-Roja-desde-habitacio%CC%81n-del-Four-Seasons-de-Moscu%CC%81-760x506.jpeg"},
+    {"nation":"France", "city":"Paris", "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/1200px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg"},
+    {"nation":"Spain", "city":"Barcelona", "img":"https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2023/02/16/16765451516678.jpg"},
+    {"nation":"Bangladesh", "city":"Dhaka", "img":"https://upload.wikimedia.org/wikipedia/commons/f/f6/2.%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE_%E0%A6%9A%E0%A6%A4%E0%A7%8D%E0%A6%AC%E0%A6%B0.jpg"}
 ]
