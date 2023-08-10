@@ -1,0 +1,17 @@
+footer a{
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+}
+footer a:hover{
+    text-transform: uppercase;
+}
+
+footer .socialLink{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    text-align: center;
+    border: solid 1px;
+}
