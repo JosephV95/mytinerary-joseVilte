@@ -17,9 +17,7 @@ function Main() {
                   trip. With an easy-to-use interface and a host of itinerary
                   options, planning your next trip has never been easier.
                 </p>
-                <button className="btn btn-info border-4 border-primary rounded-4 fw-medium " type="button">
-                  View More
-                </button>
+                
               </div>
             </div>
             <div className="col-md-4 hero-img d-flex justify-content-center p-1">
