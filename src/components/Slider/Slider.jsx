@@ -15,25 +15,22 @@ export default function Slider() {
     .catch((error) => {console.log(error.message)});
   }, []);
   
-  let data1 = data.slice(0, 4);
-  let data2 = data.slice(4, 8);
-  let data3 = data.slice(8, 12);
-  
+ 
   return (
     <div className="container my-2">
       <div className="row justify-content-center">
         <div className="col-md-9">
           <Carousel>
-            <Carousel.Item interval={3000}>
-              <CarouselItem unarray={data1} />
+            <Carousel.Item interval={1000}>
+              <CarouselItem unarray={data.slice(0,4)} />
             </Carousel.Item>
 
-            <Carousel.Item interval={3000}>
-              <CarouselItem unarray={data2} />
+            <Carousel.Item interval={1000}>
+              <CarouselItem unarray={data.slice(4,8)} />
             </Carousel.Item>
 
-            <Carousel.Item interval={3000}>
-              <CarouselItem unarray={data3} />
+            <Carousel.Item interval={1000}>
+              <CarouselItem unarray={data.slice(8,12)} />
             </Carousel.Item>
           </Carousel>
         </div>
