@@ -1,6 +1,6 @@
 import "./App.css";
 import MainLayout from "./layouts/MainLayout";
-import Cities from "./pages/Cities";
+import Cities from "./pages/Cities/Cities";
 import Home from "./pages/Home";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
