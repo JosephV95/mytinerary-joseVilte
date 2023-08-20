@@ -1,3 +1,10 @@
 section .cities{
     background-color: rgb(117, 248, 255);
 }
+
+.textCity{
+    /* position: absolute; */
+    /* width: 100%; */
+    background-color: rgba(0, 0, 0, 0.45);
+    
+}
