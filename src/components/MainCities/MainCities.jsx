@@ -15,19 +15,28 @@ export default function MainCities() {
       });
   }, []);
 
-  let [backg, setBackg] = useState("../Kioto.jpg");
+  let [bgCities, setBgCities] = useState("../Kioto.jpg");
 
   return (
-    <section className="pageCities" style={{backgroundImage: `url(${backg})`}}>
+    <section
+      className="pageCities"
+      style={{ backgroundImage: `url(${bgCities})` }}
+    >
       <div className="container">
-        <div className="row justify-content-center text-center position-relative heroCity ">
-          <div className="col-12  py-4 text-white">
+        <div className="row justify-content-center text-center position-relative  ">
+          <div className="col-12  py-4 text-white  heroCities">
             <h3>Cities</h3>
             <p>Collection of the most beatiful places and experience.</p>
           </div>
 
           <div className="col-12 py-3">
-            <input className="rounded" type="search" name="" id="" placeholder="Search your City" />
+            <input
+              className="rounded"
+              type="search"
+              name=""
+              id=""
+              placeholder="Search your City"
+            />
           </div>
         </div>
 
@@ -42,7 +51,7 @@ export default function MainCities() {
               <Card
                 className="cardCity  bg-dark text-white  overflow-x-hidden"
                 style={{ minHeight: "11rem" }}
-                onMouseEnter={() => setBackg(`${city.img}`)}
+                onMouseEnter={() => setBgCities(`${city.img}`)}
               >
                 <Card.Img
                   src={city.img}
@@ -57,7 +66,6 @@ export default function MainCities() {
                   <button
                     className="btn btn-primary  position-absolute bottom-0  py-1 px-2 mb-1 mx-1"
                     type="button"
-                    
                   >
                     More Details
                   </button>

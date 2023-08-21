@@ -4,6 +4,10 @@
     background-size: cover;
 }
 
+.heroCities h3, .heroCities p{
+    text-shadow: 0 0 15px grey, 0 0 20px black, 0 0 20px black;
+
+}
 .cardCity{
     border: none;
 }
