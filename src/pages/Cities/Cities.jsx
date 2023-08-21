@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../Cities/cities.css";
-import { Col, Image, Row } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 
 export default function Cities() {
   let [data, setData] = useState([]);
@@ -32,19 +32,24 @@ export default function Cities() {
 
         <Row className="justify-content-center  my-3">
           {data.map((city, key) => (
-            <Col xs={6} md={3} key={key} className="position-relative  text-center text-white d-flex my-1">
-              
-              <Image
-                src={city.img}
-                rounded
-                style={{  minHeight: "11rem" }}
-                className="w-100   object-fit-cover  "
-              />
-              <div className="textCity position-absolute top-0 w-100">
-                <p >{city.city}</p>
-                <p >{city.nation}</p>
-              </div>
-              <button className="btn btn-primary  position-absolute bottom-0  py-1 px-2 my-1 mx-2" type="button">More Details</button>
+            <Col
+              xs={6}
+              md={3}
+              key={key}
+              className="position-relative  text-center text-white d-flex my-1">
+
+              <Card className="bg-dark text-white"  style={{  minHeight: "11rem" }}>
+                <Card.Img src={city.img} alt="Card image" className="w-100 h-100  object-fit-cover  "/>
+                <Card.ImgOverlay className="d-flex">
+                  <div  className="bg-dark bg-opacity-75 position-absolute top-0 start-0 w-100 text-center ">
+                    <Card.Title className="m-0 ">{city.nation}</Card.Title>
+                    <Card.Text >
+                      {city.city}
+                    </Card.Text>
+                  </div>
+                  <button className="btn btn-primary  position-absolute bottom-0  py-1 px-1 my-1 mx-1" type="button">More Details</button>
+                </Card.ImgOverlay>
+              </Card>
             </Col>
           ))}
         </Row>
