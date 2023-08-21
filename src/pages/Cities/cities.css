@@ -1,10 +1,14 @@
-section .cities{
-    background-color: rgb(117, 248, 255);
+.pageCities{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-.textCity{
-    /* position: absolute; */
-    /* width: 100%; */
-    background-color: rgba(0, 0, 0, 0.45);
+.cardCity{
+    border: none;
+}
+
+.cardCity:hover{
+    outline: solid 3px white;
     
 }

@@ -1,11 +1,11 @@
-section{
+.main{
     background-color: rgba(156, 247, 255, 0.895);
     /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-section h4{
+.main h4{
     color: rgb(33, 33, 33);
     text-shadow: 0 0 2px yellow, 0 0 3px rgb(255, 68, 0);
     font-size: 1.6rem;

@@ -5,7 +5,7 @@ import "./main.css";
 function Main() {
   return (
     <>
-      <section className="py-4">
+      <section className="py-4  main">
         <h4 className="my-4 text-center px-3 fst-italic">Find your perfect trip, designed by insiders who know and love their cities!</h4>
         <div className="container">
           <div className="row hero  justify-content-center align-items-center my-4">
