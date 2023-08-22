@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
+import { CitiesService } from "../../services/CitiesService.js"
 
 export default function MainCities() {
   let [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("src/utils/dataCities.json")
-      .then((response) => response.json())
-      .then(
-        // info => console.log(info);
-        (info) => setData(info)
-      )
-      .catch((error) => {
-        console.log(error.message);
-      });
-  }, []);
+  let [bgCities, setBgCities] = useState("");
 
-  let [bgCities, setBgCities] = useState("../Kioto.jpg");
+  useEffect(() => {
+    // console.log(CitiesService());
+    CitiesService()
+    .then(resp => {
+      setData(resp);
+      setBgCities(resp[0].img)
+    })  
+    
+  }, []);
 
   return (
     <section
