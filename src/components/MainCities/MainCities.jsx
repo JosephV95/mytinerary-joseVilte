@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import { CitiesService } from "../../services/CitiesService.js"
+import { getAllCities } from "../../services/CitiesService.js"
+import { Link as PageRouter } from "react-router-dom";
 
 export default function MainCities() {
   let [data, setData] = useState([]);
@@ -8,7 +9,7 @@ export default function MainCities() {
 
   useEffect(() => {
     // console.log(CitiesService());
-    CitiesService()
+    getAllCities()
     .then(resp => {
       setData(resp);
       setBgCities(resp[0].img)
@@ -62,12 +63,8 @@ export default function MainCities() {
                     <Card.Title className="m-0 ">{city.nation}</Card.Title>
                     <Card.Text>🗺{city.city}</Card.Text>
                   </div>
-                  <button
-                    className="btn btn-primary  position-absolute bottom-0  py-1 px-2 mb-1 mx-1"
-                    type="button"
-                  >
-                    More Details
-                  </button>
+                  
+                  <PageRouter to={city._id}  className="btn btn-primary  position-absolute bottom-0  py-1 px-2 mb-1 mx-1">More details</PageRouter>
                 </Card.ImgOverlay>
               </Card>
             </Col>
