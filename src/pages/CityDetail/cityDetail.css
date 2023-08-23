@@ -1,0 +1,23 @@
+
+.detailCity{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    
+}
+.detailCity::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.33);
+}
+h2, p{
+    position: relative;
+}
+.heroDetail{
+    position: relative;
+}
+
