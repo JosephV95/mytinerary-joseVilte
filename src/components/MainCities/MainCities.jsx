@@ -1,21 +1,40 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { getAllCities } from "../../services/CitiesService.js"
 import { Link as PageRouter } from "react-router-dom";
 
 export default function MainCities() {
-  let [data, setData] = useState([]);
+  let [cities, setCities] = useState([]);
+  let [allCities, setAllCities] = useState([]);
   let [bgCities, setBgCities] = useState("");
+  const inputSearch = useRef(null);
 
   useEffect(() => {
     // console.log(CitiesService());
     getAllCities()
     .then(resp => {
-      setData(resp);
+      setCities(resp);
+      setAllCities(resp);
+
       setBgCities(resp[0].img)
     })  
     
   }, []);
+
+  const hadleSubmit = (event) =>{
+    event.preventDefault()
+    console.log( inputSearch.current.value);
+    if (inputSearch.current.value){
+      // const queryParams = "?name=" + inputSearch.current.value;
+      // getAllCities(queryParams).then((res) => setCities(res)).catch((err)=> console.log(err))
+      
+      const queryParams = inputSearch.current.value;
+      setCities(allCities.filter((ev) => ev.city.toLowerCase().includes(queryParams.toLowerCase()) ));
+      setBgCities(cities[0].img);
+    } else {
+      setCities(allCities)
+    }
+  }
 
   return (
     <section
@@ -29,46 +48,52 @@ export default function MainCities() {
             <p>Collection of the most beatiful places and experience.</p>
           </div>
 
-          <div className="col-12 py-3">
-            <input
-              className="rounded"
-              type="search"
-              name=""
-              id=""
-              placeholder="Search your City"
-            />
-          </div>
+            <form className="col-12 py-3 d-flex justify-content-center"  onSubmit={hadleSubmit}>
+              <input
+                className="rounded px-2 py-1"
+                type="search"
+                placeholder="Search your City"
+                ref={inputSearch}
+              />
+              <button type="submit" className="btn btn-success ms-1" >Search</button>
+            </form>
         </div>
 
         <Row className="justify-content-center  my-3">
-          {data.map((city, key) => (
-            <Col
-              xs={6}
-              md={3}
-              key={key}
-              className="position-relative  text-center text-white d-flex my-1"
-            >
-              <Card
-                className="cardCity  bg-dark text-white  overflow-x-hidden"
-                style={{ minHeight: "11rem" }}
-                onMouseEnter={() => setBgCities(`${city.img}`)}
+
+          {cities.length > 0 ? (
+            cities.map((city, key) => (
+              <Col
+                xs={6}
+                md={3}
+                key={key}
+                className="position-relative  text-center text-white d-flex my-1"
               >
-                <Card.Img
-                  src={city.img}
-                  alt={city.name}
-                  className="w-100 h-100  object-fit-cover  "
-                />
-                <Card.ImgOverlay className="d-flex">
-                  <div className="bg-dark bg-opacity-75 position-absolute top-0 start-0 w-100 text-center ">
-                    <Card.Title className="m-0 ">{city.nation}</Card.Title>
-                    <Card.Text>🗺{city.city}</Card.Text>
-                  </div>
-                  
-                  <PageRouter to={city._id}  className="btn btn-primary  position-absolute bottom-0  py-1 px-2 mb-1 mx-1">More details</PageRouter>
-                </Card.ImgOverlay>
-              </Card>
-            </Col>
-          ))}
+                <Card
+                  className="cardCity  bg-dark text-white  overflow-x-hidden"
+                  style={{ minHeight: "11rem" }}
+                  onMouseEnter={() => setBgCities(`${city.img}`)}
+                >
+                  <Card.Img
+                    src={city.img}
+                    alt={city.name}
+                    className="w-100 h-100  object-fit-cover  "
+                  />
+                  <Card.ImgOverlay className="d-flex">
+                    <div className="bg-dark bg-opacity-75 position-absolute top-0 start-0 w-100 text-center ">
+                      <Card.Title className="m-0 ">{city.nation}</Card.Title>
+                      <Card.Text>🗺{city.city}</Card.Text>
+                    </div>
+                    
+                    <PageRouter to={city._id}  className="btn btn-primary  position-absolute bottom-0  py-1 px-2 mb-1 mx-1">More details</PageRouter>
+                  </Card.ImgOverlay>
+                </Card>
+              </Col>
+            ))
+          )  : (
+            <Col  md={6}  className="py-5">
+              <h1  className=" text-center text-white my-3 py-5">No Results</h1></Col>
+          )}
         </Row>
       </div>
     </section>
