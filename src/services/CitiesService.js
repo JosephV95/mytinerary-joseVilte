@@ -1,8 +1,8 @@
 // import { useState, useEffect } from "react";
 
-export const getAllCities = async () => {
+export const getAllCities = async (queryParams= "") => {
   try {
-    const {allCities}  = await fetch("http://localhost:4000/api/cities")
+    const {allCities}  = await fetch("http://localhost:4000/api/cities" +queryParams)
       .then((res) => res.json())
       .then()
 

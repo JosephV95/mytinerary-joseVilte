@@ -23,14 +23,14 @@ export default function MainCities() {
 
   const hadleSubmit = (event) =>{
     event.preventDefault()
-    console.log( inputSearch.current.value);
+    // console.log( inputSearch.current.value);
     if (inputSearch.current.value){
-      // const queryParams = "?name=" + inputSearch.current.value;
-      // getAllCities(queryParams).then((res) => setCities(res)).catch((err)=> console.log(err))
+      const queryParams = "?city=" + inputSearch.current.value;
+      getAllCities(queryParams).then((res) => setCities(res)).catch((err)=> console.log(err))
       
-      const queryParams = inputSearch.current.value;
-      setCities(allCities.filter((ev) => ev.city.toLowerCase().includes(queryParams.toLowerCase()) ));
-      setBgCities(cities[0].img);
+      // const queryParams = inputSearch.current.value;
+      // setCities(allCities.filter((ev) => ev.city.toLowerCase().includes(queryParams.toLowerCase()) ));
+      // setBgCities(cities[0].img);
     } else {
       setCities(allCities)
     }
@@ -38,10 +38,10 @@ export default function MainCities() {
 
   return (
     <section
-      className="pageCities"
+      className="pageCities py-5"
       style={{ backgroundImage: `url(${bgCities})` }}
     >
-      <div className="container">
+      <div className="container mb-5">
         <div className="row justify-content-center text-center position-relative  ">
           <div className="col-12  py-4 text-white  heroCities">
             <h3>Cities</h3>
