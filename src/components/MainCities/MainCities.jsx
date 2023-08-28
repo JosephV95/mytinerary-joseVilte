@@ -2,20 +2,30 @@ import { useEffect, useRef, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { getAllCities } from "../../services/CitiesService.js"
 import { Link as PageRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import citiesRed from "../../store/actions/citiesAction.js";
 
 export default function MainCities() {
-  let [cities, setCities] = useState([]);
-  let [allCities, setAllCities] = useState([]);
+  
   let [bgCities, setBgCities] = useState("");
   const inputSearch = useRef(null);
+
+  let citiesInStore = useSelector(store => store.citiesReducer.cities);
+  console.log(citiesInStore);
+  let allCitiesInStore = useSelector(store => store.citiesReducer.allCities);
+  console.log( {nuevoDispatch: allCitiesInStore});
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // console.log(CitiesService());
     getAllCities()
     .then(resp => {
-      setCities(resp);
-      setAllCities(resp);
+      // setCities(resp);
+      // setAllCities(resp);
 
+      dispatch(citiesRed.cities_api(resp));
+      dispatch(citiesRed.all_cities(resp))
       setBgCities(resp[0].img)
     })  
     
@@ -26,13 +36,10 @@ export default function MainCities() {
     // console.log( inputSearch.current.value);
     if (inputSearch.current.value){
       const queryParams = "?city=" + inputSearch.current.value;
-      getAllCities(queryParams).then((res) => setCities(res)).catch((err)=> console.log(err))
+      getAllCities(queryParams).then((res) => dispatch(citiesRed.cities_api(res))).catch((err)=> console.log(err))
       
-      // const queryParams = inputSearch.current.value;
-      // setCities(allCities.filter((ev) => ev.city.toLowerCase().includes(queryParams.toLowerCase()) ));
-      // setBgCities(cities[0].img);
     } else {
-      setCities(allCities)
+      dispatch(citiesRed.cities_api(allCitiesInStore))
     }
   }
 
@@ -61,8 +68,8 @@ export default function MainCities() {
 
         <Row className="justify-content-center  my-3">
 
-          {cities.length > 0 ? (
-            cities.map((city, key) => (
+          {citiesInStore.length > 0 ? (
+            citiesInStore.map((city, key) => (
               <Col
                 xs={6}
                 md={3}
