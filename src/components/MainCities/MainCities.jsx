@@ -11,24 +11,21 @@ export default function MainCities() {
   const inputSearch = useRef(null);
 
   let citiesInStore = useSelector(store => store.citiesReducer.cities);
-  console.log(citiesInStore);
+  // console.log(citiesInStore);
   let allCitiesInStore = useSelector(store => store.citiesReducer.allCities);
-  console.log( {nuevoDispatch: allCitiesInStore});
-
+  // console.log( {CitiesBackup: allCitiesInStore});
   const dispatch = useDispatch();
 
   useEffect(() => {
     // console.log(CitiesService());
     getAllCities()
     .then(resp => {
-      // setCities(resp);
-      // setAllCities(resp);
 
       dispatch(citiesRed.cities_api(resp));
       dispatch(citiesRed.all_cities(resp))
       setBgCities(resp[0].img)
     })  
-    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const hadleSubmit = (event) =>{
@@ -36,7 +33,7 @@ export default function MainCities() {
     // console.log( inputSearch.current.value);
     if (inputSearch.current.value){
       const queryParams = "?city=" + inputSearch.current.value;
-      getAllCities(queryParams).then((res) => dispatch(citiesRed.cities_api(res))).catch((err)=> console.log(err))
+      getAllCities(queryParams).then((res) => dispatch(citiesRed.cities_api(res)) ).catch((err)=> console.log(err))
       
     } else {
       dispatch(citiesRed.cities_api(allCitiesInStore))

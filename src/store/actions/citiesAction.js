@@ -1,6 +1,6 @@
 import { createAction } from "@reduxjs/toolkit";
 
-const cities_api = createAction( 'cities_api', (payload)=>{
+const cities_api = createAction('cities_api', (payload)=>{
     return { payload }
 } )
 

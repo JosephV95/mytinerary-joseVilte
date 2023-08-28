@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import citiesRed from "../actions/citiesAction";
+import citiesReducer from "../actions/citiesAction";
 
 const initialState = {
     cities: [
@@ -19,18 +19,15 @@ const initialState = {
 }
 
 const cities = createReducer( initialState, (builder)=>{
-    
     builder
-    .addCase(citiesRed.cities_api, (state, action) =>{
+    .addCase(citiesReducer.cities_api, (state, action) =>{
         let newState = {...state, cities: action.payload};
         return newState;
     })
-    .addCase(citiesRed.all_cities, (state, action) =>{
+    .addCase(citiesReducer.all_cities, (state, action) =>{
         let newState = {...state, allCities: action.payload};
         return newState;
     })
 })
-
-// const citiesReducer = {cities}
 
 export default  cities
