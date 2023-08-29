@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import citiesReducer from "../actions/citiesAction";
+import citiesActions from "../actions/citiesAction";
 
 const initialState = {
     cities: [
@@ -18,16 +18,16 @@ const initialState = {
     ]
 }
 
-const cities = createReducer( initialState, (builder)=>{
+const citiesReducer = createReducer( initialState, (builder)=>{
     builder
-    .addCase(citiesReducer.cities_api, (state, action) =>{
+    .addCase(citiesActions.cities_api, (state, action) =>{
         let newState = {...state, cities: action.payload};
         return newState;
     })
-    .addCase(citiesReducer.all_cities, (state, action) =>{
+    .addCase(citiesActions.all_cities, (state, action) =>{
         let newState = {...state, allCities: action.payload};
         return newState;
     })
 })
 
-export default  cities
+export default  citiesReducer

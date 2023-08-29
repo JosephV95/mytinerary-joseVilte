@@ -3,7 +3,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import { getAllCities } from "../../services/CitiesService.js"
 import { Link as PageRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import citiesRed from "../../store/actions/citiesAction.js";
+import citiesActions from "../../store/actions/citiesAction.js";
 
 export default function MainCities() {
   
@@ -21,8 +21,8 @@ export default function MainCities() {
     getAllCities()
     .then(resp => {
 
-      dispatch(citiesRed.cities_api(resp));
-      dispatch(citiesRed.all_cities(resp))
+      dispatch(citiesActions.cities_api(resp));
+      dispatch(citiesActions.all_cities(resp))
       setBgCities(resp[0].img)
     })  
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -33,10 +33,10 @@ export default function MainCities() {
     // console.log( inputSearch.current.value);
     if (inputSearch.current.value){
       const queryParams = "?city=" + inputSearch.current.value;
-      getAllCities(queryParams).then((res) => dispatch(citiesRed.cities_api(res)) ).catch((err)=> console.log(err))
+      getAllCities(queryParams).then((res) => dispatch(citiesActions.cities_api(res)) ).catch((err)=> console.log(err))
       
     } else {
-      dispatch(citiesRed.cities_api(allCitiesInStore))
+      dispatch(citiesActions.cities_api(allCitiesInStore))
     }
   }
 

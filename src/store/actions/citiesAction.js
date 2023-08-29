@@ -8,6 +8,6 @@ const all_cities = createAction('all_cities', (payload)=>{
     return { payload }
 })
 
-const citiesReducer = {cities_api, all_cities}
+const citiesActions = {cities_api, all_cities}
 
-export default citiesReducer;
+export default citiesActions;
