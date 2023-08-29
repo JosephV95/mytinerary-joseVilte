@@ -16,7 +16,7 @@ export default function CityDetail() {
       <div className="container-fluid">
         <div
           className="row justify-content-center detailCity"
-          style={{ backgroundImage: `url(${city.img})`, height: "60vh" }}
+          style={{ backgroundImage: `url(${city.img})`, height: "75vh" }}
         >
           <div className="col-12 col-md-6 heroDetail  text-center text-white d-flex flex-column justify-content-center ">
             <h2 className="py-4">{city.city}</h2>
