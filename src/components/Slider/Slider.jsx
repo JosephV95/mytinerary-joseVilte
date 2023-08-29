@@ -1,36 +1,41 @@
 import Carousel from "react-bootstrap/Carousel";
 import "./slider.css";
 import CarouselItem from "./CarouselItem";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+
+import { getAllCities } from '../../services/CitiesService.js';
+import { useDispatch, useSelector } from "react-redux";
+import citiesActions from "../../store/actions/citiesAction";
 
 export default function Slider() {
 
-  let [data, setData] = useState([]);
+  let allCitiesInStore = useSelector(store => store.citiesReducer.allCities);
+  const dispatch = useDispatch()
   useEffect(() => {
-    fetch('src/utils/dataCities.json').then((response) => response.json())
-    .then(
-      // info => console.log(info);
-      info => setData(info)
-    )
+    getAllCities()
+    .then((res) => {
+        dispatch(citiesActions.all_cities(res))
+    })
+    
     .catch((error) => {console.log(error.message)});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
- 
   return (
     <div className="container my-2">
       <div className="row justify-content-center">
         <div className="col-md-9">
           <Carousel>
             <Carousel.Item interval={1000}>
-              <CarouselItem unarray={data.slice(0,4)} />
+              <CarouselItem unarray={allCitiesInStore.slice(0,4)} />
             </Carousel.Item>
 
             <Carousel.Item interval={1000}>
-              <CarouselItem unarray={data.slice(4,8)} />
+              <CarouselItem unarray={allCitiesInStore.slice(4,8)} />
             </Carousel.Item>
 
             <Carousel.Item interval={1000}>
-              <CarouselItem unarray={data.slice(8,12)} />
+              <CarouselItem unarray={allCitiesInStore.slice(8,12)} />
             </Carousel.Item>
           </Carousel>
         </div>
