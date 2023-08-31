@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import { getAllCities } from "../../services/CitiesService.js"
 import { Link as PageRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction.js";
@@ -11,23 +10,14 @@ export default function MainCities() {
   const inputSearch = useRef(null);
 
   let citiesInStore = useSelector(store => store.citiesReducer.cities);
-  // console.log(citiesInStore);
-  let allCitiesInStore = useSelector(store => store.citiesReducer.allCities);
-  // console.log( {CitiesBackup: allCitiesInStore});
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(citiesActions.get_cities())
 
     setBgCities(citiesInStore[0].img)
-    // console.log(CitiesService());
-    // getAllCities()
-    // .then(resp => {
-
-    //   dispatch(citiesActions.cities_api(resp));
-    //   dispatch(citiesActions.all_cities(resp))
-    //   setBgCities(resp[0].img)
-    // })  
+   
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -36,10 +26,11 @@ export default function MainCities() {
     // console.log( inputSearch.current.value);
     if (inputSearch.current.value){
       const queryParams = "?city=" + inputSearch.current.value;
-      getAllCities(queryParams).then((res) => dispatch(citiesActions.cities_api(res)) ).catch((err)=> console.log(err))
+
+      dispatch(citiesActions.get_cities(queryParams))
       
     } else {
-      dispatch(citiesActions.cities_api(allCitiesInStore))
+      dispatch(citiesActions.get_cities())
     }
   }
 
@@ -74,7 +65,7 @@ export default function MainCities() {
                 xs={6}
                 md={3}
                 key={key}
-                className="position-relative  text-center text-white d-flex my-1"
+                className="position-relative  text-center text-white d-flex my-1 pt-4"
               >
                 <Card
                   className="cardCity  bg-dark text-white  overflow-x-hidden"

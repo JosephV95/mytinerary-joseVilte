@@ -32,6 +32,10 @@ const citiesReducer = createReducer( initialState, (builder)=>{
         let newState = {...state, cities: action.payload.citiesApi}
         return newState
     })
+    .addCase(citiesActions.get_one_city.fulfilled, (state, action)=>{
+        let newState = {...state, cities: [action.payload.oneCity]}  //? Se debe pasar el action como array para que no produzca errores
+        return newState
+    })
 })
 
 export default  citiesReducer
