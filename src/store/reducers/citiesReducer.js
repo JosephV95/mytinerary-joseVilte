@@ -15,7 +15,16 @@ const initialState = {
             city: "",
             img: ""
         }
-    ]
+    ],
+    city:{
+        city:"",
+        nation:"",
+        img:"",
+        _itineraries:[
+            {name:"",
+            city:""}
+        ]
+    }
 }
 
 const citiesReducer = createReducer( initialState, (builder)=>{
@@ -26,7 +35,8 @@ const citiesReducer = createReducer( initialState, (builder)=>{
         return newState
     })
     .addCase(citiesActions.get_one_city.fulfilled, (state, action)=>{
-        let newState = {...state, cities: [action.payload.oneCity]}  //? Se debe pasar el action como array para que no produzca errores
+        let newState = {...state, city: action.payload.oneCity}  //? Se deberia pasar el action como array para que no produzca errores(si el estado fuera cities y no city)
+        // let newState = {...state, cities: [action.payload.oneCity]}  //? Se debe pasar el action como array para que no produzca errores
         return newState
     })
     

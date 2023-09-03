@@ -7,7 +7,7 @@ const get_cities = createAsyncThunk('get_cities', async(queries= "")=>{    //! E
         const citiesApi = await axios.get("http://localhost:4000/api/cities" + queries)  
             .then((res) => {
                 // console.log(res.data.allCities);
-                return res.data.allCities     //? En axios la info viene en la respuesta.data
+                return res.data.allCities   //? En axios la info viene en la respuesta.data
             })
 
         return {
@@ -22,7 +22,7 @@ const get_one_city = createAsyncThunk("get_one_city", async(id)=>{
     try {
         const oneCity = await axios.get("http://localhost:4000/api/cities/" + id)
         .then((res)=>{
-            console.log(res.data.oneCity);
+            // console.log(res.data.oneCity);
             return res.data.oneCity
         })
 
