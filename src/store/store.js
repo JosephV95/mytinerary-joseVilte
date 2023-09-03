@@ -5,6 +5,6 @@ import itinerariesReducer from "./reducers/itinerariesReducer"
 export const store = configureStore({
     reducer: {
         citiesReducer: citiesReducer,
-        itinerariesReducers : itinerariesReducer
+        itinerariesReducer : itinerariesReducer
     }
 })
