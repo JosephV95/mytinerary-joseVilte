@@ -6,8 +6,8 @@
     align-items: center;
 }
 .main h4{
-    color: rgb(33, 33, 33);
-    text-shadow: 0 0 2px yellow, 0 0 3px rgb(255, 68, 0);
+    color: whitesmoke;
+    text-shadow: 0 0 2px rgb(42, 230, 255),0 0 3px rgb(42, 230, 255), 0 0 5px rgb(255, 0, 0);
     font-size: 1.6rem;
 }
 

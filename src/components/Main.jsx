@@ -28,7 +28,7 @@ function Main() {
           <CallToAction />
 
           <div className="row my-5">
-            <h3 className="text-center py-2 fw-bold">Popular MyTineraries!</h3>
+            <h3 className="text-center text-white py-2 fw-bold">Popular MyTineraries!</h3>
             <Slider/>
         </div>
         </div>
