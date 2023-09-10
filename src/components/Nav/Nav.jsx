@@ -7,8 +7,8 @@ export default function Nav() {
         <NavRouterLink title={"Home"} url={'/'}/>
         <NavRouterLink title={"Cities"} url={'/cities'}/>
 
-        <button className="btn btn-primary" type="button">
-          <i className="fa-solid fa-user"></i> Login
+        <button className="btn btn-primary ms-2 px-2" type="button">
+          <i className="fa-solid fa-user"></i> Sign Out
         </button>
       </ul>
     </nav>
