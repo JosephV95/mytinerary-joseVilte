@@ -4,7 +4,7 @@ import Cities from "./pages/Cities/Cities";
 import Home from "./pages/Home";
 import CityDetails from "./pages/CityDetail/CityDetail"
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import UserLogin from "./pages/UserLogin/UserLogin";
+import UserLogin from "./pages/UserLogin/UserRegister";
 
 const router = createBrowserRouter([
   {path:'/', element: <MainLayout />, children:[
@@ -13,7 +13,10 @@ const router = createBrowserRouter([
     {path:'/cities/:id', element: <CityDetails/>}
   ]},
   {
-    path:'/user', element: <UserLogin />
+    path:'/user/register', element: <UserLogin />
+  },
+  {
+    path:'/user/login', element: <UserLogin />
   }
 ])
 
