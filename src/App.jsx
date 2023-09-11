@@ -4,7 +4,7 @@ import Cities from "./pages/Cities/Cities";
 import Home from "./pages/Home";
 import CityDetails from "./pages/CityDetail/CityDetail"
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import UserLogin from "./pages/UserLogin/UserRegister";
+import UserLogin from "./pages/UserLogin/UserLogin";
 import UserRegister from "./pages/UserLogin/UserRegister";
 
 const router = createBrowserRouter([
