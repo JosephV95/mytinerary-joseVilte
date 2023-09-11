@@ -1,8 +1,12 @@
-import axios from "axios";
+// import axios from "axios";
 import { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import userActions from "../../store/actions/authActions";
 
 export default function UserLogin() {
+
+  const dispatch = useDispatch();
 
     const userEmailRef = useRef();
     const userPasswordRef = useRef();
@@ -16,19 +20,13 @@ export default function UserLogin() {
         // event.preventDefault();
         // event.stopPropagation();
         // } 
-        axios.post("http://localhost:4000/api/user/login",  {
-        email: userEmailRef.current.value,
-        password: userPasswordRef.current.value,
-        })
-          .then((res)=>{
-             console.log(res.data);
-              
-             localStorage.setItem("token", res.data.token) //?Se guarda el token en el localStorage
-             localStorage.setItem("user", JSON.stringify( res.data.user ) ) //? JSONstringify convierte un objeto a string
-          })
-          .catch((error) => console.log( error.response.data.message ))
 
-    setValidated(true);
+        dispatch(userActions.user_login({
+          email: userEmailRef.current.value,
+          password: userPasswordRef.current.value
+        }))
+
+      setValidated(true);
   };
 
   return (

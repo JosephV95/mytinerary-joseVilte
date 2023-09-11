@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { axios } from "axios";
+import axios from "axios";
 
 const user_login = createAsyncThunk("user_login", async(userData)=>{
     try {
