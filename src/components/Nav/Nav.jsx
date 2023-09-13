@@ -1,7 +1,7 @@
 // import { Button, Form, Modal } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import NavRouterLink from "./NavRouterLink";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import userActions from "../../store/actions/authActions";
 import { Button, ButtonGroup, Dropdown } from "react-bootstrap";
@@ -12,9 +12,9 @@ export default function Nav() {
   const navigate = useNavigate();
 
   let userlogedd = useSelector(store => store.userReducer)
-  useEffect(()=>{
-    console.log(userlogedd);
-  })
+  // useEffect(()=>{
+  //   console.log(userlogedd);
+  // })
 
   const logoutUser = ()=>{
     dispatch(userActions.user_logout())
