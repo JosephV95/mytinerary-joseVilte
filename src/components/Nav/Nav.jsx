@@ -1,67 +1,54 @@
-import { Button, Form, Modal } from "react-bootstrap";
+// import { Button, Form, Modal } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import NavRouterLink from "./NavRouterLink";
-import { useState } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import userActions from "../../store/actions/authActions";
+import { Button, ButtonGroup, Dropdown } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function Nav() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const [show, setShow] = useState(false);
+  let userlogedd = useSelector(store => store.userReducer)
+  useEffect(()=>{
+    console.log(userlogedd);
+  })
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const logoutUser = ()=>{
+    dispatch(userActions.user_logout())
+  }
 
   return (
 <>
-
     <nav>
       <ul className="nav d-flex justify-content-end align-items-center">
         <NavRouterLink title={"Home"} url={'/'}/>
         <NavRouterLink title={"Cities"} url={'/cities'}/>
 
-        <button className="btn btn-primary ms-2 px-2" type="button"  onClick={handleShow}>
-          <i className="fa-solid fa-user"></i> Sign Out
-        </button>
+
+        {userlogedd.isLogged ?( 
+        <>
+        <Dropdown as={ButtonGroup} data-bs-theme="dark">
+         <Button variant="primary" className="py-0 ps-2 pe-1" style={{backgroundColor: "#08abe2"}}>
+          <img src={userlogedd.user.photo} alt="img" style={{height:"1.8rem", width:"1.8rem", borderRadius:"50%", display:"inline", objectFit:"cover"}} />  
+           {" "+ userlogedd.user.name}
+         </Button>
+
+         <Dropdown.Toggle split variant="primary" id="dropdown-split-basic"  />
+
+          <Dropdown.Menu>
+            <Dropdown.Item eventKey="1" className="bg-danger" onClick={logoutUser}><i className="fa-solid fa-right-from-bracket fa-fade"></i> Logout</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+        </>) :( 
+          <button className="btn btn-primary ms-2 px-2" type="button" onClick={()=>{navigate("/user/login")}}> <i className="fa-solid fa-user"></i> Login</button>
+        )}
+
       </ul>
     </nav>
 
-    <Modal show={show} onHide={handleClose} >
-      <Modal.Header closeButton >
-        <Modal.Title>Iniciar Sesión</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Enter email"  required />
-                </Form.Group>
-
-                <Form.Group className="mb-3">
-                  <Form.Control
-                    type="password"
-                    pattern=".{6,12}"
-                    id="inputPassword5"
-                    aria-describedby="pass" placeholder="Password" required 
-                  />
-                  <Form.Text id="pass" muted>
-                    The password must be 6-12 characters
-                  </Form.Text>
-                </Form.Group>
-        </Form>
-      </Modal.Body>
-      <Modal.Body>
-        <p>Si no tienes cuenta ragistrate</p>
-        <Button variant="success" href="/user">
-            Save Changes
-          </Button>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
-        <Button variant="primary" onClick={handleClose}>
-          Save Changes
-        </Button>
-        
-      </Modal.Footer>
-    </Modal>
     </>
   );
 }
