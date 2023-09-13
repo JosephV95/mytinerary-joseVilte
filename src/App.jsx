@@ -6,6 +6,9 @@ import CityDetails from "./pages/CityDetail/CityDetail"
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import UserLogin from "./pages/UserLogin/UserLogin";
 import UserRegister from "./pages/UserLogin/UserRegister";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import userActions from "./store/actions/authActions";
 
 const router = createBrowserRouter([
   {path:'/', element: <MainLayout />, children:[
@@ -22,6 +25,16 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+
+  // //! Primero se verificara si el usuario ya esta loguado usando el token guardado en el localStorage
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    if(localStorage.getItem('token')){
+      dispatch(userActions.user_authenticate())
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  } , [] )
+
   return (
     <>
       <RouterProvider router={router}/>
