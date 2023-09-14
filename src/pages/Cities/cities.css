@@ -6,14 +6,17 @@
 }
 
 .heroCities h3, .heroCities p{
-    text-shadow: 0 0 15px grey, 0 0 20px black, 0 0 20px black;
-
+    text-shadow: 0 0 15px black, 0 0 20px black, 0 0 20px black,0 0 23px black, 0 0 25px grey;
+    /* color: rgb(255, 255, 255); */
+    font-weight: bold lighter ;
+    font-style: italic;
 }
 .cardCity{
     border: none;
 }
 
 .cardCity:hover{
-    outline: solid 3px white;
+    outline: solid 3px orange;
+    box-shadow: 0 0 10px orange, 0 0 10px orange, 0 0 15px yellow;
     
 }
