@@ -17,7 +17,7 @@ export default function UserLogin() {
     const [validated, setValidated] = useState(false);
 
     if (userLogged) {
-       return navigate("/")
+      return navigate("/")
     }
 
     const handleSubmit = (event) => {
@@ -33,17 +33,15 @@ export default function UserLogin() {
           email: userEmailRef.current.value,
           password: userPasswordRef.current.value
         }))
-
-      
-  };
+    };
 
   return (
     <section  style={{minHeight:"100vh"}}>
-      <div className="container pt-3">
-        <div className="row  align-items-center">
+      <div className="container pt-5">
+        <div className="row justify-content-center  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
-            <h1>Mytinerary</h1>
-            <p>Welcome nuevo usuario</p>
+            <h1 style={{fontSize: "2.2rem"}} className="mb-3">Mytinerary</h1>
+            <p style={{fontSize: "1.5rem"}}>Welcome back.</p>
           </div>
           <div className="col-md-7 rounded"  style={{backgroundColor: "white"}}>
             <Form className="  p-4 rounded"   validated={validated} onSubmit={handleSubmit}  >

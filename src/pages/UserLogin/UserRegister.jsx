@@ -1,6 +1,8 @@
-import axios from "axios";
 import { useRef, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import userActions from "../../store/actions/authActions";
 
 export default function UserRegister() {
 
@@ -10,8 +12,21 @@ export default function UserRegister() {
   const userPasswordRef = useRef();
   const userPhotoRef = useRef();
   const userNationRef = useRef();
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const userLogged = useSelector(store => store.userReducer.isLogged)
+
+  const userCreatedStore = useSelector(store => store.userReducer.userCreated)
     
   const [validated, setValidated] = useState(false);
+
+  if (userLogged) {
+    return navigate("/")
+  }
+  if (userCreatedStore.email.length > 0) {
+    navigate("/user/login")
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,41 +38,27 @@ export default function UserRegister() {
 
     setValidated(true);
 
-    axios.post("http://localhost:4000/api/user/register",  {
+    dispatch(userActions.user_register( {
       name: userNameRef.current.value,
       lastname: userLastnameRef.current.value,
       email: userEmailRef.current.value,
       password: userPasswordRef.current.value,
       photo: userPhotoRef.current.value,
       nation: userNationRef.current.value
-    })
-       .then((res)=>{
-           console.log(res.data);
-           return res.data
-            })
-       .catch((error) => console.log(error.response.data.message) )
-                     
-    // console.log({
-    //   name: userNameRef.current.value,
-    //   lastname: userLastnameRef.current.value,
-    //   email: userEmailRef.current.value,
-    //   password: userPasswordRef.current.value,
-    //   photo: userPhotoRef.current.value,
-    //   nation: userNationRef.current.value
-    // });
-  };
+    }))
+  }
 
   return (
     <section  style={{minHeight:"100vh"}}>
       <div className="container pt-3">
         <div className="row  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
-            <h1>Mytinerary</h1>
-            <p>Welcome nuevo usuario</p>
+            <h1 style={{fontSize: "2.2rem"}} className="mb-3">Mytinerary</h1>
+            <p style={{fontSize: "1.5rem"}}>Welcome new user.</p>
           </div>
           <div className="col-md-7">
             <Form className="  p-4 rounded"   validated={validated} onSubmit={handleSubmit}  style={{backgroundColor: "white"}}>
-              <h3 className="text-center mb-4"><i className="fa-solid fa-user-plus" style={{color:"#0ec06d"}}></i> Register</h3>
+              <h3 className="text-center mb-4"><i className="fa-solid fa-user-plus" style={{color:"#0bab6d"}}></i> Register</h3>
               <fieldset>
                 <Row>
                   <Form.Group className="mb-3" as={Col} md="6">
@@ -86,7 +87,7 @@ export default function UserRegister() {
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Email address:</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" aria-describedby=""  required  ref={userEmailRef}/>
+                  <Form.Control type="email" placeholder="Enter email" aria-describedby=""  required pattern=".+com" ref={userEmailRef}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3">
@@ -96,6 +97,7 @@ export default function UserRegister() {
                     // minLength={6}
                     // maxLength={12}
                     pattern=".{6,12}"
+                    // title="alfanumerico y sin simbolo"
                     id="inputPassword5"
                     aria-describedby="pass" placeholder="Password" required ref={userPasswordRef}
                   />
@@ -116,7 +118,7 @@ export default function UserRegister() {
                     Select country
                   </Form.Label>
                   <Form.Select id="selectCountry" required placeholder="Hola" ref={userNationRef}>
-                    <option selected disabled >Select </option>
+                    <option value="other" defaultValue="other" disabled >Select </option>
                     <option value="Japan">Japan</option>
                     <option value="Argentina">Argentina</option>
                     <option value="Alemania">Alemania</option>
