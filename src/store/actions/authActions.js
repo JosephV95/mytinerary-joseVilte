@@ -26,14 +26,16 @@ const user_register = createAsyncThunk("user_register", async(userData)=>{
             .then((res)=>{
                 // console.log(res.data);
                 alert("Successful registration")
-                return res.data.userCreated
+                localStorage.setItem("token", res.data.token)
+                
+                return res.data
             })
             .catch((error) => { 
                 //  console.log( error.response.data.message),
                  alert( error.response.data.message) 
             } )
-
         return newUser
+
     } catch (error) {
         console.log(error.message);   
     }

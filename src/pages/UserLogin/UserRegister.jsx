@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import userActions from "../../store/actions/authActions";
 
+import { GoogleLogin } from '@react-oauth/google';
+import jwtDecode from "jwt-decode";
+
 export default function UserRegister() {
 
   const userNameRef = useRef();
@@ -17,16 +20,16 @@ export default function UserRegister() {
   const navigate = useNavigate();
   const userLogged = useSelector(store => store.userReducer.isLogged)
 
-  const userCreatedStore = useSelector(store => store.userReducer.userCreated)
+  // const userCreatedStore = useSelector(store => store.userReducer.userCreated)
     
   const [validated, setValidated] = useState(false);
 
   if (userLogged) {
     return navigate("/")
   }
-  if (userCreatedStore.email.length > 0) {
-    navigate("/user/login")
-  }
+  // if (userCreatedStore.email.length > 0) {
+  //   navigate("/user/login")
+  // }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -48,6 +51,20 @@ export default function UserRegister() {
     }))
   }
 
+  const signUpWithGoogle = (credentialResponse) =>{
+    const dataUser = jwtDecode(credentialResponse.credential);
+    // console.log(dataUser);
+    const body = {
+      name: dataUser.given_name,
+      lastname: dataUser.family_name,
+      email: dataUser.email,
+      password: dataUser.sub.slice(0,12),
+      photo: dataUser.picture
+    }
+    // console.log(body);
+    dispatch(userActions.user_register(body))
+  }
+
   return (
     <section  style={{minHeight:"100vh"}}>
       <div className="container pt-3">
@@ -58,7 +75,7 @@ export default function UserRegister() {
           </div>
           <div className="col-md-7">
             <Form className="  p-4 rounded"   validated={validated} onSubmit={handleSubmit}  style={{backgroundColor: "white"}}>
-              <h3 className="text-center mb-4"><i className="fa-solid fa-user-plus" style={{color:"#0bab6d"}}></i> Register</h3>
+              <h3 className="text-center mb-4"><i className="fa-solid fa-user-plus" style={{color:"#0bab6d"}}></i> Sign Up</h3>
               <fieldset>
                 <Row>
                   <Form.Group className="mb-3" as={Col} md="6">
@@ -129,6 +146,20 @@ export default function UserRegister() {
                 <Button type="submit" className="mt-2 btn btn-success">Register</Button>
               </fieldset>
               <div>
+              <GoogleLogin
+                text="signup_with"
+                theme="filled_blue"
+                shape="pill"
+                
+                onSuccess={signUpWithGoogle}
+                // onSuccess={credentialResponse => {
+                //   console.log(credentialResponse);
+                //   console.log(jwtDecode(credentialResponse.credential));
+                // }}
+                onError={() => {
+                  console.log('Login Failed');
+                }}
+              />
                 <a href="">Registrarse con Google</a>
               </div>
             </Form>

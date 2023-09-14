@@ -4,6 +4,8 @@ import { Button, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import userActions from "../../store/actions/authActions";
 import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
+import jwtDecode from "jwt-decode"
 
 export default function UserLogin() {
 
@@ -34,6 +36,17 @@ export default function UserLogin() {
           password: userPasswordRef.current.value
         }))
     };
+
+    const signInWithGoogle = (credentialResponse) =>{
+      const dataUser = jwtDecode(credentialResponse.credential);
+      // console.log(dataUser);
+      const body = {
+        email: dataUser.email,
+        password: dataUser.sub.slice(0,12)
+      }
+      // console.log(body);
+      dispatch(userActions.user_login(body))
+    }
 
   return (
     <section  style={{minHeight:"100vh"}}>
@@ -66,7 +79,22 @@ export default function UserLogin() {
                   </Form.Text>
                 </Form.Group>
                 
-                <Button type="submit" className="mt-2 btn btn-primary">Sign In</Button> or <Button  className="mt-2 btn btn-secondary">ingresar con google</Button>
+                <Button type="submit" className="mt-2 btn btn-primary">Sign In</Button> or 
+
+                <GoogleLogin
+                text="signin_with"
+                theme="filled_blue"
+                shape="pill"
+                
+                onSuccess={signInWithGoogle}
+                // onSuccess={credentialResponse => {
+                //   console.log(credentialResponse);
+                //   console.log(jwtDecode(credentialResponse.credential));
+                // }}
+                onError={() => {
+                  console.log('Login Failed');
+                }}
+              />
               </fieldset>
               
             </Form>

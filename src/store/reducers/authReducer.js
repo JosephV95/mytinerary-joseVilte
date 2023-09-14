@@ -10,9 +10,9 @@ const initialState = {
     },
     isLogged: false,
 
-    userCreated:{
-        email: ""
-    }
+    // userCreated:{
+    //     email: ""
+    // }
 }
 
 const userReducer = createReducer(initialState, (builder)=>{
@@ -27,7 +27,7 @@ const userReducer = createReducer(initialState, (builder)=>{
         return initialState  //* se volvera a tener los estados iniciales
     })
     .addCase(userActions.user_register.fulfilled, (state,action)=>{
-        return {userCreated: action.payload}
+        return {...state, user: action.payload.userCreated, isLogged:action.payload.success}
     })
 })
 
