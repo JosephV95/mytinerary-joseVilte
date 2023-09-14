@@ -1,5 +1,18 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import Swal from 'sweetalert2'
+
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 2300,
+    // timerProgressBar: true,
+    didOpen: (toast) => {
+    //   toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
 
 const user_login = createAsyncThunk("user_login", async(userData)=>{
     try {
@@ -9,7 +22,11 @@ const user_login = createAsyncThunk("user_login", async(userData)=>{
             localStorage.setItem("token", res.data.token) //?Se guarda el token en el localStorage
             // localStorage.setItem("user", JSON.stringify( res.data.user ) ) //? JSONstringify convierte un objeto a string
 
-            alert("Login Successful")
+            // alert("Login Successful")
+            Toast.fire({
+                icon: 'success',
+                title: 'Welcome back ' + res.data.user.name
+              })
             return res.data
         })
         .catch((error) => {console.log( error.response.data.message ), alert( error.response.data.message )})
@@ -25,14 +42,33 @@ const user_register = createAsyncThunk("user_register", async(userData)=>{
         const newUser = await axios.post("http://localhost:4000/api/user/register", userData )
             .then((res)=>{
                 // console.log(res.data);
-                alert("Successful registration")
+                // alert("Successful registration")
+                Swal.fire({
+                    position: 'top',
+                    icon: 'success',
+                    title: 'Successful registration',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
                 localStorage.setItem("token", res.data.token)
                 
                 return res.data
             })
             .catch((error) => { 
-                //  console.log( error.response.data.message),
-                 alert( error.response.data.message) 
+                if (Array.isArray(error.response.data.message)) {
+                    error.response.data.message.map(val => 
+                        Swal.fire(
+                            val,
+                            '',
+                            'error'
+                        ))
+                } else{
+                    Swal.fire(
+                        error.response.data.message,
+                        '',
+                        'info'
+                    )
+                }
             } )
         return newUser
 
