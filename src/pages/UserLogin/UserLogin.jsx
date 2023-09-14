@@ -78,23 +78,27 @@ export default function UserLogin() {
                     The password must be 6-12 characters
                   </Form.Text>
                 </Form.Group>
+                <div className="d-flex flex-column align-items-center mt-4">
                 
-                <Button type="submit" className="mt-2 btn btn-primary">Sign In</Button> or 
+                  <Button type="submit" className="me-2 px-4 btn btn-primary">Sign In </Button> 
+                  <p className="py-1 my-1">or</p>
 
-                <GoogleLogin
-                text="signin_with"
-                theme="filled_blue"
-                shape="pill"
-                
-                onSuccess={signInWithGoogle}
-                // onSuccess={credentialResponse => {
-                //   console.log(credentialResponse);
-                //   console.log(jwtDecode(credentialResponse.credential));
-                // }}
-                onError={() => {
-                  console.log('Login Failed');
-                }}
-              />
+                  <GoogleLogin
+                  text="signin_with"
+                  theme="filled_blue"
+                  shape="pill"
+                  
+                  onSuccess={signInWithGoogle}
+                  // onSuccess={credentialResponse => {
+                  //   console.log(credentialResponse);
+                  //   console.log(jwtDecode(credentialResponse.credential));
+                  // }}
+                  onError={() => {
+                    console.log('Login Failed');
+                  }}
+                  
+                  />
+                </div>
               </fieldset>
               
             </Form>

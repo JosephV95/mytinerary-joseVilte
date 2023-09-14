@@ -67,7 +67,7 @@ export default function UserRegister() {
 
   return (
     <section  style={{minHeight:"100vh"}}>
-      <div className="container pt-3">
+      <div className="container pt-2">
         <div className="row  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
             <h1 style={{fontSize: "2.2rem"}} className="mb-3">Mytinerary</h1>
@@ -142,26 +142,26 @@ export default function UserRegister() {
                   </Form.Select>
                 </Form.Group>
                 
-
-                <Button type="submit" className="mt-2 btn btn-success">Register</Button>
+                <div className="d-flex flex-column align-items-center mt-3">
+                  <Button type="submit" className="mt-2 px-5 btn btn-success">Register</Button>
+                  <p className="py-1 my-0">or</p>
+                  <GoogleLogin
+                    text="signup_with"
+                    theme="filled_blue"
+                    shape="pill"
+                    
+                    onSuccess={signUpWithGoogle}
+                    // onSuccess={credentialResponse => {
+                    //   console.log(credentialResponse);
+                    //   console.log(jwtDecode(credentialResponse.credential));
+                    // }}
+                    onError={() => {
+                      console.log('Login Failed');
+                    }}
+                  />
+                </div>
               </fieldset>
-              <div>
-              <GoogleLogin
-                text="signup_with"
-                theme="filled_blue"
-                shape="pill"
-                
-                onSuccess={signUpWithGoogle}
-                // onSuccess={credentialResponse => {
-                //   console.log(credentialResponse);
-                //   console.log(jwtDecode(credentialResponse.credential));
-                // }}
-                onError={() => {
-                  console.log('Login Failed');
-                }}
-              />
-                <a href="">Registrarse con Google</a>
-              </div>
+              
             </Form>
           </div>
         </div>
