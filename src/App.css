@@ -8,6 +8,13 @@ section{
   padding: 2rem 0;
 }
 section{
-  background-image: linear-gradient(120deg, rgba(27, 173, 236, 0.9) 20%, #f71b84 50%, rgba(27, 173, 236, 0.9) 80%);
-  background-size: 200%;
+  background-image: linear-gradient(120deg, rgba(27, 173, 236) 20%, #f71b84 50%, rgba(27, 173, 236, 0.9) 80%);
+  background-size: 300%;
+  animation: animBG 10s infinite;
+}
+
+@keyframes animBG {
+  0%{background-position: start;}
+  50%{background-position: center;}
+  100%{background-position: end;}
 }
