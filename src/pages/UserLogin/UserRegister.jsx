@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import userActions from "../../store/actions/authActions";
 
 import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from "jwt-decode";
+import { getCountries } from "../../services/CountriesService";
 
 export default function UserRegister() {
 
@@ -20,17 +21,22 @@ export default function UserRegister() {
   const navigate = useNavigate();
   const userLogged = useSelector(store => store.userReducer.isLogged)
 
-  // const userCreatedStore = useSelector(store => store.userReducer.userCreated)
     
   const [validated, setValidated] = useState(false);
+  const [countryData, setcountryData] = useState([]);
+  
+  useEffect(()=>{
+      getCountries()
+      .then(res => {
+        // console.log(res)
+        setcountryData(res)
+      })
+  },[])
 
   if (userLogged) {
     return navigate("/")
   }
-  // if (userCreatedStore.email.length > 0) {
-  //   navigate("/user/login")
-  // }
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -135,10 +141,9 @@ export default function UserRegister() {
                     Select country
                   </Form.Label>
                   <Form.Select id="selectCountry" required placeholder="Hola" ref={userNationRef}>
-                    <option value="other" defaultValue="other" disabled >Select </option>
-                    <option value="Japan">Japan</option>
-                    <option value="Argentina">Argentina</option>
-                    <option value="Alemania">Alemania</option>
+                    {countryData.map((country, key)=>(
+                      <option value={country.name}  key={key}>{country.name}</option>
+                    ))}
                   </Form.Select>
                 </Form.Group>
                 
