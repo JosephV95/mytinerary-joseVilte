@@ -58,12 +58,12 @@ export default function CityDetail() {
           <div className="row  gap-4 py-5">
 
             {itineraryStore.length > 0 ? (
-              itineraryStore.map((itinerary, key) => (
-                <>
+              itineraryStore.map((itinerary) => (
+                <div key={itinerary._id}>
                   <div   className="col-12  rounded-5 bg-danger ">
                     <div className="row justify-content-center">
                       <div
-                        key={key}
+                        
                         className="col-md-5  text-white d-flex flex-column justify-content-between  rounded-start-3"
                         style={{
                           backgroundImage: `url(${itinerary.img})`,
@@ -85,13 +85,13 @@ export default function CityDetail() {
                         <p><b>Price: </b>  {itinerary.price ==0 ? "Free" : "💸"+itinerary.price}</p>
                         <p><b>Duration:</b> {itinerary.duration}</p>
                         <p><b>Likes:</b> ♥ {itinerary.likes}</p>
-                        <p><b>Tags:</b>{itinerary.hastag.map((val)=>(<a key={val.key}> {val}</a> ))}  </p>
+                        <p><b>Tags:</b>{itinerary.hastag.map((val, key)=>(<a key={key}> {val}</a> ))}  </p>
                         <p><b>Comments:</b> {itinerary.comments}</p>
                         
                       </div>
                     </div>
                   </div>
-                </>
+                </div>
               ))
             ) : (
                <div className="col-12  text-center">
