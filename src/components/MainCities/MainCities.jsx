@@ -36,7 +36,7 @@ export default function MainCities() {
 
   return (
     <section
-      className="pageCities py-5"
+      className="pageCities pt-5"
       style={{ backgroundImage: `url(${bgCities})` }}
     >
       <div className="container mb-5">
@@ -57,7 +57,7 @@ export default function MainCities() {
             </form>
         </div>
 
-        <Row className="justify-content-center  my-3">
+        <Row className="justify-content-center ">
 
           {citiesInStore.length > 0 ? (
             citiesInStore.map((city, key) => (
@@ -68,8 +68,8 @@ export default function MainCities() {
                 className="position-relative  text-center text-white d-flex my-1 pt-4"
               >
                 <Card
-                  className="cardCity  bg-dark text-white  overflow-x-hidden"
-                  style={{ minHeight: "11rem" }}
+                  className="cardCity  bg-dark text-white w-100 overflow-x-hidden"
+                  style={{ minHeight: "10rem", maxHeight: "12rem" }}
                   onMouseEnter={() => setBgCities(`${city.img}`)}
                 >
                   <Card.Img
@@ -83,7 +83,7 @@ export default function MainCities() {
                       <Card.Text>🗺{city.city}</Card.Text>
                     </div>
                     
-                    <PageRouter to={city._id}  className="btn btn-primary  position-absolute bottom-0  py-1 px-2 mb-1 mx-1">More details</PageRouter>
+                    <PageRouter to={city._id} style={{background:"#0d72cf"}} className="btn text-white position-absolute bottom-0  py-1 px-2 mb-1 mx-1"> <i className="fa-solid fa-plane-departure"></i> Details</PageRouter>
                   </Card.ImgOverlay>
                 </Card>
               </Col>
