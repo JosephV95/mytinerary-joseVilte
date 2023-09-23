@@ -1,5 +1,5 @@
 // import axios from "axios";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import userActions from "../../store/actions/authActions";
@@ -18,9 +18,11 @@ export default function UserLogin() {
 
     const [validated, setValidated] = useState(false);
 
+   useEffect(()=>{
     if (userLogged) {
       return navigate("/")
     }
+   }) //! Sin el 2do parametro opcional ( ,[]) se lanzara el useEffect cada que se ingrese a la page, en este caso es conveniente
 
     const handleSubmit = (event) => {
         event.preventDefault();

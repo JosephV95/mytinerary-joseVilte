@@ -24,18 +24,22 @@ export default function UserRegister() {
     
   const [validated, setValidated] = useState(false);
   const [countryData, setcountryData] = useState([]);
-  
+ 
   useEffect(()=>{
-      getCountries()
-      .then(res => {
-        // console.log(res)
-        setcountryData(res)
-      })
+    if (userLogged) {
+      return navigate("/")
+    }
+  })  //! Sin el 2do parametro opcional ( ,[]) se lanzara el useEffect cada que se ingrese a la page, en este caso es conveniente
+
+  useEffect(()=>{
+    getCountries()
+     .then(res => {
+      // console.log(res)
+      setcountryData(res)
+    })
   },[])
 
-  if (userLogged) {
-    return navigate("/")
-  }
+ 
   
   const handleSubmit = (event) => {
     event.preventDefault();
