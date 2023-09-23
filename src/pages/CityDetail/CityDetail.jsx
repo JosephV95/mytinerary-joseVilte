@@ -33,17 +33,10 @@ export default function CityDetail() {
             className="row justify-content-center detailCity"
             style={{ backgroundImage: `url(${cityInStore.img})`, height: "75vh" }}
           >
-            <div className="col-12 col-md-6 heroDetail  text-center text-white d-flex flex-column justify-content-center ">
+            <div className="col-12 col-md-6 heroDetail  text-center text-white d-flex flex-column justify-content-center " >
               <h2 className="py-4">{cityInStore.city}</h2>
-              <p>{cityInStore.nation}</p>
+              <p style={{fontSize: "1.1rem", fontStyle:"italic"}}><i className="fa-solid fa-location-dot"></i> <b>{cityInStore.nation}</b></p>
               <p>{cityInStore.description}</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-                voluptas ipsam itaque placeat ullam fuga. Corrupti, dolorem
-                pariatur modi sint veritatis vel autem hic, molestias natus sed
-                eum provident repellendus!
-              </p>
-
               <a type="button" className="btn btn-primary my-3 "  href="#Itineraries" style={{width:'15rem', margin:'auto'}}>
                 View itineraries
               </a>
@@ -60,11 +53,10 @@ export default function CityDetail() {
             {itineraryStore.length > 0 ? (
               itineraryStore.map((itinerary) => (
                 <div key={itinerary._id}>
-                  <div   className="col-12  rounded-5 bg-danger ">
-                    <div className="row justify-content-center">
+                  <div   className="col-12  rounded-5 bg-danger overflow-x-hidden ">
+                    <div className="row justify-content-center  ">
                       <div
-                        
-                        className="col-md-5  text-white d-flex flex-column justify-content-between  rounded-start-3"
+                        className="col-md-5  text-white d-flex flex-column justify-content-between rounded-start-3 px-4 "
                         style={{
                           backgroundImage: `url(${itinerary.img})`,
                           backgroundPosition: "center",
@@ -72,7 +64,7 @@ export default function CityDetail() {
                           minHeight: "15rem",
                         }}
                       >
-                        <div className="">
+                        <div >
                           <h3 className="pt-2  text-center" style={{textShadow:'0 0 15px gray,0 0 15px gray,0 0 20px gray,0 0 20px black'}}>{itinerary.name}</h3>
                         </div>
                         <div>
@@ -82,10 +74,20 @@ export default function CityDetail() {
                       </div>
                       <div className="col-md-7 text-white py-3 px-4">
                         <p>{itinerary.desc}</p>
-                        <p><b>Price: </b>  {itinerary.price ==0 ? "Free" : "💸"+itinerary.price}</p>
-                        <p><b>Duration:</b> {itinerary.duration}</p>
-                        <p><b>Likes:</b> ♥ {itinerary.likes}</p>
-                        <p><b>Tags:</b>{itinerary.hastag.map((val, key)=>(<a key={key}> {val}</a> ))}  </p>
+                        <div className="row  infoItinerary">
+                          <div className="col-sm-4">
+                            <p><b>Price: </b>  {itinerary.price ==0 ? "Free" : "$"+itinerary.price}</p>
+                          </div>
+                          <div className="col-sm-8">
+                            <p><b>Duration:</b> {itinerary.duration}</p>
+                          </div>
+                          <div className="col-sm-4">
+                            <p><b>Likes: </b> <a type="button" onClick={()=>{alert("diste like")}}><i className="fa-regular fa-thumbs-up" style={{fontSize: "21px"}} ></i></a>  {itinerary.likes}</p>
+                          </div>
+                          {/* <div className="col-sm-8"> */}
+                            <p><b>Tags:</b>{itinerary.hastag.map((val, key)=>(<a key={key}> {val}</a> ))}  </p>
+                          {/* </div> */}
+                        </div>
                         <p><b>Comments:</b> {itinerary.comments}</p>
                         
                       </div>

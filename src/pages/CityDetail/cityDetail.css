@@ -16,8 +16,12 @@
 }
 h2, p{
     position: relative;
+    text-wrap: balance;
 }
 .heroDetail{
     position: relative;
+}
+.infoItinerary p{
+    line-height: 1;
 }
 
