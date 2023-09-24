@@ -83,7 +83,8 @@ export default function MainCities() {
                       <Card.Text>🗺{city.city}</Card.Text>
                     </div>
                     
-                    <PageRouter to={city._id} style={{background:"#0d72cf"}} className="btn text-white position-absolute bottom-0  py-1 px-2 mb-1 mx-1"> <i className="fa-solid fa-plane-departure"></i> Details</PageRouter>
+                    <PageRouter to={city._id} style={{background:"#0d72cf", borderColor:"#f71b84", boxShadow:"inset 0 0 5px #f71b84"}} 
+                    className="btn bDetails text-white position-absolute bottom-0 py-1 px-2 mb-2 ms-1 "> <i className="fa-solid fa-plane-departure"></i> Details</PageRouter>
                   </Card.ImgOverlay>
                 </Card>
               </Col>

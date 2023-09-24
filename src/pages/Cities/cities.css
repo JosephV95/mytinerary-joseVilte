@@ -13,10 +13,17 @@
 }
 .cardCity{
     border: none;
+    text-align: center;
+    transition-duration: .7s;
 }
 
 .cardCity:hover{
     outline: solid 3px orange;
     box-shadow: 0 0 10px orange, 0 0 10px orange, 0 0 15px yellow;
-    
 }
+/* .bDetails{
+    display: none;
+}
+.cardCity:hover .bDetails{
+    display: block;
+} */
