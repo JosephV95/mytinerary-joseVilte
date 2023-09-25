@@ -15,8 +15,14 @@ header nav a{
     color: white;
     padding: 0 .7rem;
 }
+header nav .active {
+    text-decoration: overline;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+}
 
 header img{
+    color: white;
     height: 2.5rem;
 }
 
