@@ -6,11 +6,19 @@
 }
 
 .heroCities h3, .heroCities p{
-    text-shadow: 0 0 15px black, 0 0 20px black, 0 0 20px black,0 0 23px black, 0 0 25px grey;
-    /* color: rgb(255, 255, 255); */
+    text-shadow: 0 0 15px grey, 3px 3px 15px grey;
     font-weight: bold lighter ;
     font-style: italic;
 }
+.heroCities h3{
+    -webkit-text-stroke: thin black;
+}
+.heroCities p{
+    -webkit-text-stroke: thin black;
+    font-size: 1.29rem;
+    font-weight: bold;
+}
+
 .cardCity{
     border: none;
     text-align: center;
