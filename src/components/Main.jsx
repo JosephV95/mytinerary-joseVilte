@@ -26,11 +26,14 @@ function Main() {
           </div>
 
           <CallToAction />
-
-          <div className="row my-5">
-            <h3 className="text-center text-white py-2 fw-bold">Popular MyTineraries!</h3>
-            <Slider/>
         </div>
+        <div className="container-fluid">
+          <div className="row ">
+            <div className="col-12 px-0">
+              <h3 className="text-center text-white py-2 fw-bold">Popular MyTineraries!</h3>
+              <Slider/>
+            </div>
+          </div>
         </div>
       </section>
     </>

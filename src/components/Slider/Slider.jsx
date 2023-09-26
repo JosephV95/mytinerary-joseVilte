@@ -22,19 +22,19 @@ export default function Slider() {
   }, []);
   
   return (
-    <div className="container my-2">
+    <div className="container-fluid  my-2 bg-dark">
       <div className="row justify-content-center">
-        <div className="col-md-9">
-          <Carousel>
-            <Carousel.Item interval={1000}>
+        <div className="col-md-12  px-1">
+          <Carousel className="pb-3 pt-2">
+            <Carousel.Item interval={2000}>
               <CarouselItem unarray={allCitiesInStore.slice(0,4)} />
             </Carousel.Item>
 
-            <Carousel.Item interval={1000}>
+            <Carousel.Item interval={2000}>
               <CarouselItem unarray={allCitiesInStore.slice(4,8)} />
             </Carousel.Item>
 
-            <Carousel.Item interval={1000}>
+            <Carousel.Item interval={2000}>
               <CarouselItem unarray={allCitiesInStore.slice(8,12)} />
             </Carousel.Item>
           </Carousel>

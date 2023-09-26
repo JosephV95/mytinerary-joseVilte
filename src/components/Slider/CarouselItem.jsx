@@ -2,8 +2,8 @@ import CarouselCard from "./CarouselCard";
 
 export default function CarouselItem({ unarray }) {
   return (
-    <div className="container  carItem">
-      <div className="row justify-content-center">
+    <div className="container-fluid  carItem">
+      <div className="row justify-content-center m-0 p-0">
         {unarray.map((each, key) => (
           <CarouselCard
             key={key}

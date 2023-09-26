@@ -1,15 +1,18 @@
-
+/*? Edita los botones inferiores del carouosel  */
 .carousel .carousel-indicators button{
     width: 15px;
     height: 15px;
     border-radius: 50%;
 }
+.carousel .carousel-indicators{
+    margin-bottom: 0;
+}
 
 .carouselCard{
     position: relative;
     /* max-height: 270px; */
-    max-height: 280px;
-    min-height: 220px;
+    /* max-height: 280px; */
+    /* min-height: 220px; */
     display: flex;
     justify-content: center;
     /* align-self: center; */
@@ -18,13 +21,20 @@
 .carouselCard img{
     width: 100%;
     object-fit: cover;
+    height: 18rem;
     /* object-position: center; */
-    border-radius: 10px;
+    /* border-radius: 10px; */
+}
+/*? Se cambiara el tamaño de las imagenes de carousel en mobile donde cambia el tipo de vista de las cards  */
+@media only screen and (max-width: 768px) {
+    .carouselCard img{
+        height: 14rem;
+    }
 }
 .carouselCard .text-img{
     position: absolute;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.75);
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.69);
     width: 100%;
     text-align: center;
     line-height: 0.2;
@@ -37,5 +47,6 @@
 }
 
 .carItem{
-    background-color: rgb(27, 27, 27);
+    /* background-color: rgb(27, 27, 27); */
+    padding: 0;
 }
