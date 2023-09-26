@@ -16,7 +16,7 @@ export default function MainCities() {
   useEffect(() => {
     dispatch(citiesActions.get_cities())
 
-    setBgCities(citiesInStore[0].img)
+    // setBgCities(citiesInStore[0].img)
    
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -37,7 +37,7 @@ export default function MainCities() {
   return (
     <section
       className="pageCities pt-5"
-      style={{ backgroundImage: `url(${bgCities})` }}
+      style={{ backgroundImage: `url(${bgCities})`, minHeight:"90vh" }}
     >
       <div className="container mb-5">
         <div className="row justify-content-center text-center position-relative  ">
@@ -83,15 +83,15 @@ export default function MainCities() {
                       <Card.Text>🗺{city.city}</Card.Text>
                     </div>
                     
-                    <PageRouter to={city._id} style={{background:"#0d72cf", borderColor:"#f71b84", boxShadow:"inset 0 0 5px #f71b84"}} 
-                    className="btn bDetails text-white position-absolute bottom-0 py-1 px-2 mb-2 ms-1 "> <i className="fa-solid fa-plane-departure"></i> Details</PageRouter>
+                    <PageRouter to={city._id} style={{background:"#0d72cfbb"}} 
+                    className="btn bDetails btn-outline-info border-3 text-white position-absolute bottom-0 py-1 px-2 mb-2 ms-1 " onClick={()=>{window.scrollTo(0, 0)}}> <i className="fa-regular fa-calendar-plus"></i> Details</PageRouter>
                   </Card.ImgOverlay>
                 </Card>
               </Col>
             ))
           )  : (
             <Col  md={6}  className="py-5">
-              <h1  className=" text-center text-white my-3 py-5">No Results</h1></Col>
+              <h1  className="text-center text-white my-3 py-5" style={{ fontSize:"4rem", WebkitTextStroke: "thin black"}}>No Results</h1></Col>
           )}
         </Row>
       </div>
