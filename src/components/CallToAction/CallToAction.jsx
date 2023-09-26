@@ -5,7 +5,7 @@ export default function CallToAction() {
   return (
     <div className="row justify-content-center my-5 mx-1">
         <PageRouter to={'/cities'}  className="btn btn-outline-danger  buttonCall px-0 text-white"> 
-        <i className="fa-solid fa-arrow-right fa-fade text-warning" ></i> Discover Cities! <i className="fa-solid fa-arrow-left fa-fade text-warning"></i>
+        <i className="fa-solid fa-plane-departure fa-fade text-info" ></i> Discover Cities! <span style={{fontStyle:"normal"}}>😎</span>
         </PageRouter>
     </div>
   );
