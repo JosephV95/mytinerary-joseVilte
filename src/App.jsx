@@ -9,12 +9,14 @@ import UserRegister from "./pages/UserLogin/UserRegister";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import userActions from "./store/actions/authActions";
+import ProfileUser from "./pages/ProfileUser/ProfileUser";
 
 const router = createBrowserRouter([
   {path:'/', element: <MainLayout />, children:[
     {path:'/', element: <Home/>},
     {path:'/cities', element: <Cities />},
-    {path:'/cities/:id', element: <CityDetails/>}
+    {path:'/cities/:id', element: <CityDetails/>},
+    {path:'/profile', element: <ProfileUser/>}
   ]},
   {
     path:'/user/register', element: <UserRegister />
