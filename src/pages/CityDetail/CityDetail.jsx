@@ -4,6 +4,7 @@ import "./cityDetail.css";
 import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction";
 import itinerariesActions from "../../store/actions/itinerariesAction";
+import { DiscussionEmbed } from 'disqus-react';
 
 export default function CityDetail() {
   const { id } = useParams();
@@ -12,6 +13,14 @@ export default function CityDetail() {
   const itineraryStore = useSelector(
     (store) => store.itinerariesReducer.itineraries
   );
+
+  //!  variables necesarias de react-disqus
+  const disqusShortname = 'http-localhost-5173-cities'; // Reemplaza con tu shortname de Disqus
+  const disqusConfig = {
+    url: 'https://viltejosedev.netlify.app/', // Reemplaza con la URL de tu página
+    identifier: 'Mytinerary', // Un identificador único para cada página que tenga comentarios de Disqus
+    title: 'My Tinerary', // Reemplaza con el título de tu página
+  };
 
   // window.scrollTo(0, 0)
 
@@ -89,7 +98,6 @@ export default function CityDetail() {
                           {/* </div> */}
                         </div>
                         <p><b>Comments:</b> {itinerary.comments}</p>
-                        
                       </div>
                     </div>
                   </div>
@@ -103,7 +111,10 @@ export default function CityDetail() {
             
             )}
           </div>
+
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} className="w-100 p-2" style={{background: "#151120ab"}} />
         </div>
+
       </section>
 
     </>
