@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import userActions from "../../store/actions/authActions";
 import { Button, ButtonGroup, Dropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Nav() {
   const dispatch = useDispatch();
@@ -17,7 +18,25 @@ export default function Nav() {
   // })
 
   const logoutUser = ()=>{
-    dispatch(userActions.user_logout())
+    Swal.fire({
+      title: '',
+      text: 'Are you sure you want to go out?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, I want to go out'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'We hope you come back soon!',
+          '',
+          'info'
+        )
+
+        dispatch(userActions.user_logout())
+      }
+    })
   }
 
   return (
@@ -39,7 +58,8 @@ export default function Nav() {
          <Dropdown.Toggle split variant="primary" id="dropdown-split-basic"  />
 
           <Dropdown.Menu>
-            <Dropdown.Item eventKey="1" className="bg-danger" onClick={logoutUser}><i className="fa-solid fa-right-from-bracket fa-fade"></i> Logout</Dropdown.Item>
+            <Dropdown.Item eventKey="1" onClick={()=>{navigate('/profile')}}><i className="fa-solid fa-user-pen" style={{width:"20px"}}></i> Edit Profile</Dropdown.Item>
+            <Dropdown.Item eventKey="2" onClick={logoutUser}><i className="fa-solid fa-right-from-bracket" style={{width:"20px"}}></i> Logout</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         </>) :( 
