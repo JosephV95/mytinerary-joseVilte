@@ -1,7 +1,5 @@
-// import { Button, Form, Modal } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import NavRouterLink from "./NavRouterLink";
-// import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import userActions from "../../store/actions/authActions";
 import { Button, ButtonGroup, Dropdown } from "react-bootstrap";
@@ -28,16 +26,24 @@ export default function Nav() {
       confirmButtonText: 'Yes, I want to go out'
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire(
-          'We hope you come back soon!',
-          '',
-          'info'
-        )
+        Toast.fire({
+          icon: 'success',
+          title: 'We hope you come back soon!'
+        })
 
         dispatch(userActions.user_logout())
       }
     })
   }
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'center',
+    showConfirmButton: false,
+    timer: 1800,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
 
   return (
 <>
@@ -46,16 +52,15 @@ export default function Nav() {
         <NavRouterLink title={"Home"} url={'/'}/>
         <NavRouterLink title={"Cities"} url={'/cities'}/>
 
-
         {userlogedd.isLogged ?( 
         <>
-        <Dropdown as={ButtonGroup} data-bs-theme="dark">
-         <Button variant="primary" className="py-0 ps-2 pe-1" style={{backgroundColor: "#08abe2"}}>
+        <Dropdown as={ButtonGroup} data-bs-theme="dark" className="border border-success" >
+         <Button variant="" className="py-0 ps-2 pe-1  bg-success bg-opacity-25" >
           <img src={userlogedd.user.photo} alt="img" style={{height:"1.8rem", width:"1.8rem", borderRadius:"50%", display:"inline", objectFit:"cover"}} />  
            {" "+ userlogedd.user.name}
          </Button>
 
-         <Dropdown.Toggle split variant="primary" id="dropdown-split-basic"  />
+         <Dropdown.Toggle split variant="" id="dropdown-split-basic" className="bg-success bg-opacity-25 px-1"  />
 
           <Dropdown.Menu>
             <Dropdown.Item eventKey="1" onClick={()=>{navigate('/profile')}}><i className="fa-solid fa-user-pen" style={{width:"20px"}}></i> Edit Profile</Dropdown.Item>
