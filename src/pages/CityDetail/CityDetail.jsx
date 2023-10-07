@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction";
 import itinerariesActions from "../../store/actions/itinerariesAction";
 import { DiscussionEmbed } from 'disqus-react';
+import { Accordion } from "react-bootstrap";
 
 export default function CityDetail() {
   const { id } = useParams();
@@ -42,14 +43,14 @@ export default function CityDetail() {
             className="row justify-content-center detailCity"
             style={{ backgroundImage: `url(${cityInStore.img})`, height: "75vh" }}
           >
-            <div className="col-12 col-md-6 heroDetail  text-center text-white d-flex flex-column justify-content-center " >
+            <div className="col-12 col-md-6 heroDetail  text-center text-white d-flex flex-column justify-content-center pt-5" >
               <h2 className="py-4">{cityInStore.city}</h2>
               <p style={{fontSize: "1.1rem", fontStyle:"italic"}}><i className="fa-solid fa-location-dot"></i> <b>{cityInStore.nation}</b></p>
               <p>{cityInStore.description}</p>
-              <a type="button" className="btn btn-primary my-3 "  href="#Itineraries" style={{width:'15rem', margin:'auto'}}>
-                View itineraries
-              </a>
             </div>
+            <a type="button" className="btn  text-white"  href="#Itineraries" style={{margin:'auto', fontSize: "2rem"}}>
+              <i className="fa-solid fa-angles-down fa-bounce" ></i>
+            </a>
           </div>
         </div>
       </main>
@@ -98,6 +99,42 @@ export default function CityDetail() {
                           {/* </div> */}
                         </div>
                         <p><b>Comments:</b> {itinerary.comments}</p>
+                        <Accordion >
+                          <Accordion.Item eventKey="0">
+                            <Accordion.Header >Comentarios sobre el iti</Accordion.Header>
+                            <Accordion.Body>
+                              <span><b>{itinerary.name}</b></span>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                              aliquip ex ea commodo consequat. Duis aute irure dolor in
+                              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                              culpa qui officia deserunt mollit anim id est laborum.
+                            </Accordion.Body>
+                            <Accordion.Body>
+                              <span><b>{itinerary.name}</b></span>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                              aliquip ex ea commodo consequat. Duis aute irure dolor in
+                              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                              culpa qui officia deserunt mollit anim id est laborum.
+                            </Accordion.Body>
+                            <Accordion.Body>
+                              <span><b>{itinerary.name}</b></span>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                              aliquip ex ea commodo consequat. Duis aute irure dolor in
+                              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                              culpa qui officia deserunt mollit anim id est laborum.
+                            </Accordion.Body>
+                          </Accordion.Item>
+                          
+                        </Accordion>
                       </div>
                     </div>
                   </div>

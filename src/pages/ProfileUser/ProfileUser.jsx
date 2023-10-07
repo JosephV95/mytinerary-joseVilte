@@ -31,7 +31,7 @@ export default function ProfileUser() {
               <p>Lastname: </p>
             </Col>
             <Col md={8}>
-              <input type="text" name="" value={userStore.password}/>
+              <input type="text" name="" value={userStore.lastname}/>
             </Col>
             <Col md={3}>
               <p>Photo: </p>
