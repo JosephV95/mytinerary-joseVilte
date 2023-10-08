@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import userActions from "../../store/actions/authActions";
 
 import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from "jwt-decode";
 import { getCountries } from "../../services/CountriesService";
+import UserIsLogged from "../../services/UserIsLogged";
 
 export default function UserRegister() {
 
@@ -18,18 +18,9 @@ export default function UserRegister() {
   const userNationRef = useRef();
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const userLogged = useSelector(store => store.userReducer.isLogged)
-
     
   const [validated, setValidated] = useState(false);
   const [countryData, setcountryData] = useState([]);
- 
-  useEffect(()=>{
-    if (userLogged) {
-      return navigate("/")
-    }
-  })  //! Sin el 2do parametro opcional ( ,[]) se lanzara el useEffect cada que se ingrese a la page, en este caso es conveniente
 
   useEffect(()=>{
     getCountries()
@@ -39,7 +30,8 @@ export default function UserRegister() {
     })
   },[])
 
- 
+  //todo  Funcion importada de service que verificara si ya se esta logeado
+  UserIsLogged();
   
   const handleSubmit = (event) => {
     event.preventDefault();

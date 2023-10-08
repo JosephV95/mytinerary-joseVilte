@@ -1,28 +1,25 @@
 // import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, } from "react-redux";
 import userActions from "../../store/actions/authActions";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import jwtDecode from "jwt-decode"
+import UserIsLogged from "../../services/UserIsLogged";
 
 export default function UserLogin() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate()
-  const userLogged = useSelector(store => store.userReducer.isLogged)
 
     const userEmailRef = useRef();
     const userPasswordRef = useRef();
 
     const [validated, setValidated] = useState(false);
 
-   useEffect(()=>{
-    if (userLogged) {
-      return navigate("/")
-    }
-   }) //! Sin el 2do parametro opcional ( ,[]) se lanzara el useEffect cada que se ingrese a la page, en este caso es conveniente
+  //todo  Funcion importada de service que verificara si ya se esta logeado
+  UserIsLogged();
 
     const handleSubmit = (event) => {
         event.preventDefault();
