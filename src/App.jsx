@@ -16,14 +16,16 @@ const router = createBrowserRouter([
     {path:'/', element: <Home/>},
     {path:'/cities', element: <Cities />},
     {path:'/cities/:id', element: <CityDetails/>},
-    {path:'/profile', element: <ProfileUser/>}
+    {path:'/profile', element: <ProfileUser/>},
+    {path:'/user/login', element: <UserLogin />},
+    {path:'/user/register', element: <UserRegister />}
   ]},
-  {
-    path:'/user/register', element: <UserRegister />
-  },
-  {
-    path:'/user/login', element: <UserLogin />
-  }
+  // {
+  //   path:'/user/register', element: <UserRegister />
+  // },
+  // {
+  //   path:'/user/login', element: <UserLogin />
+  // }
 ])
 
 function App() {

@@ -48,8 +48,8 @@ export default function UserLogin() {
     }
 
   return (
-    <section  style={{minHeight:"100vh"}}>
-      <div className="container pt-5">
+    <section  > 
+      <div className="container py-2">
         <div className="row justify-content-center  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
             <h1 style={{fontSize: "2.2rem"}} className="mb-3">Mytinerary</h1>
@@ -101,7 +101,7 @@ export default function UserLogin() {
               </fieldset>
               
             </Form>
-            <div className="w-100 mb-4 mt-3 pt-0 d-flex justify-content-center align-items-center">
+            <div className="w-100 mb-4 mt-3 pt-3 d-flex justify-content-center align-items-center">
               You do not have an account? 
               <Button type="button" className=" btn btn-success ms-2"  onClick={()=>{navigate("/user/register")}}>Sign up</Button>
             </div>

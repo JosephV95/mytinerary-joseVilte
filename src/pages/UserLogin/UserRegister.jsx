@@ -68,8 +68,8 @@ export default function UserRegister() {
   }
 
   return (
-    <section  style={{minHeight:"100vh"}}>
-      <div className="container pt-2">
+    <section  >
+      <div className="container ">
         <div className="row  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
             <h1 style={{fontSize: "2.2rem"}} className="mb-3">Mytinerary</h1>
