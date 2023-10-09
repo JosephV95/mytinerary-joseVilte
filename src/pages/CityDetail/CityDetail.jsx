@@ -57,7 +57,7 @@ export default function CityDetail() {
 
       <section>
         <div className="container  " >
-            <h2 className="text-center text-white" id="Itineraries"><i>Itineraries</i></h2>
+            <h2 className="text-center text-white" id="Itineraries"><i className="fa-solid fa-signs-post"></i> <i>Itineraries</i></h2>
           <div className="row  gap-4 py-5">
 
             {itineraryStore.length > 0 ? (
