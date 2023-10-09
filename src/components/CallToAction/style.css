@@ -1,7 +1,7 @@
 .buttonCall{
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.69);
     width: 19rem;
-    border: outset 3px red;
+    border: outset 3px rgb(0, 217, 255);
     border-radius: 28px;
     font-weight: 800;
     font-size: 1.25rem;
@@ -13,8 +13,8 @@
 }
 
 @keyframes animCallAction {
-    0%{ box-shadow: 0 0 21px red, 0 0 21px red;}
-    40%{ box-shadow: 0 0 21px rgb(176, 50, 243), 0 0 21px rgb(176, 50, 243);}
-    70%{ box-shadow: 0 0 21px rgb(2, 95, 255), 0 0 21px blue;}
-    100%{ box-shadow: 0 0 21px red, 0 0 21px red;}
+    0%{ box-shadow: 0 0 18px red, 0 0 18px red;}
+    30%{ box-shadow: 0 0 18px rgb(176, 50, 243), 0 0 18px rgb(176, 50, 243);}
+    65%{ box-shadow: 0 0 18px rgb(2, 95, 255), 0 0 18px blue;}
+    100%{ box-shadow: 0 0 18px red, 0 0 18px red;}
 }
