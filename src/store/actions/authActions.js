@@ -29,7 +29,15 @@ const user_login = createAsyncThunk("user_login", async(userData)=>{
               })
             return res.data
         })
-        .catch((error) => {console.log( error.response.data.message ), alert( error.response.data.message )})
+        .catch((error) => {console.log( error.response.data.message ), 
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: error.response.data.message,
+                showConfirmButton: false,
+                timer: 1500
+              })
+        })
         // console.log(userLogin);
         return userLogin
 
