@@ -86,7 +86,7 @@ export default function Cities() {
                     </div>
                     
                     <PageRouter to={city._id} 
-                    className="btn btn-outline-light border-2  position-absolute bottom-0 py-1 ps-2 mb-2 ms-0 " onClick={()=>{window.scrollTo(0, 0)}}> 
+                    className="viewCity btn btn-outline-light border-2  position-absolute bottom-0 py-1 ps-2 mb-2 ms-0 " onClick={()=>{window.scrollTo(0, 0)}}> 
                     <i className="fa-solid fa-mountain-sun"></i> View City</PageRouter>
                   </Card.ImgOverlay>
                 </Card>

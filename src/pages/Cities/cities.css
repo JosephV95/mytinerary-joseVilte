@@ -33,16 +33,16 @@
 .cardCity{
     border: none;
     text-align: center;
+    box-shadow: 5px 5px 8px black;
     transition-duration: .7s;
 }
 
 .cardCity:hover{
-    outline: solid 3px orange;
-    box-shadow: 0 0 10px orange, 0 0 10px orange, 0 0 15px yellow;
+    outline: dotted 1.8px rgb(253, 244, 77);
+    box-shadow: 0 0 8px rgb(255, 227, 46), 0 0 10px orange, 0 0 12px yellow;
 }
-/* .bDetails{
-    display: none;
+
+.viewCity{
+    background-color: rgba(0, 0, 0, 0.4);;
 }
-.cardCity:hover .bDetails{
-    display: block;
-} */
+
