@@ -10,7 +10,7 @@ section{
 section{
   background-image: linear-gradient(120deg, rgba(27, 173, 236) 20%, #f71b84 50%, rgba(27, 173, 236, 0.9) 80%);
   background-size: 300%;
-  animation: animBG 10s infinite;
+  /* animation: animBG 20s infinite; */
 }
 
 @keyframes animBG {
