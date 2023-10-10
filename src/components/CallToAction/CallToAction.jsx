@@ -3,7 +3,7 @@ import "./style.css";
 
 export default function CallToAction() {
   return (
-    <div className="row justify-content-center my-5 mx-1">
+    <div className="row justify-content-center mt-4 mb-1 mx-1">
         <PageRouter to={'/cities'}  className="btn btn-outline-primary buttonCall px-0 text-white"> 
         <i className="fa-solid fa-plane-departure fa-fade text-info" ></i> Discover Cities!
         </PageRouter>
