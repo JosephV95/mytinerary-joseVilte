@@ -55,12 +55,12 @@ export default function Nav() {
         {userlogedd.isLogged ?( 
         <>
         <Dropdown as={ButtonGroup} data-bs-theme="dark" className="border border-success" >
-         <Button variant="" className="py-0 ps-2 pe-1  bg-success bg-opacity-25" >
+         <Button variant="" className="py-0 ps-1 pe-1  bg-success bg-opacity-25" >
           <img src={userlogedd.user.photo} alt="img" style={{height:"1.8rem", width:"1.8rem", borderRadius:"50%", display:"inline", objectFit:"cover"}} />  
            {" "+ userlogedd.user.name}
          </Button>
 
-         <Dropdown.Toggle split variant="" id="dropdown-split-basic" className="bg-success bg-opacity-25 px-1"  />
+         <Dropdown.Toggle split variant="" id="dropdown-split-basic" className="bg-success bg-opacity-25 px-2"  />
 
           <Dropdown.Menu>
             <Dropdown.Item eventKey="1" onClick={()=>{navigate('/profile')}}><i className="fa-solid fa-user-pen" style={{width:"20px"}}></i> Edit Profile</Dropdown.Item>
