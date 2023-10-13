@@ -63,7 +63,7 @@ export default function Nav() {
          <Dropdown.Toggle split variant="" id="dropdown-split-basic" className="bg-success bg-opacity-25 px-2"  />
 
           <Dropdown.Menu>
-            <Dropdown.Item eventKey="1" onClick={()=>{navigate('/profile')}}><i className="fa-solid fa-user-pen" style={{width:"20px"}}></i> Edit Profile</Dropdown.Item>
+            <Dropdown.Item eventKey="1" onClick={()=>{navigate('/profile/'+userlogedd.user._id)}}><i className="fa-solid fa-user-pen" style={{width:"20px"}}></i> Edit Profile</Dropdown.Item>
             <Dropdown.Item eventKey="2" onClick={logoutUser}><i className="fa-solid fa-right-from-bracket" style={{width:"20px"}}></i> Logout</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
