@@ -29,6 +29,9 @@ const userReducer = createReducer(initialState, (builder)=>{
     .addCase(userActions.user_register.fulfilled, (state,action)=>{
         return {...state, user: action.payload.userCreated, isLogged:action.payload.success}
     })
+    .addCase(userActions.user_update.fulfilled, ()=>{
+        console.log("Se actualizo");
+    })
 })
 
 export default userReducer;

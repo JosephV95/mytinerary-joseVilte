@@ -118,6 +118,16 @@ const user_logout = createAsyncThunk("user_logout", async()=>{
     }
 })
 
-const userActions = { user_login, user_register, user_authenticate, user_logout };
+const user_update = createAsyncThunk("user_update", async(id, updateData)=>{
+    try {
+        await axios.put("http://localhost:4000/api/user/" + id , updateData)
+        .then((res) => console.log(res) 
+        )
+    } catch (error) {
+        console.log(error.message);
+    }
+})
+
+const userActions = { user_login, user_register, user_authenticate, user_logout, user_update };
 
 export default userActions;
