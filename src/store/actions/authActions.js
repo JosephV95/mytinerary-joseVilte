@@ -118,13 +118,19 @@ const user_logout = createAsyncThunk("user_logout", async()=>{
     }
 })
 
-const user_update = createAsyncThunk("user_update", async(id, updateData)=>{
+const user_update = createAsyncThunk("user_update", async( {id, updateData}, { rejectWithValue })=>{
+    //todo  El parametro {rejectWithValue} no es necesario para el correcto funcionamiento del update, pero es una práctica común en Redux Toolkit para manejar errores en acciones asíncronas.
+    //! {id, updateData} fue necesario enviarlo asi para que funcione. Al pasar los argumento como un solo objeto tiene ventajas en Claridad y Legibilidad, Flexibilidad; y facilita la Desetructuraci+on.
     try {
-        await axios.put("http://localhost:4000/api/user/" + id , updateData)
-        .then((res) => console.log(res) 
-        )
+        let updateUser = await axios.put(`http://localhost:4000/api/user/${id}` , updateData)
+        .then((res) => {
+            console.log(res.data.upUser)
+            return res.data.upUser
+        })
+        return updateUser;
+        
     } catch (error) {
-        console.log(error.message);
+        return rejectWithValue(error.message)
     }
 })
 

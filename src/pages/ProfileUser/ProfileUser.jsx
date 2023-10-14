@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import userActions from "../../store/actions/authActions";
 
 export default function ProfileUser() {
   const userInStore = useSelector(store => store.userReducer.user);
   const [userStore, setUserStore] = useState(userInStore);
   const [profilePhoto, setProfilePhoto] = useState("");
+  const dispatch = useDispatch();
+  const {id} = useParams();
 
   const upUserName = useRef();
   const upUserLastname = useRef();
@@ -14,7 +18,6 @@ export default function ProfileUser() {
   useEffect(()=>{
     setUserStore(userInStore)
     setProfilePhoto(userInStore.photo)
-    // console.log(userName.current);
   },[userInStore])
 
   const changePhoto = (e)=>{
@@ -22,12 +25,25 @@ export default function ProfileUser() {
     setProfilePhoto(e.target.value)
   }
 
+  const handleSubmit = (event)=>{
+    event.preventDefault();
+    
+    //! Se debe crear esta variable con los datos dentro de la funcion, en caso de hacerlo fuera, lanzaria error,
+    //! ya que al inicio(cuando entra a esta page) el .current.value estaria vacio y lanza error.
+    const updateData = {
+      name: upUserName.current.value,
+      lastname: upUserLastname.current.value,
+      photo: upUserPhoto.current.value
+    }
+    dispatch(userActions.user_update({id, updateData}));
+  }
+
   return (
     <section style={{minHeight:"83vh"}}>
       <Container>
         <Row  className="justify-content-center">
           <Col md={{ span: 7 }}>
-            <Form  className="p-4 rounded-5 text-white position-relative" style={{backgroundColor:"rgb(21, 123, 141)"}}>
+            <Form  className="p-4 rounded-5 text-white position-relative" onSubmit={handleSubmit}  style={{backgroundColor:"rgb(21, 123, 141)"}}>
               <h3 className="text-center mb-3"><i className="fa-solid fa-pen-to-square" style={{color:"#2dfb6b"}}></i> Edit Profile</h3>
              
              <Row className="justify-content-center mb-4">
@@ -43,7 +59,7 @@ export default function ProfileUser() {
                       <Form.Control
                         type="text"
                         id="inputPassword5"
-                        aria-describedby="pass"  defaultValue={userStore.name} ref={upUserName}  />
+                        aria-describedby="pass" defaultValue={userInStore.name} ref={upUserName}  />
                   </Form.Group>
                   <Form.Group className="mb-3" as={Col} md="6">
                         <Form.Label htmlFor="inputLastname">Lastname:</Form.Label>
