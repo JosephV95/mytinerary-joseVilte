@@ -111,7 +111,7 @@ const user_logout = createAsyncThunk("user_logout", async()=>{
     try {
         await axios.post("http://localhost:4000/api/user/logout")
         .then((res) => {
-            console.log(res);
+            console.log(res.data.message);
         })
     } catch (error) {
         console.log(error.message);
@@ -124,7 +124,12 @@ const user_update = createAsyncThunk("user_update", async( {id, updateData}, { r
     try {
         let updateUser = await axios.put(`http://localhost:4000/api/user/${id}` , updateData)
         .then((res) => {
-            console.log(res.data.upUser)
+            // console.log(res.data.upUser)
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Updated successfully'
+              })
             return res.data.upUser
         })
         return updateUser;
