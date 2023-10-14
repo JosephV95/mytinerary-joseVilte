@@ -14,6 +14,8 @@ export default function ProfileUser() {
   const upUserName = useRef();
   const upUserLastname = useRef();
   const upUserPhoto = useRef();
+
+  const [formEdited, setFormEdited] = useState(false); //* Estado que mostrara si hubo cambios en los inputs
   
   useEffect(()=>{
     setUserStore(userInStore)
@@ -22,7 +24,8 @@ export default function ProfileUser() {
 
   const changePhoto = (e)=>{
     console.log(e.target.value);
-    setProfilePhoto(e.target.value)
+    setProfilePhoto(e.target.value);
+    setFormEdited(true)
   }
 
   const handleSubmit = (event)=>{
@@ -36,6 +39,8 @@ export default function ProfileUser() {
       photo: upUserPhoto.current.value
     }
     dispatch(userActions.user_update({id, updateData}));
+
+    setFormEdited(false); //* desactivara el button submit
   }
 
   return (
@@ -55,18 +60,22 @@ export default function ProfileUser() {
                 <Row>
                   {/* //todo  Se utilizara defaultValue en vez de solo value, para no lanzar errores por consola  */}
                   <Form.Group className="mb-3" as={Col} md="6">
-                      <Form.Label htmlFor="inputPassword5">Name:</Form.Label>
+                      <Form.Label htmlFor="inputName">Name:</Form.Label>
                       <Form.Control
                         type="text"
-                        id="inputPassword5"
-                        aria-describedby="pass" defaultValue={userInStore.name} ref={upUserName}  />
+                        id="inputName"
+                        pattern="^(?!\s)[a-zA-Z0-9\s].{2,}$"
+                        title="Enter at least 2 characters without leading spaces"
+                        aria-describedby="pass" defaultValue={userInStore.name} ref={upUserName} onChange={()=>{setFormEdited(true)}} />
                   </Form.Group>
                   <Form.Group className="mb-3" as={Col} md="6">
                         <Form.Label htmlFor="inputLastname">Lastname:</Form.Label>
                         <Form.Control
                           type="text"
                           id="inputLastname"
-                          aria-describedby="textLastName"  defaultValue={userStore.lastname} ref={upUserLastname}  />
+                          pattern="^(?!\s)[a-zA-Z0-9\s].{2,}$"
+                          title="Enter at least 2 characters without leading spaces"
+                          aria-describedby="textLastName"  defaultValue={userStore.lastname} ref={upUserLastname} onChange={()=>{setFormEdited(true)}} />
                   </Form.Group> 
                 </Row>
 
@@ -77,7 +86,7 @@ export default function ProfileUser() {
                 </Form.Group>
 
                 <div className="d-flex justify-content-center mt-4">
-                  <Button type="submit" variant="primary" > <i className="fa-solid fa-floppy-disk" style={{fontSize:"1.28rem"}}></i> Update</Button>
+                  <Button type="submit" variant="primary" disabled={!formEdited} ><i className="fa-solid fa-floppy-disk" style={{fontSize:"1.28rem"}}></i> Update</Button>
                 </div>
               </fieldset>
             </Form>
