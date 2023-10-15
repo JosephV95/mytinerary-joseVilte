@@ -64,7 +64,7 @@ export default function ProfileUser() {
                       <Form.Control
                         type="text"
                         id="inputName"
-                        pattern="^(?!\s)[a-zA-Z0-9\s].{2,}$"
+                        pattern="^(?!\s)[a-zA-Z0-9\s].{1,}$" required
                         title="Enter at least 2 characters without leading spaces"
                         aria-describedby="pass" defaultValue={userInStore.name} ref={upUserName} onChange={()=>{setFormEdited(true)}} />
                   </Form.Group>
@@ -73,7 +73,7 @@ export default function ProfileUser() {
                         <Form.Control
                           type="text"
                           id="inputLastname"
-                          pattern="^(?!\s)[a-zA-Z0-9\s].{2,}$"
+                          pattern="^(?!\s)[a-zA-Z0-9\s].{1,}$" required
                           title="Enter at least 2 characters without leading spaces"
                           aria-describedby="textLastName"  defaultValue={userStore.lastname} ref={upUserLastname} onChange={()=>{setFormEdited(true)}} />
                   </Form.Group> 
