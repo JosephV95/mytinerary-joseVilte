@@ -3,6 +3,7 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import userActions from "../../store/actions/authActions";
+import { UserNoLogged } from "../../services/UserLoggedVerify";
 
 export default function ProfileUser() {
   const userInStore = useSelector(store => store.userReducer.user);
@@ -17,6 +18,9 @@ export default function ProfileUser() {
 
   const [formEdited, setFormEdited] = useState(false); //* Estado que mostrara si hubo cambios en los inputs
   
+  // Se verifica si el usuario no esta loggeado, para redirigirlo al inicio
+  UserNoLogged()
+
   useEffect(()=>{
     setUserStore(userInStore)
     setProfilePhoto(userInStore.photo)
