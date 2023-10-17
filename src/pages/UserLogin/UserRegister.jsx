@@ -6,7 +6,7 @@ import userActions from "../../store/actions/authActions";
 import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from "jwt-decode";
 import { getCountries } from "../../services/CountriesService";
-import UserIsLogged from "../../services/UserIsLogged";
+import UserIsLogged from "../../services/UserLoggedVerify.js";
 
 export default function UserRegister() {
 

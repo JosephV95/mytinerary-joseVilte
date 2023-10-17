@@ -6,7 +6,7 @@ import userActions from "../../store/actions/authActions";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import jwtDecode from "jwt-decode"
-import UserIsLogged from "../../services/UserIsLogged";
+import UserIsLogged from "../../services/UserLoggedVerify.js";
 
 export default function UserLogin() {
 
