@@ -38,8 +38,8 @@
 }
 
 .cardCity:hover{
-    outline: dotted 1.8px rgb(253, 244, 77);
-    box-shadow: 0 0 8px rgb(255, 227, 46), 0 0 10px orange, 0 0 12px yellow;
+    outline: solid 2px rgb(55, 214, 250);
+    box-shadow: 0 0 9px rgb(104, 226, 254), 0 0 12px rgb(104, 226, 254), 0 0 15px rgb(104, 226, 254);
 }
 
 .viewCity{

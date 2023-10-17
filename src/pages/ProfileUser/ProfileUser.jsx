@@ -52,7 +52,7 @@ export default function ProfileUser() {
       <Container>
         <Row  className="justify-content-center">
           <Col md={{ span: 7 }}>
-            <Form  className="p-4 rounded-5 text-white position-relative" onSubmit={handleSubmit}  style={{backgroundColor:"rgb(21, 123, 141)"}}>
+            <Form  className="px-4 py-3 rounded-5 text-white position-relative" onSubmit={handleSubmit}  style={{backgroundColor:"rgb(21, 123, 141)", border:"5px solid rgb(10, 108, 128)"}}>
               <h3 className="text-center mb-3"><i className="fa-solid fa-pen-to-square" style={{color:"#2dfb6b"}}></i> Edit Profile</h3>
              
              <Row className="justify-content-center mb-4">
@@ -89,8 +89,8 @@ export default function ProfileUser() {
                       defaultValue={userStore.photo} onChange={changePhoto} ref={upUserPhoto}/>
                 </Form.Group>
 
-                <div className="d-flex justify-content-center mt-4">
-                  <Button type="submit" variant="primary" disabled={!formEdited} ><i className="fa-solid fa-floppy-disk" style={{fontSize:"1.28rem"}}></i> Update</Button>
+                <div className="d-flex justify-content-center mt-4 text-white">
+                  <Button type="submit" variant="success" disabled={!formEdited} style={{backgroundColor:"#20b769"}}><i className="fa-solid fa-floppy-disk" style={{fontSize:"1.28rem"}}></i> Update</Button>
                 </div>
               </fieldset>
             </Form>

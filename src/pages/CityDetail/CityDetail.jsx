@@ -63,7 +63,7 @@ export default function CityDetail() {
             {itineraryStore.length > 0 ? (
               itineraryStore.map((itinerary) => (
                 <div key={itinerary._id}>
-                  <div   className="col-12  rounded-5 bg-danger overflow-x-hidden ">
+                  <div   className="col-12  rounded-5  overflow-x-hidden " style={{backgroundColor:"rgb(10, 108, 128)"}}>
                     <div className="row justify-content-center  ">
                       <div
                         className="col-md-5  text-white d-flex flex-column justify-content-between rounded-start-3 px-4 "

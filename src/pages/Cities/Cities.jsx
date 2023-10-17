@@ -81,8 +81,8 @@ export default function Cities() {
                   />
                   <Card.ImgOverlay className="d-flex">
                     <div className="bg-dark bg-opacity-75 position-absolute top-0 start-0 w-100 text-center ">
-                      <Card.Title className="m-0 ">{city.nation}</Card.Title>
-                      <Card.Text>🗺{city.city}</Card.Text>
+                      <Card.Title className="m-0 ">{city.city}</Card.Title>
+                      <Card.Text>🗺{city.nation}</Card.Text>
                     </div>
                     
                     <PageRouter to={city._id} 
