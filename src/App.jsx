@@ -11,6 +11,9 @@ import { useDispatch } from "react-redux";
 import userActions from "./store/actions/authActions";
 import ProfileUser from "./pages/ProfileUser/ProfileUser";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const router = createBrowserRouter([
   {path:'/', element: <MainLayout />, children:[
     {path:'/', element: <Home/>},
@@ -38,6 +41,9 @@ function App() {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   } , [] )
+
+  //todo Inicializo libreria AOS para los efectos 
+  AOS.init();
 
   return (
     <>
