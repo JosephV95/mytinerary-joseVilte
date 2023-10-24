@@ -4,7 +4,7 @@ import Nav from "../Nav/Nav";
 function Header() {
   return (
     <header>
-      <div className="container">
+      <div className="container ps-1" >
         <div className="row">
           <div className="col-12 d-flex justify-content-between">
             <span className="d-flex align-items-center">

@@ -13,7 +13,7 @@ header nav button{
 header nav a{
     text-decoration: none;
     color: white;
-    padding: 0 .7rem;
+    padding-right: 1.9rem;
 }
 header nav .active {
     text-decoration: overline;
@@ -26,8 +26,12 @@ header img{
     height: 2.5rem;
 }
 
-@media only screen and (max-width: 440px) {  
+@media only screen and (max-width: 510px) {  
     header h3 {
         display: none;
+    }
+
+    header nav a{
+        padding-right: .7rem;
     }
 }
