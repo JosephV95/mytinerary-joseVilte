@@ -43,12 +43,12 @@ export default function Cities() {
     >
       <div className="container mb-5">
         <div className="row justify-content-center text-center position-relative  ">
-          <div className="col-12  py-4 text-white  heroCities">
+          <div className="col-12  py-3 text-white  heroCities">
             <h3>Cities</h3>
             <p>Collection of the most beatiful places and experience.</p>
           </div>
 
-            <form className="col-12 py-3 d-flex justify-content-center"  onSubmit={hadleSubmit}>
+            <form className="col-12 py-2 d-flex justify-content-center"  onSubmit={hadleSubmit}>
               <input
                 className="rounded px-2 py-1"
                 type="search"
