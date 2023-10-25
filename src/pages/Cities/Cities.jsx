@@ -5,6 +5,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import { Link as PageRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction.js";
+import AddCity from "../../components/CityModal/AddCity";
 
 export default function Cities() {
   
@@ -48,6 +49,9 @@ export default function Cities() {
             <p>Collection of the most beatiful places and experience.</p>
           </div>
 
+          <AddCity />
+          
+          <div>
             <form className="col-12 py-2 d-flex justify-content-center"  onSubmit={hadleSubmit}>
               <input
                 className="rounded px-2 py-1"
@@ -57,6 +61,7 @@ export default function Cities() {
               />
               <button type="submit" className="btn btn-success ms-1" >Search</button>
             </form>
+          </div>
         </div>
 
         <Row className="justify-content-center ">
