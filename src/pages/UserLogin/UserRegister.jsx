@@ -75,7 +75,7 @@ export default function UserRegister() {
             <h1 style={{fontSize: "2.2rem"}} className="mb-3">Mytinerary</h1>
             <p style={{fontSize: "1.5rem"}}>Welcome new user.</p>
           </div>
-          <div className="col-md-7">
+          <div className="col-md-7" data-aos="fade">
             <Form className="  p-4 rounded"   validated={validated} onSubmit={handleSubmit}  style={{backgroundColor: "white"}}>
               <h3 className="text-center mb-4"><i className="fa-solid fa-user-plus" style={{color:"#0bab6d"}}></i> Sign Up</h3>
               <fieldset>

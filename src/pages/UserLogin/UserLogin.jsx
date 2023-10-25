@@ -55,8 +55,8 @@ export default function UserLogin() {
             <h1 style={{fontSize: "2.2rem"}} className="mb-3">Mytinerary</h1>
             <p style={{fontSize: "1.5rem"}}>Welcome back.</p>
           </div>
-          <div className="col-md-7 rounded"  style={{backgroundColor: "white"}}>
-            <Form className="  p-4 rounded"   validated={validated} onSubmit={handleSubmit}  >
+          <div className="col-md-7 rounded"  style={{backgroundColor: "white"}}  data-aos="fade">
+            <Form className="  p-4 rounded"   validated={validated} onSubmit={handleSubmit} >
               <h3 className="text-center mb-4"><i className="fa-solid fa-user-check" style={{color:"#0bab6d"}}></i> Sign In</h3>
               <fieldset>
                 

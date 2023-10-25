@@ -43,7 +43,8 @@ export default function CityDetail() {
             className="row justify-content-center detailCity"
             style={{ backgroundImage: `url(${cityInStore.img})`, height: "75vh" }}
           >
-            <div className="col-12 col-md-6 heroDetail  text-center text-white d-flex flex-column justify-content-center pt-5" >
+            <div className="col-12 col-md-6 heroDetail  text-center text-white d-flex flex-column justify-content-center pt-5" 
+            data-aos="zoom-out" data-aos-duration="700" data-aos-delay="400">
               <h2 className="py-4">{cityInStore.city}</h2>
               <p style={{fontSize: "1.1rem", fontStyle:"italic"}}><i className="fa-solid fa-location-dot"></i> <b>{cityInStore.nation}</b></p>
               <p>{cityInStore.description}</p>
@@ -62,7 +63,7 @@ export default function CityDetail() {
 
             {itineraryStore.length > 0 ? (
               itineraryStore.map((itinerary) => (
-                <div key={itinerary._id}>
+                <div key={itinerary._id}  data-aos="flip-down" data-aos-duration="1400">
                   <div   className="col-12  rounded-5  overflow-x-hidden " style={{backgroundColor:"rgb(10, 108, 128)"}}>
                     <div className="row justify-content-center  ">
                       <div

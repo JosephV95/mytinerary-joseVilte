@@ -52,7 +52,9 @@ export default function ProfileUser() {
       <Container>
         <Row  className="justify-content-center">
           <Col md={{ span: 7 }}>
-            <Form  className="px-4 py-3 rounded-5 text-white position-relative" onSubmit={handleSubmit}  style={{backgroundColor:"rgb(21, 123, 141)", border:"5px solid rgb(10, 108, 128)"}}>
+            <Form  className="px-4 py-3 rounded-5 text-white position-relative" onSubmit={handleSubmit}  
+            style={{backgroundColor:"rgb(21, 123, 141)", border:"5px solid rgb(10, 108, 128)"}}
+            data-aos="flip-up" data-aos-duration="1500"  >
               <h3 className="text-center mb-3"><i className="fa-solid fa-pen-to-square" style={{color:"#2dfb6b"}}></i> Edit Profile</h3>
              
              <Row className="justify-content-center mb-4">

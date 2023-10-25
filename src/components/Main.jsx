@@ -6,9 +6,9 @@ function Main() {
   return (
     <>
       <section className="py-4  main">
-        <h4 className="my-4 text-center px-3 fst-italic">Find your perfect trip, designed by insiders who know and love their cities!</h4>
+        <h4 className="my-4 text-center px-3 fst-italic" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="1000">Find your perfect trip, designed by insiders who know and love their cities!</h4>
         <div className="container">
-          <div className="row hero  justify-content-center align-items-center my-3">
+          <div className="row hero  justify-content-center align-items-center my-3" data-aos="fade-down" data-aos-duration="1000">
             <div className="hero-article col-md-7 text-center text-white">
               <div className=" p-3 mt-3">
                 <h3>Find the perfect destination</h3>
@@ -29,7 +29,7 @@ function Main() {
         </div>
         <div className="container-fluid">
           <div className="row ">
-            <div className="col-12 px-0">
+            <div className="col-12 px-0" data-aos="fade" data-aos-duration="1100">
               <h3 className="text-center text-white py-2 fw-bold">Popular MyTineraries!</h3>
               <Slider/>
             </div>

@@ -72,7 +72,7 @@ export default function Cities() {
                 <Card
                   className="cardCity  bg-dark text-white w-100 overflow-x-hidden"
                   style={{ minHeight: "10rem", maxHeight: "12rem" }}
-                  onMouseEnter={() => setBgCities(`${city.img}`)}
+                  onMouseEnter={() => setBgCities(`${city.img}`)}  data-aos="zoom-in-up" data-aos-duration="960"
                 >
                   <Card.Img
                     src={city.img}
