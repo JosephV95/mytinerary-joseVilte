@@ -39,6 +39,9 @@ const citiesReducer = createReducer( initialState, (builder)=>{
         // let newState = {...state, cities: [action.payload.oneCity]}  //? Se debe pasar el action como array para que no produzca errores
         return newState
     })
+    // .addCase(citiesActions.create_city.fulfilled, (action)=>{
+    //     console.log(action.payload);
+    // })
     
     //todo  casos Sincronos
     .addCase(citiesActions.cities_api, (state, action) =>{

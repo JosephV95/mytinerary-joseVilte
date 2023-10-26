@@ -34,6 +34,21 @@ const get_one_city = createAsyncThunk("get_one_city", async(id)=>{
     }
 })
 
+//todo Nuevos actions para el crud 
+const create_city = createAsyncThunk('create_city', async(dataNewCity)=>{
+    try {
+        const newCity = await axios.post("http://localhost:4000/api/cities", dataNewCity)
+        .then((res)=> {
+            console.log(res.data);
+            return res.data
+        })
+        
+        return newCity
+    } catch (error) {
+        console.log(error.message);
+    }
+})
+
 //!  Redux Sincrono 
 const cities_api = createAction('cities_api', (payload)=>{
     return { payload }
@@ -44,6 +59,6 @@ const all_cities = createAction('all_cities', (payload)=>{
 })
 
 
-const citiesActions = {cities_api, all_cities,  get_cities, get_one_city}
+const citiesActions = {cities_api, all_cities,  get_cities, get_one_city, create_city}
 
 export default citiesActions;
