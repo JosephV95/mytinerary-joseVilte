@@ -16,13 +16,15 @@ export default function Cities() {
   
   const dispatch = useDispatch();
 
+  const [cityCreated, setCityCreated] = useState(false) //! Estado que indicara que se creo una city y ejecutara de nuevo el useEffect
+
   useEffect(() => {
     dispatch(citiesActions.get_cities())
-
+    setCityCreated(false) //! Settear en false para que se creen más cities. Pero ocaciona que se vuelva a ejecutar el useEffect (es decir se ejecuta 2 veces al crear city)
     // setBgCities(citiesInStore[0].img)
-   
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [cityCreated]);
 
   const hadleSubmit = (event) =>{
     event.preventDefault()
@@ -49,7 +51,7 @@ export default function Cities() {
             <p>Collection of the most beatiful places and experience.</p>
           </div>
 
-          <AddCity />
+          <AddCity activarEfecto={()=>setCityCreated(true)} /> {/*//! Se pasa una funcion como prop  */}
           
           <div>
             <form className="col-12 py-2 d-flex justify-content-center"  onSubmit={hadleSubmit}>
