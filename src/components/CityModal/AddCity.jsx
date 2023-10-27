@@ -73,8 +73,8 @@ export default function AddCity( {activarEfecto}) {
               </Form.Group>
 
               <Modal.Footer className=" pb-0 pt-2">
-                <Button variant="secondary" onClick={handleClose}>
-                  Close
+                <Button variant="danger" onClick={handleClose}>
+                  Cancel
                 </Button>
                 <Button type="submit" variant="primary" disabled={!formEdited} >Save City</Button>
               </Modal.Footer>
