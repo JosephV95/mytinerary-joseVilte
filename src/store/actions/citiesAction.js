@@ -10,7 +10,7 @@ const Toast = Swal.mixin({
     didOpen: (toast) => {
       toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
-  })
+})
 
 //* Redux Asincrono   con el await le digo a la funcion que la promesa se debe resolver primero y luego continuar con lo demas
 const get_cities = createAsyncThunk('get_cities', async(queries= "")=>{    //! El asyncThunk trae por defecto el payload, por lo que no se necesita definirlo
