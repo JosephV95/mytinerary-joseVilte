@@ -4,7 +4,7 @@ import "./cityDetail.css";
 import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction";
 import itinerariesActions from "../../store/actions/itinerariesAction";
-import { DiscussionEmbed } from 'disqus-react';
+// import { DiscussionEmbed } from 'disqus-react';
 import { Accordion } from "react-bootstrap";
 
 export default function CityDetail() {
@@ -16,12 +16,12 @@ export default function CityDetail() {
   );
 
   //!  variables necesarias de react-disqus
-  const disqusShortname = 'http-localhost-5173-cities'; // Reemplaza con tu shortname de Disqus
-  const disqusConfig = {
-    url: 'https://viltejosedev.netlify.app/', // Reemplaza con la URL de tu página
-    identifier: 'Mytinerary', // Un identificador único para cada página que tenga comentarios de Disqus
-    title: 'My Tinerary', // Reemplaza con el título de tu página
-  };
+  // const disqusShortname = 'http-localhost-5173-cities'; // Reemplaza con tu shortname de Disqus
+  // const disqusConfig = {
+  //   url: 'https://viltejosedev.netlify.app/', // Reemplaza con la URL de tu página
+  //   identifier: 'Mytinerary', // Un identificador único para cada página que tenga comentarios de Disqus
+  //   title: 'My Tinerary', // Reemplaza con el título de tu página
+  // };
 
   // window.scrollTo(0, 0)
 
@@ -59,12 +59,13 @@ export default function CityDetail() {
       <section>
         <div className="container  " >
             <h2 className="text-center text-white" id="Itineraries"><i className="fa-solid fa-signs-post"></i> <i>Itineraries</i></h2>
-          <div className="row  gap-4 py-5">
-
+          
+          <div className="row justify-content-center gap-4 py-4">
             {itineraryStore.length > 0 ? (
               itineraryStore.map((itinerary) => (
-                <div key={itinerary._id}  data-aos="flip-down" data-aos-duration="1400">
-                  <div   className="col-12  rounded-5  overflow-x-hidden " style={{backgroundColor:"rgb(10, 108, 128)"}}>
+                // <div >
+                  <div key={itinerary._id}   data-aos-duration="1400"  
+                  className="col-12 col-md-10  rounded-5  overflow-x-hidden " style={{backgroundColor:"rgb(10, 108, 128)"}}>
                     <div className="row justify-content-center  ">
                       <div
                         className="col-md-5  text-white d-flex flex-column justify-content-between rounded-start-3 px-4 "
@@ -139,7 +140,7 @@ export default function CityDetail() {
                       </div>
                     </div>
                   </div>
-                </div>
+                // </div>
               ))
             ) : (
                <div className="col-12  text-center">
@@ -150,7 +151,7 @@ export default function CityDetail() {
             )}
           </div>
 
-          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} className="w-100 p-2" style={{background: "#151120ab"}} />
+          {/* <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} className="w-100 p-2" style={{background: "#151120ab"}} /> */}
         </div>
 
       </section>
