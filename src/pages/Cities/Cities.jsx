@@ -1,7 +1,7 @@
 import "../Cities/cities.css";
 
 import { useEffect, useRef, useState } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Button, ButtonGroup, Card, Col, Row } from "react-bootstrap";
 import { Link as PageRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction.js";
@@ -74,7 +74,7 @@ export default function Cities() {
                 xs={6}
                 md={3}
                 key={key}
-                className="position-relative  text-center text-white d-flex my-1 pt-4"
+                className="position-relative d-flex p-2"
               >
                 <Card
                   className="cardCity  bg-dark text-white w-100 overflow-x-hidden"
@@ -92,11 +92,20 @@ export default function Cities() {
                       <Card.Text>🗺{city.nation}</Card.Text>
                     </div>
                     
-                    <PageRouter to={city._id} 
-                    className="viewCity btn btn-outline-light border-2  position-absolute bottom-0 py-1 ps-2 mb-2 ms-0 " onClick={()=>{window.scrollTo(0, 0)}}> 
-                    <i className="fa-solid fa-mountain-sun"></i> View City</PageRouter>
+                    <div className="position-absolute bottom-0 ps-0 mb-1 mx-0 ">
+                      <PageRouter to={city._id} 
+                      className="viewCity btn btn-outline-light border-2  " onClick={()=>{window.scrollTo(0, 0)}}> 
+                      <i className="fa-solid fa-mountain-sun"></i> View City</PageRouter>
+
+                    </div> 
+
+                    
                   </Card.ImgOverlay>
                 </Card>
+                <ButtonGroup aria-label="Basic example" vertical>
+                   <Button variant="outline-warning" className="viewCity px-1"><i className="fa-solid fa-pen-to-square"></i></Button>
+                  <Button variant="outline-danger" className="viewCity px-1"><i className="fa-solid fa-trash-can"></i></Button>
+                </ButtonGroup>
               </Col>
             ))
           )  : (
