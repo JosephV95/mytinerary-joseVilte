@@ -38,7 +38,7 @@ export default function AddCity( {activarEfecto}) {
     <>
       <div className="col-12 mb-1">
         <Button
-          variant="outline-info border-2  fw-bold" className="viewCity"
+          variant="outline-info border-2  fw-bold" className="buttonCities"
           onClick={handleShow}
           hidden={userLogged == false}
         >

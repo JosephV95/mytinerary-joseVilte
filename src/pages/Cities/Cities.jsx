@@ -13,6 +13,8 @@ export default function Cities() {
   const inputSearch = useRef(null);
 
   let citiesInStore = useSelector(store => store.citiesReducer.cities);
+
+  const userLogged = useSelector((store) => store.userReducer.isLogged);
   
   const dispatch = useDispatch();
 
@@ -96,7 +98,7 @@ export default function Cities() {
                       <PageRouter to={city._id} 
                       className="buttonCities btn btn-outline-light border-2 px-2 mb-2" onClick={()=>{window.scrollTo(0, 0)}}> 
                       <i className="fa-solid fa-mountain-sun"></i> View City</PageRouter>
-                      <ButtonGroup aria-label="Basic example" className="w-100 ">
+                      <ButtonGroup aria-label="Basic example" className="w-100" hidden={userLogged == false}>
                         <Button variant="outline-warning" className="buttonCities py-1"><i className="fa-solid fa-pen-to-square"></i></Button>
                         <Button variant="outline-danger" className="buttonCities py-1"><i className="fa-solid fa-trash-can"></i></Button>
                       </ButtonGroup>
