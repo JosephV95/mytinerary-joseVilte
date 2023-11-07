@@ -54,7 +54,7 @@ export default function Cities() {
           <AddCity activarEfecto={()=>setCityCreated(true)} /> {/*//! Se pasa una funcion como prop  */}
           
           <div>
-            <form className="col-12 py-2 d-flex justify-content-center"  onSubmit={hadleSubmit}>
+            <form className="col-12 py-3 d-flex justify-content-center"  onSubmit={hadleSubmit}>
               <input
                 className="rounded px-2 py-1"
                 type="search"
@@ -77,8 +77,8 @@ export default function Cities() {
                 className="position-relative d-flex p-2"
               >
                 <Card
-                  className="cardCity  bg-dark text-white w-100 overflow-x-hidden"
-                  style={{ minHeight: "10rem", maxHeight: "12rem" }}
+                  className="cardCity  bg-dark text-white w-100 p-0 overflow-x-hidden"
+                  style={{ minHeight: "11.2rem", maxHeight: "11.7rem" }}
                   onMouseEnter={() => setBgCities(`${city.img}`)}  data-aos="zoom-in-up" data-aos-duration="960"
                 >
                   <Card.Img
@@ -86,26 +86,23 @@ export default function Cities() {
                     alt={city.name}
                     className="w-100 h-100  object-fit-cover  "
                   />
-                  <Card.ImgOverlay className="d-flex">
+                  <Card.ImgOverlay className="d-flex position-absolute">
                     <div className="bg-dark bg-opacity-75 position-absolute top-0 start-0 w-100 text-center ">
                       <Card.Title className="m-0 ">{city.city}</Card.Title>
                       <Card.Text>🗺{city.nation}</Card.Text>
                     </div>
                     
-                    <div className="position-absolute bottom-0 ps-0 mb-1 mx-0 ">
+                    <div className="divInfoCity position-absolute bottom-0 w-100 h-60 px-2 pb-1">
                       <PageRouter to={city._id} 
-                      className="viewCity btn btn-outline-light border-2  " onClick={()=>{window.scrollTo(0, 0)}}> 
+                      className="buttonCities btn btn-outline-light border-2 px-2 mb-2" onClick={()=>{window.scrollTo(0, 0)}}> 
                       <i className="fa-solid fa-mountain-sun"></i> View City</PageRouter>
-
+                      <ButtonGroup aria-label="Basic example" className="w-100 ">
+                        <Button variant="outline-warning" className="buttonCities py-1"><i className="fa-solid fa-pen-to-square"></i></Button>
+                        <Button variant="outline-danger" className="buttonCities py-1"><i className="fa-solid fa-trash-can"></i></Button>
+                      </ButtonGroup>
                     </div> 
-
-                    
                   </Card.ImgOverlay>
                 </Card>
-                <ButtonGroup aria-label="Basic example" vertical>
-                   <Button variant="outline-warning" className="viewCity px-1"><i className="fa-solid fa-pen-to-square"></i></Button>
-                  <Button variant="outline-danger" className="viewCity px-1"><i className="fa-solid fa-trash-can"></i></Button>
-                </ButtonGroup>
               </Col>
             ))
           )  : (

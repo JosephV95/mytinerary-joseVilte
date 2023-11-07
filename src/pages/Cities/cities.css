@@ -35,15 +35,26 @@
     border: none;
     text-align: center;
     box-shadow: 5px 5px 8px black;
-    transition-duration: .7s;
+    transition-duration: .9s;
 }
 
 .cardCity:hover{
     outline: solid 2px rgb(55, 214, 250);
     box-shadow: 0 0 9px rgb(104, 226, 254), 0 0 12px rgb(104, 226, 254), 0 0 15px rgb(104, 226, 254);
 }
-
-.viewCity{
-    background-color: rgba(0, 0, 0, 0.4);;
+.cardCity:hover .divInfoCity{
+    opacity: 1;
 }
+.divInfoCity{
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.buttonCities{
+    background-color: rgba(0, 0, 0, 0.5);;
+}
+.card-img-overlay{
+    padding: 0;
+}
+
 
