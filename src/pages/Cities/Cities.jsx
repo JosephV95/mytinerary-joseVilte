@@ -41,6 +41,10 @@ export default function Cities() {
     }
   }
 
+  const handleDeleteCity = (queryId)=>{
+    dispatch(citiesActions.delete_city(queryId));
+  }
+  
   return (
     <section
       className="pageCities pt-5"
@@ -99,8 +103,13 @@ export default function Cities() {
                       className="buttonCities btn btn-outline-light border-2 px-2 mb-2" onClick={()=>{window.scrollTo(0, 0)}}> 
                       <i className="fa-solid fa-mountain-sun"></i> View City</PageRouter>
                       <ButtonGroup aria-label="Basic example" className="w-100" hidden={userLogged == false}>
-                        <Button variant="outline-warning" className="buttonCities py-1"><i className="fa-solid fa-pen-to-square"></i></Button>
-                        <Button variant="outline-danger" className="buttonCities py-1"><i className="fa-solid fa-trash-can"></i></Button>
+                        <Button variant="outline-warning" className="buttonCities py-1"  ><i className="fa-solid fa-pen-to-square"></i></Button>
+
+                        {/* //! Para que Funcione BIEN EL DELETE se DEBE usar una funcion anonima '()=>{hadle(city_id)}' en el onClick; Cuando solo 
+                        //! use 'hadleDelete(city._id)' ME BORRO TODAS LAS CITIES DE LA BASE DE DATOS. Esto ocurre porque al renderizar y leer el codigo
+                        //? EJECUTA la funcion DELETE y lo que guarda en el onClick es el resultado de esa funcion, osea elimina todo sin haber clickeado 
+                        */}
+                        <Button variant="outline-danger" className="buttonCities py-1" onClick={()=>{handleDeleteCity(city._id)} } ><i className="fa-solid fa-trash-can"></i></Button>
                       </ButtonGroup>
                     </div> 
                   </Card.ImgOverlay>
