@@ -63,6 +63,18 @@ const create_city = createAsyncThunk('create_city', async(dataNewCity)=>{
         console.log(error.message);
     }
 })
+//! solo en este caso se pasara el id por query (para ver su desarrollo), seria mejor por param 
+const delete_city = createAsyncThunk('delete_city', async (query)=>{
+    try {
+        console.log(query)
+        await axios.delete("http://localhost:4000/api/cities?id=" + query)
+        .then((res)=>{
+            return console.log(res.data.message);
+        })
+    } catch (error) {
+        console.log(error.message);
+    }
+})
 
 //!  Redux Sincrono 
 const cities_api = createAction('cities_api', (payload)=>{
@@ -72,6 +84,6 @@ const all_cities = createAction('all_cities', (payload)=>{
     return { payload }
 })
 
-const citiesActions = {cities_api, all_cities,  get_cities, get_one_city, create_city}
+const citiesActions = {cities_api, all_cities,  get_cities, get_one_city, create_city, delete_city}
 
 export default citiesActions;
