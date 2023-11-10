@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction.js";
 import AddCity from "../../components/CityModal/AddCity";
 import Swal from "sweetalert2";
+import EditCity from "../../components/CityModal/EditCity";
 
 export default function Cities() {
   
@@ -122,7 +123,9 @@ export default function Cities() {
                       className="buttonCities btn btn-outline-light border-2 px-2 mb-2" onClick={()=>{window.scrollTo(0, 0)}}> 
                       <i className="fa-solid fa-mountain-sun"></i> View City</PageRouter>
                       <ButtonGroup aria-label="Basic example" className="w-100" hidden={userLogged == false}>
-                        <Button variant="outline-warning" className="buttonCities py-1"  ><i className="fa-solid fa-pen-to-square"></i></Button>
+                        {/* //? Componente que contiene el button con el form para Editar. Se le pasa la misma Prop que en Add City y otra con el ID */}
+                        <EditCity activarEfecto={()=>setCityCreated(true)} numId={city._id} /> 
+                        {/* <Button variant="outline-warning" className="buttonCities py-1"  ><i className="fa-solid fa-pen-to-square"></i></Button> */}
 
                         {/* //! Para que Funcione BIEN EL DELETE se DEBE usar una funcion anonima '()=>{hadle(city_id)}' en el onClick; Cuando solo 
                         //! use 'hadleDelete(city._id)' ME BORRO TODAS LAS CITIES DE LA BASE DE DATOS. Esto ocurre porque al renderizar y leer el codigo
