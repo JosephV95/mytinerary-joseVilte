@@ -6,6 +6,7 @@ import { Link as PageRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction.js";
 import AddCity from "../../components/CityModal/AddCity";
+import Swal from "sweetalert2";
 
 export default function Cities() {
   
@@ -42,7 +43,25 @@ export default function Cities() {
   }
 
   const handleDeleteCity = (queryId)=>{
-    dispatch(citiesActions.delete_city(queryId));
+    Swal.fire({
+        title: "Delete City?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then( (result) => {
+        if (result.isConfirmed) {
+          dispatch(citiesActions.delete_city(queryId));
+          Swal.fire({
+            title: "Deleted!",
+            text: "The city was erased",
+            icon: "success"
+          });
+          setCityCreated(true)
+        }
+      });
   }
   
   return (
