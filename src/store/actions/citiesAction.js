@@ -66,7 +66,6 @@ const create_city = createAsyncThunk('create_city', async(dataNewCity)=>{
 //! solo en este caso se pasara el id por query (para ver su desarrollo), seria mejor por param 
 const delete_city = createAsyncThunk('delete_city', async (query)=>{
     try {
-        console.log(query)
         await axios.delete("http://localhost:4000/api/cities?id=" + query)
         .then((res)=>{
             return console.log(res.data.message);
