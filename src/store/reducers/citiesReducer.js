@@ -20,6 +20,7 @@ const initialState = {
         city:"",
         nation:"",
         img:"",
+        description: "",
         _itineraries:[
             {name:"",
             city:""}
