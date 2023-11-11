@@ -79,6 +79,10 @@ const update_city = createAsyncThunk('update_city', async({id, dataCityEdited})=
         await axios.put(`http://localhost:4000/api/cities/${id}`, dataCityEdited)
         .then((res)=>{
             console.log(res.data.response);
+            Toast.fire({
+                icon: 'success',
+                title: 'City updated successfully'
+            })
         })
     } catch (error) {
         console.log(error.message);
