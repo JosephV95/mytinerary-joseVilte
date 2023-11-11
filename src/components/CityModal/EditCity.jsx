@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction";
 
 //! Se recibe una funcion como prop que avisa al componente padre que se Edito una city
@@ -18,7 +18,6 @@ export default function EditCity({activarEfecto, numId}) {
     const descriptionRef = useRef();
 
     // const cityInStore = useSelector((store)=> store.citiesReducer.city)
-    
     const [cityEdit, setCityEdit]= useState({})
 
     const modalEdit = async()=>{
@@ -29,6 +28,18 @@ export default function EditCity({activarEfecto, numId}) {
           console.log(res.payload.oneCity)
           setCityEdit(res.payload.oneCity)
       })
+    }
+
+    const handleCityEdited = (event)=>{
+      event.preventDefault()
+      const dataCityEdited = {
+        city: cityRef.current.value,
+        nation: countryRef.current.value,
+        img: imageUrlRef.current.value,
+        description: descriptionRef.current.value
+      }
+      console.log(dataCityEdited);
+      // activarEfecto()
     }
 
   return (
@@ -42,7 +53,7 @@ export default function EditCity({activarEfecto, numId}) {
             <Modal.Title>Edit City</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form onSubmit={()=>{}} >
+            <Form onSubmit={handleCityEdited} >
               <Form.Group className="mb-3" >
                 <Form.Label>City name:</Form.Label>
                 <Form.Control  autoFocus  ref={cityRef} defaultValue={cityEdit.city} onChange={()=>{setFormEdited(true)}}
