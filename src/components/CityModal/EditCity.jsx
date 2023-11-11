@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction";
@@ -17,18 +17,18 @@ export default function EditCity({activarEfecto, numId}) {
     const imageUrlRef = useRef();
     const descriptionRef = useRef();
 
-    const cityInStore = useSelector((store)=> store.citiesReducer.city)
+    // const cityInStore = useSelector((store)=> store.citiesReducer.city)
     
-    const [cityEdit, setCityEdit]= useState(cityInStore)
+    const [cityEdit, setCityEdit]= useState({})
 
-    const modalEdit = ()=>{
-        dispatch(citiesActions.get_one_city(numId))
-        .then((res)=>{
-            console.log(res.payload.oneCity)
-            setCityEdit(res.payload.oneCity)
-            // console.log(cityEdit);
-        })
-        handleShow();
+    const modalEdit = async()=>{
+      handleShow();
+        
+      await dispatch(citiesActions.get_one_city(numId))
+      .then((res)=>{
+          console.log(res.payload.oneCity)
+          setCityEdit(res.payload.oneCity)
+      })
     }
 
   return (
