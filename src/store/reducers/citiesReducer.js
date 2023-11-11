@@ -43,6 +43,12 @@ const citiesReducer = createReducer( initialState, (builder)=>{
     // .addCase(citiesActions.create_city.fulfilled, (action)=>{
     //     console.log(action.payload);
     // })
+    // .addCase(citiesActions.update_city.fulfilled, ()=>{
+    //     console.log('Actualización Exitosa' );
+    // })
+    // .addCase(citiesActions.update_city.rejected, (state, action)=>{
+    //     console.log('Actualización Fallida: ', action.error.message );
+    // })
     
     //todo  casos Sincronos
     .addCase(citiesActions.cities_api, (state, action) =>{
