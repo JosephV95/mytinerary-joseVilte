@@ -25,7 +25,7 @@ export default function EditCity({activarEfecto, numId}) {
         
       await dispatch(citiesActions.get_one_city(numId))
       .then((res)=>{
-          console.log(res.payload.oneCity)
+          // console.log(res.payload.oneCity)
           setCityEdit(res.payload.oneCity)
       })
     }
@@ -33,13 +33,17 @@ export default function EditCity({activarEfecto, numId}) {
     const handleCityEdited = (event)=>{
       event.preventDefault()
       const dataCityEdited = {
+        
         city: cityRef.current.value,
         nation: countryRef.current.value,
         img: imageUrlRef.current.value,
         description: descriptionRef.current.value
       }
-      console.log(dataCityEdited);
-      // activarEfecto()
+      // console.log(dataCityEdited);
+
+      dispatch(citiesActions.update_city({id: numId, dataCityEdited: dataCityEdited}))
+      activarEfecto();
+      handleClose()
     }
 
   return (

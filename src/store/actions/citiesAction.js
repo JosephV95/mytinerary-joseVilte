@@ -74,6 +74,16 @@ const delete_city = createAsyncThunk('delete_city', async (query)=>{
         console.log(error.message);
     }
 })
+const update_city = createAsyncThunk('update_city', async({id, dataCityEdited})=>{
+    try {
+        await axios.put(`http://localhost:4000/api/cities/${id}`, dataCityEdited)
+        .then((res)=>{
+            console.log(res.data.response);
+        })
+    } catch (error) {
+        console.log(error.message);
+    }
+})
 
 //!  Redux Sincrono 
 const cities_api = createAction('cities_api', (payload)=>{
@@ -83,6 +93,6 @@ const all_cities = createAction('all_cities', (payload)=>{
     return { payload }
 })
 
-const citiesActions = {cities_api, all_cities,  get_cities, get_one_city, create_city, delete_city}
+const citiesActions = {cities_api, all_cities,  get_cities, get_one_city, create_city, delete_city, update_city}
 
 export default citiesActions;
