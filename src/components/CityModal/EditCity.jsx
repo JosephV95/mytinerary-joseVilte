@@ -7,7 +7,7 @@ import citiesActions from "../../store/actions/citiesAction";
 export default function EditCity({activarEfecto, numId}) {
 
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {setShow(false), setCityEdit({})}; //? Se settea vacia la data por si se vuelve a editar la misma city
     const handleShow = () => setShow(true);
 
     const [formEdited, setFormEdited] = useState(false); //* Estado que mostrara si hubo cambios en los inputs
@@ -25,7 +25,6 @@ export default function EditCity({activarEfecto, numId}) {
         
       await dispatch(citiesActions.get_one_city(numId))
       .then((res)=>{
-          // console.log(res.payload.oneCity)
           setCityEdit(res.payload.oneCity)
       })
     }
@@ -33,15 +32,13 @@ export default function EditCity({activarEfecto, numId}) {
     const handleCityEdited = (event)=>{
       event.preventDefault()
       const dataCityEdited = {
-        
         city: cityRef.current.value,
         nation: countryRef.current.value,
         img: imageUrlRef.current.value,
         description: descriptionRef.current.value
       }
-      // console.log(dataCityEdited);
-
-      dispatch(citiesActions.update_city({id: numId, dataCityEdited: dataCityEdited}))
+      //!       Se paso los parametros de esta forma para que funcione correctamente
+      dispatch(citiesActions.update_city({id: numId, dataCityEdited: dataCityEdited}))   
       activarEfecto();
       handleClose()
     }
@@ -61,12 +58,11 @@ export default function EditCity({activarEfecto, numId}) {
               <Form.Group className="mb-3" >
                 <Form.Label>City name:</Form.Label>
                 <Form.Control  autoFocus  ref={cityRef} defaultValue={cityEdit.city} onChange={()=>{setFormEdited(true)}}
-                      type="text" 
-                      placeholder="Ej: Shibuya" required />
+                      type="text"  required />
               </Form.Group>
               <Form.Group className="mb-3" controlId="input2">
                 <Form.Label>Country name:</Form.Label>
-                <Form.Control type="text" placeholder="Ej: Japan" ref={countryRef} defaultValue={cityEdit.nation} onChange={()=>{setFormEdited(true)}} required/>
+                <Form.Control type="text" ref={countryRef} defaultValue={cityEdit.nation} onChange={()=>{setFormEdited(true)}} required/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="input2">
                 <Form.Label>City image url:</Form.Label>
@@ -85,11 +81,9 @@ export default function EditCity({activarEfecto, numId}) {
                 </Button>
                 <Button type="submit" variant="primary" disabled={!formEdited} >Edit City</Button>
               </Modal.Footer>
-
             </Form>
           </Modal.Body>
-        </Modal>
-
+      </Modal>
     </>
   )
 }
