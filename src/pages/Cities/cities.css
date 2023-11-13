@@ -42,19 +42,27 @@
     outline: solid 2px rgb(55, 214, 250);
     box-shadow: 0 0 9px rgb(104, 226, 254), 0 0 12px rgb(104, 226, 254), 0 0 15px rgb(104, 226, 254);
 }
-.cardCity:hover .divInfoCity{
-    opacity: 1;
-}
-.divInfoCity{
-    opacity: 0;
-    transition-duration: 1s;
-}
 
+.divInfoCity{
+    transform: translateY(100%);
+    visibility: hidden;
+}
+.cardCity:hover .divInfoCity{
+    animation: aparecerDeAbajo 0.5s ease-in-out 0.2s forwards ;  /*todo  con forwards se logra que el div se quede donde termino la animation  */
+}
+@keyframes aparecerDeAbajo {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        visibility: visible;  /*todo  Al usar visibility se evita problema que ocurria con el div tittle en card*/
+        transform: translateY(0);
+    }
+}
 .buttonCities{
     background-color: rgba(0, 0, 0, 0.5);;
 }
 .card-img-overlay{
     padding: 0;
 }
-
-

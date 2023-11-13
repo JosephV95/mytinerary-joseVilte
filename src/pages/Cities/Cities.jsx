@@ -112,7 +112,7 @@ export default function Cities() {
                     alt={city.name}
                     className="w-100 h-100  object-fit-cover  "
                   />
-                  <Card.ImgOverlay className="d-flex position-absolute">
+                  <Card.ImgOverlay className="d-flex position-absolute overflow-hidden">
                     <div className="bg-dark bg-opacity-75 position-absolute top-0 start-0 w-100 text-center">
                       <Card.Title className="m-0 ">{city.city}</Card.Title>
                       <Card.Text><i className="fa-solid fa-location-dot " style={{fontSize:"12.8px"}}></i> {city.nation}</Card.Text>
