@@ -79,7 +79,7 @@ export default function EditCity({activarEfecto, numId}) {
                 <Button variant="danger" onClick={handleClose}>
                   Cancel
                 </Button>
-                <Button type="submit" variant="primary" disabled={!formEdited} >Edit City</Button>
+                <Button type="submit" variant="primary" disabled={!formEdited} >Update</Button>
               </Modal.Footer>
             </Form>
           </Modal.Body>
