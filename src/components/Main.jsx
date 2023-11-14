@@ -5,9 +5,9 @@ import "./main.css";
 function Main() {
   return (
     <>
-      <section className="py-4  main">
+      <section className="py-4  main" style={{backgroundImage:"url('https://images.unsplash.com/photo-1421091242698-34f6ad7fc088?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')", backgroundSize:"cover", backgroundPosition:"center"}}>
         <h4 className="my-4 text-center px-3 fst-italic" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="1000">Find your perfect trip, designed by insiders who know and love their cities!</h4>
-        <div className="container">
+        <div className="container" >
           <div className="row hero  justify-content-center align-items-center my-3" data-aos="fade-down" data-aos-duration="1000">
             <div className="hero-article col-md-7 text-center text-white">
               <div className=" p-3 mt-3">
@@ -23,7 +23,7 @@ function Main() {
               </div>
             </div>
             <div className=" col-md-4 hero-img d-flex justify-content-center p-1">
-              <img src="https://images.theconversation.com/files/271802/original/file-20190430-136800-n73r21.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" alt="imgHero" />
+              <img src="https://images.unsplash.com/photo-1485731226153-303323e1c49b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D" alt="imgHero" />
             </div>
           </div>
         </div>
@@ -35,6 +35,8 @@ function Main() {
             </div>
           </div>
         </div>
+      
+      
       </section>
     </>
   );
