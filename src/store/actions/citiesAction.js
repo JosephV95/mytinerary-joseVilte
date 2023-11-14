@@ -68,6 +68,11 @@ const delete_city = createAsyncThunk('delete_city', async (query)=>{
     try {
         await axios.delete("http://localhost:4000/api/cities?id=" + query)
         .then((res)=>{
+            Swal.fire({
+                title: "Deleted!",
+                text: "The city was erased",
+                icon: "success"
+              });
             return console.log(res.data.message);
         })
     } catch (error) {

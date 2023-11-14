@@ -55,11 +55,6 @@ export default function Cities() {
       }).then( (result) => {
         if (result.isConfirmed) {
           dispatch(citiesActions.delete_city(queryId));
-          Swal.fire({
-            title: "Deleted!",
-            text: "The city was erased",
-            icon: "success"
-          });
           setCityCreated(true)
         }
       });
