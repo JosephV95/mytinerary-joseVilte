@@ -6,6 +6,7 @@ import citiesActions from "../../store/actions/citiesAction";
 import itinerariesActions from "../../store/actions/itinerariesAction";
 // import { DiscussionEmbed } from 'disqus-react';
 import { Accordion } from "react-bootstrap";
+import AddItinerary from "../../components/ItinerariesModal/AddItinerary";
 
 export default function CityDetail() {
   const { id } = useParams();
@@ -59,7 +60,7 @@ export default function CityDetail() {
       <section>
         <div className="container  " >
             <h2 className="text-center text-white" id="Itineraries"><i className="fa-solid fa-signs-post"></i> <i>Itineraries</i></h2>
-          
+            <AddItinerary/>
           <div className="row justify-content-center gap-4 py-4">
             {itineraryStore.length > 0 ? (
               itineraryStore.map((itinerary) => (
