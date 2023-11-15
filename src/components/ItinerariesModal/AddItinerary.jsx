@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import itinerariesActions from "../../store/actions/itinerariesAction";
 
-export default function AddItinerary() {
+export default function AddItinerary( {efectoEnProp}) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -28,8 +28,10 @@ export default function AddItinerary() {
       duration: durationIti.current.value,
       _cities: id  //!  Aqui se le pasa el id de la city al que pertenece el itinerario
     }
-    console.log(dataAddItinerary);
     dispatch(itinerariesActions.create_itinerary({id:id, dataNewItinerary: dataAddItinerary}))
+    .then(()=>{ efectoEnProp(); }); //! Se agrego el efectoProp porque no reenderizaba el useEffect al crear el 1er itinerario
+    // efectoEnProp();
+    handleClose();
   }
 
   return (

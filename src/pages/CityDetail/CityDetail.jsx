@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./cityDetail.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,9 +12,7 @@ export default function CityDetail() {
   const { id } = useParams();
   const cityInStore = useSelector((store) => store.citiesReducer.city);
   const dispatch = useDispatch();
-  const itineraryStore = useSelector(
-    (store) => store.itinerariesReducer.itineraries
-  );
+  const itineraryStore = useSelector((store) => store.itinerariesReducer.itineraries);
 
   //!  variables necesarias de react-disqus
   // const disqusShortname = 'http-localhost-5173-cities'; // Reemplaza con tu shortname de Disqus
@@ -24,17 +22,15 @@ export default function CityDetail() {
   //   title: 'My Tinerary', // Reemplaza con el título de tu página
   // };
 
-  // window.scrollTo(0, 0)
-
+  const [changeItineraries, setChangeItineraries] = useState(false)
   useEffect(() => {
     dispatch(citiesActions.get_one_city(id));
     dispatch(itinerariesActions.get_itineraries(id));
-    // console.log(cityInStore._itineraries);
-    // console.log(itineraryStore);
 
+    setChangeItineraries(false)
     // return ()=> dispatch(itinerariesActions.reset_ity()) //! dispatch para reiniciar valores al salir o cambiar de pagina
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [changeItineraries]);
 
   return (
     <>
@@ -60,12 +56,12 @@ export default function CityDetail() {
       <section>
         <div className="container  " >
             <h2 className="text-center text-white" id="Itineraries"><i className="fa-solid fa-signs-post"></i> <i>Itineraries</i></h2>
-            <AddItinerary/>
+            <AddItinerary efectoEnProp={()=> setChangeItineraries(true) }/>
           <div className="row justify-content-center gap-4 py-4">
             {itineraryStore.length > 0 ? (
               itineraryStore.map((itinerary) => (
                 // <div >
-                  <div key={itinerary._id}   data-aos-duration="1400"  
+                  <div key={itinerary._id}  data-aos="flip-down" data-aos-duration="1400"  
                   className="col-12 col-md-10  rounded-5  overflow-x-hidden " style={{backgroundColor:"rgb(10, 108, 128)"}}>
                     <div className="row justify-content-center  ">
                       <div
