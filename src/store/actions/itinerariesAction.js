@@ -40,11 +40,32 @@ const create_itinerary = createAsyncThunk('create_itinerary', async({id, dataNew
         console.log(error.message);
     }
 })
+const delete_itinerary = createAsyncThunk('delete_itinerary', async({id})=>{
+    try {
+        await axios.delete("http://localhost:4000/api/itineraries?id="+id)
+        .then((res)=>{
+            console.log(res.data);
+            Swal.fire({
+                title: "Deleted!",
+                text: res.data.message,
+                icon: "success"
+            });
+        })
+    } catch (error) {
+        console.log(error.message);
+        Swal.fire({
+            title: "Error!",
+            text: error.message,
+            icon: "error"
+        });
+    }
+})
+
 
 const reset_ity = createAction('reset_ity', ()=>{  //! Acción que reiniciaria los valores de un estado
     return {payload : null}  
 })
 
-const itinerariesActions = { get_itineraries , reset_ity, create_itinerary}
+const itinerariesActions = { get_itineraries , reset_ity, create_itinerary, delete_itinerary}
 
 export default itinerariesActions;
