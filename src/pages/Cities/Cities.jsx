@@ -43,9 +43,9 @@ export default function Cities() {
     }
   }
 
-  const handleDeleteCity = (queryId)=>{
+  const handleDeleteCity = (queryId, nameCity)=>{
     Swal.fire({
-        title: "Delete City?",
+        title: "Delete " + nameCity + "?",
         text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
@@ -126,7 +126,7 @@ export default function Cities() {
                         //! use 'hadleDelete(city._id)' ME BORRO TODAS LAS CITIES DE LA BASE DE DATOS. Esto ocurre porque al renderizar y leer el codigo
                         //? EJECUTA la funcion DELETE y lo que guarda en el onClick es el resultado de esa funcion, osea elimina todo sin haber clickeado 
                         */}
-                        <Button variant="outline-danger" className="buttonCities py-1" onClick={()=>{handleDeleteCity(city._id)} } ><i className="fa-solid fa-trash-can"></i></Button>
+                        <Button variant="outline-danger" className="buttonCities py-1" onClick={()=>{handleDeleteCity(city._id, city.city)} } ><i className="fa-solid fa-trash-can"></i></Button>
                       </ButtonGroup>
                     </div> 
                   </Card.ImgOverlay>
