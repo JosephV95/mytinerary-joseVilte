@@ -1,0 +1,21 @@
+
+.delete {
+    color: #ff0055;
+}
+
+.buttonIti{
+    background-color: rgba(0, 0, 0, 0.59);
+}
+
+@media screen and (max-width: 767.5px) {
+    .buttonIti{
+        width: 50%;
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:991px){
+    .buttonIti{
+        padding: 6px 2px;
+        text-align: center;
+    }
+}

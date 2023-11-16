@@ -7,6 +7,7 @@ import itinerariesActions from "../../store/actions/itinerariesAction";
 // import { DiscussionEmbed } from 'disqus-react';
 import { Accordion } from "react-bootstrap";
 import AddItinerary from "../../components/ItinerariesModal/AddItinerary";
+import EditDeleteItinerary from "../../components/ItinerariesModal/EditDeleteItinerary";
 
 export default function CityDetail() {
   const { id } = useParams();
@@ -57,29 +58,28 @@ export default function CityDetail() {
         <div className="container  " >
             <h2 className="text-center text-white" id="Itineraries"><i className="fa-solid fa-signs-post"></i> <i>Itineraries</i></h2>
             <AddItinerary efectoEnProp={()=> setChangeItineraries(true) }/>
-          <div className="row justify-content-center gap-4 py-4">
+          {/* <div > */}
             {itineraryStore.length > 0 ? (
               itineraryStore.map((itinerary) => (
-                // <div >
-                  <div key={itinerary._id}  data-aos="flip-down" data-aos-duration="1400"  
-                  className="col-12 col-md-10  rounded-5  overflow-x-hidden " style={{backgroundColor:"rgb(10, 108, 128)"}}>
+                <div className="row justify-content-center my-3" key={itinerary._id} >
+                  <div  //data-aos="flip-down" data-aos-duration="1000"  
+                  className="col-10 col-md-10 rounded-5  overflow-x-hidden position-relative" style={{backgroundColor:"rgb(10, 108, 128)"}}>
                     <div className="row justify-content-center  ">
                       <div
-                        className="col-md-5  text-white d-flex flex-column justify-content-between rounded-start-3 px-4 "
+                        className="col-md-5  text-white d-flex flex-column justify-content-between px-3"
                         style={{
                           backgroundImage: `url(${itinerary.img})`,
                           backgroundPosition: "center",
                           backgroundSize: "cover",
-                          minHeight: "15rem",
+                          minHeight: "14rem",
                         }}
                       >
                         <div >
-                          <h3 className="pt-2  text-center" style={{textShadow:'0 0 15px gray,0 0 15px gray,0 0 20px gray,0 0 20px black'}}>{itinerary.name}</h3>
+                          <h3 className="pt-2 text-center" style={{textShadow:'0 0 15px gray,0 0 15px gray,0 0 20px gray,0 0 20px black'}}>{itinerary.name}</h3>
                         </div>
                         <div>
                           <h5 className="text-end"> <i className="fa-regular fa-circle-user"></i> Username</h5>
                         </div>
-                        
                       </div>
                       <div className="col-md-7 text-white py-3 px-4">
                         <p>{itinerary.desc}</p>
@@ -111,33 +111,13 @@ export default function CityDetail() {
                               pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
                               culpa qui officia deserunt mollit anim id est laborum.
                             </Accordion.Body>
-                            <Accordion.Body>
-                              <span><b>{itinerary.name}</b></span>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                              aliquip ex ea commodo consequat. Duis aute irure dolor in
-                              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                              culpa qui officia deserunt mollit anim id est laborum.
-                            </Accordion.Body>
-                            <Accordion.Body>
-                              <span><b>{itinerary.name}</b></span>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                              aliquip ex ea commodo consequat. Duis aute irure dolor in
-                              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                              culpa qui officia deserunt mollit anim id est laborum.
-                            </Accordion.Body>
                           </Accordion.Item>
-                          
                         </Accordion>
                       </div>
                     </div>
                   </div>
-                // </div>
+                  <EditDeleteItinerary/>
+                </div>
               ))
             ) : (
                <div className="col-12  text-center">
@@ -146,7 +126,7 @@ export default function CityDetail() {
                </div>
             
             )}
-          </div>
+          {/* </div> */}
 
           {/* <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} className="w-100 p-2" style={{background: "#151120ab"}} /> */}
         </div>
