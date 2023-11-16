@@ -116,7 +116,7 @@ export default function CityDetail() {
                       </div>
                     </div>
                   </div>
-                  <EditDeleteItinerary/>
+                  <EditDeleteItinerary efectoEnProp={()=> setChangeItineraries(true)} idEnProp={itinerary._id} nameItiProp={itinerary.name}/>
                 </div>
               ))
             ) : (
