@@ -8,13 +8,13 @@ import itinerariesActions from "../../store/actions/itinerariesAction";
 export default function EditDeleteItinerary({efectoEnProp, idEnProp, nameItiProp}) {
 
   const [show, setShow] = useState(false);
-  const handleClose = () => {setShow(false), setEdit({})}; //? Se settea vacia la data por si se vuelve a editar la misma city
+  const handleClose = () => {setShow(false), setItiForEdit({})}; //? Se settea vacia la data por si se vuelve a editar la misma city
   const handleShow = () => setShow(true);
 
   const [formEdited, setFormEdited] = useState(false); //* Estado que mostrara si hubo cambios en los inputs
   const dispatch = useDispatch();
 
-  const [edit, setEdit] = useState({});
+  const [itiForEdit, setItiForEdit] = useState({});
 
   const nameIti = useRef();
   const imageIti = useRef();
@@ -22,10 +22,29 @@ export default function EditDeleteItinerary({efectoEnProp, idEnProp, nameItiProp
   const durationIti = useRef();
   const descriptionIti = useRef();
 
-  const handleSubmitEdit=()=>{
+  const openModalEdit = async()=>{
+    await dispatch(itinerariesActions.get_itinerary({id: idEnProp}))
+    .then((res) => {
+      // console.log(res)
+      setItiForEdit( res.payload )
+    })
 
+    handleShow()
   }
 
+  const handleSubmitEdit = (event)=>{
+    event.preventDefault();
+    const dataItiEdit = {
+      name: nameIti.current.value ,
+      img: imageIti.current.value ,
+      price: priceIti.current.value ,
+      duration: durationIti.current.value ,
+      desc: descriptionIti.current.value
+    }
+    dispatch(itinerariesActions.update_itinerary({id: idEnProp, dataEdit: dataItiEdit}))
+    efectoEnProp();
+    handleClose();
+  }
   const handleDelete = (_id)=>{
     Swal.fire({
       title: "Delete " +nameItiProp+ "?",
@@ -46,30 +65,30 @@ export default function EditDeleteItinerary({efectoEnProp, idEnProp, nameItiProp
     <div className="col-9 col-md-1 ps-1 pe-0">
       <div className="w-100 d-flex justify-content-center flex-md-column " >
         <Button variant="outline-warning" className="mb-2 buttonIti fw-bold border-2 text-xl-start"
-        onClick={handleShow}
+        onClick={openModalEdit}
         ><i className="fa-solid fa-pen-to-square"></i> Edit</Button>
         <Button variant="outline-danger" className="mb-2 buttonIti delete fw-bold border-2 text-xl-start"
         onClick={()=>{handleDelete(idEnProp) }} //! Se usa funcion anonima para evitar eliminar todos los Itinerarios al renderizar la página
         ><i className="fa-solid fa-delete-left"></i> Delete</Button>
 
-
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Add New Itinerary</Modal.Title>
+            <Modal.Title>Edit Itinerary</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form onSubmit={handleSubmitEdit}>
               <Form.Group className="mb-3">
                 <Form.Label>Itinerary name:</Form.Label>
                 <Form.Control
-                  autoFocus type="text" placeholder="E.g., Guided tour of Shibuya city" required ref={nameIti}
+                  autoFocus type="text"  required ref={nameIti} 
+                  onChange={()=>{setFormEdited(true)}} defaultValue={itiForEdit.name}
                 />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="input2">
                 <Form.Label>Itinerary image url:</Form.Label>
                 <Form.Control
-                  type="url" placeholder="Enter a valid url" required ref={imageIti}
+                  type="url" placeholder="Enter a valid url" required ref={imageIti} defaultValue={itiForEdit.img}
                 />
               </Form.Group>
 
@@ -77,13 +96,15 @@ export default function EditDeleteItinerary({efectoEnProp, idEnProp, nameItiProp
                 <Form.Group className="mb-3" as={Col} sm="4">
                   <Form.Label>Price:</Form.Label>
                   <Form.Control
-                    type="number" required min={0} step={0.01} placeholder="$ 0" ref={priceIti}
+                    type="number" required min={0} step={0.01} placeholder="$ 0" ref={priceIti} 
+                    onChange={()=>{setFormEdited(true)}} defaultValue={itiForEdit.price}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" as={Col} sm="8">
                   <Form.Label>Duration:</Form.Label>
                   <Form.Control
-                    type="text" placeholder="E.g., 5 hours or Half a day" required ref={durationIti}
+                    type="text" placeholder="E.g., 5 hours or Half a day" required ref={durationIti} 
+                    onChange={()=>{setFormEdited(true)}} defaultValue={itiForEdit.duration}
                   />
                 </Form.Group>
               </Row>
@@ -92,7 +113,7 @@ export default function EditDeleteItinerary({efectoEnProp, idEnProp, nameItiProp
                 <Form.Label>Description:</Form.Label>
                 <Form.Control
                   as="textarea" rows={3} placeholder="Enter a description about the itinerary" required
-                  ref={descriptionIti}
+                  ref={descriptionIti} onChange={()=>{setFormEdited(true)}} defaultValue={itiForEdit.desc}
                 />
               </Form.Group>
 
@@ -100,15 +121,13 @@ export default function EditDeleteItinerary({efectoEnProp, idEnProp, nameItiProp
                 <Button variant="danger" onClick={handleClose}>
                   Cancel
                 </Button>
-                <Button type="submit" variant="primary">
-                  Save Itinerary
+                <Button type="submit" variant="primary" disabled={!formEdited}> 
+                  Update
                 </Button>
               </Modal.Footer>
             </Form>
           </Modal.Body>
         </Modal>
-
-        
       </div>
     </div>
   )
