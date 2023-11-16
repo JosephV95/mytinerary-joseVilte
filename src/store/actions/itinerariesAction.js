@@ -26,6 +26,14 @@ const get_itineraries = createAsyncThunk('get_itineraries', async(id)=>{
         console.log(error.message);
     }
 })
+const get_itinerary = createAsyncThunk('get_itinerary', async({id})=>{
+    const oneItinerary = await axios.get("http://localhost:4000/api/itineraries/"+id)
+    .then((res)=>{
+        // console.log(res.data.oneItinerary);
+        return res.data.oneItinerary
+    })
+    return oneItinerary
+})
 const create_itinerary = createAsyncThunk('create_itinerary', async({id, dataNewItinerary}) =>{
     try {
         await axios.post("http://localhost:4000/api/itineraries?id="+id, dataNewItinerary)
@@ -60,12 +68,22 @@ const delete_itinerary = createAsyncThunk('delete_itinerary', async({id})=>{
         });
     }
 })
-
+const update_itinerary = createAsyncThunk('update_itinerary', async ({id, dataEdit})=>{
+    await axios.put("http://localhost:4000/api/itineraries/"+id, dataEdit)
+    .then((res)=>{
+        // console.log(res.data.response);
+        Toast.fire({
+            icon: 'success',
+            title: 'Updated successfully'
+        })
+        return res.data.response
+    })
+})
 
 const reset_ity = createAction('reset_ity', ()=>{  //! Acción que reiniciaria los valores de un estado
     return {payload : null}  
 })
 
-const itinerariesActions = { get_itineraries , reset_ity, create_itinerary, delete_itinerary}
+const itinerariesActions = { get_itineraries , reset_ity, get_itinerary, create_itinerary, delete_itinerary, update_itinerary}
 
 export default itinerariesActions;
