@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Button, Col, Form, Modal, Row } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import itinerariesActions from "../../store/actions/itinerariesAction";
 
@@ -17,20 +17,23 @@ export default function AddItinerary( {efectoEnProp}) {
   const priceIti = useRef();
   const durationIti = useRef();
   const descriptionIti = useRef();
+  const userInStore = useSelector((store)=> store.userReducer.user)
 
   const handleSubmitAddItinerary = (event) =>{
     event.preventDefault();
+    console.log(userInStore);
     const dataAddItinerary = {
       name: nameIti.current.value,
       img: imageIti.current.value,
       desc: descriptionIti.current.value,
       price: priceIti.current.value,
       duration: durationIti.current.value,
-      _cities: id  //!  Aqui se le pasa el id de la city al que pertenece el itinerario
+      _cities: id,  //!  Aqui se le pasa el id de la city al que pertenece el itinerario
+      _userCreator: userInStore._id
     }
     dispatch(itinerariesActions.create_itinerary({id:id, dataNewItinerary: dataAddItinerary}))
     .then(()=>{ efectoEnProp(); }); //! Se agrego el efectoProp porque no reenderizaba el useEffect al crear el 1er itinerario
-    // efectoEnProp();
+    efectoEnProp();
     handleClose();
   }
 
