@@ -74,12 +74,19 @@ export default function CityDetail() {
                           minHeight: "14rem",
                         }}
                       >
-                        <div >
+                        <div>
                           <h3 className="pt-2 text-center" style={{textShadow:'0 0 15px gray,0 0 15px gray,0 0 20px gray,0 0 20px black'}}>{itinerary.name}</h3>
                         </div>
-                        <div>
-                          <h5 className="text-end"> <i className="fa-regular fa-circle-user"></i> Username</h5>
-                        </div>
+                        {itinerary._userCreator ? (
+                          <div>
+                            <h5 className="text-end"><img src={itinerary._userCreator.photo} alt="PhotoUser" 
+                            style={{height:"3rem", width:"3rem", borderRadius:"50%", display:"inline",border:"1px solid white", objectFit:"cover"}} /> {itinerary._userCreator.name}</h5>
+                          </div>
+                        ):(
+                          <div>
+                            <h5 className="text-end"> <i className="fa-regular fa-circle-user"></i> Username</h5>
+                          </div>
+                        )}
                       </div>
                       <div className="col-md-7 text-white py-3 px-4">
                         <p>{itinerary.desc}</p>
