@@ -79,12 +79,12 @@ export default function CityDetail() {
                         </div>
                         {itinerary._userCreator ? (
                           <div>
-                            <h5 className="text-end"><img src={itinerary._userCreator.photo} alt="PhotoUser" 
-                            style={{height:"3rem", width:"3rem", borderRadius:"50%", display:"inline",border:"1px solid white", objectFit:"cover"}} /> {itinerary._userCreator.name}</h5>
+                            <h4 className="text-end"><img src={itinerary._userCreator.photo} alt="PhotoUser" 
+                            style={{height:"2.3rem", width:"2.3rem", borderRadius:"50%", display:"inline", border:"2px inset white", objectFit:"cover"}} /> {itinerary._userCreator.name}</h4>
                           </div>
                         ):(
                           <div>
-                            <h5 className="text-end"> <i className="fa-regular fa-circle-user"></i> Username</h5>
+                            <h4 className="text-end"> <i className="fa-regular fa-circle-user"></i> Username</h4>
                           </div>
                         )}
                       </div>
