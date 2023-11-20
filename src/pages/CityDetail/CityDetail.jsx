@@ -80,7 +80,7 @@ export default function CityDetail() {
                         </div>
                         {itinerary._userCreator ? (
                           <div>
-                            <h4 className="text-end"><img src={itinerary._userCreator.photo} alt="PhotoUser" 
+                            <h4 className="userNameIti text-end"><img src={itinerary._userCreator.photo} alt="PhotoUser" 
                             style={{height:"2.3rem", width:"2.3rem", borderRadius:"50%", display:"inline", border:"2px inset white", objectFit:"cover"}} /> {itinerary._userCreator.name}</h4>
                           </div>
                         ):(

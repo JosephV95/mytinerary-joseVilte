@@ -25,6 +25,9 @@ h2, p{
 .infoItinerary p{
     line-height: 1;
 }
+.userNameIti{
+    -webkit-text-stroke: thin black;
+}
 
 .accordion-button {
     padding: 5px 20px;
