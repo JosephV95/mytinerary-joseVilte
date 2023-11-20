@@ -14,6 +14,7 @@ export default function CityDetail() {
   const cityInStore = useSelector((store) => store.citiesReducer.city);
   const dispatch = useDispatch();
   const itineraryStore = useSelector((store) => store.itinerariesReducer.itineraries);
+  const userLogged = useSelector( store=> store.userReducer.user)
 
   //!  variables necesarias de react-disqus
   // const disqusShortname = 'http-localhost-5173-cities'; // Reemplaza con tu shortname de Disqus
@@ -123,7 +124,14 @@ export default function CityDetail() {
                       </div>
                     </div>
                   </div>
-                  <EditDeleteItinerary efectoEnProp={()=> setChangeItineraries(true)} idEnProp={itinerary._id} nameItiProp={itinerary.name}/>
+                  {/*//todo condicionales que MOSTRARAN el div solo si el Itinerary tiene Autor(ingresa al id) y si es IGUAL al ID del usuario
+                  //todo    logueado. Tambien se mostrara si el itinerary NO TIENE un Autor(userCreator) */}
+                  {(itinerary._userCreator?._id === userLogged._id || !itinerary._userCreator) ?(
+                    <div className="col-9 col-md-1 ps-1 pe-0"  >
+                      <EditDeleteItinerary efectoEnProp={()=> setChangeItineraries(true)} idEnProp={itinerary._id} nameItiProp={itinerary.name}/>
+                    </div>
+                  ): null}
+                  
                 </div>
               ))
             ) : (
@@ -131,7 +139,6 @@ export default function CityDetail() {
                  <img src="../sorryIco.png" alt="no results" style={{width:'12rem'}} />
                  <h2 className="text-center">No itineraries yet.</h2>
                </div>
-            
             )}
           {/* </div> */}
 
