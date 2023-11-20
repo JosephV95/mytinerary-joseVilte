@@ -62,7 +62,7 @@ export default function EditDeleteItinerary({efectoEnProp, idEnProp, nameItiProp
     });
   }
   return (
-    <div className="col-9 col-md-1 ps-1 pe-0">
+    <div >
       <div className="w-100 d-flex justify-content-center flex-md-column " >
         <Button variant="outline-warning" className="mb-2 buttonIti fw-bold border-2 text-xl-start"
         onClick={openModalEdit}
