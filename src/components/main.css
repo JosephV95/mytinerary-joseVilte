@@ -5,15 +5,19 @@
     flex-direction: column;
     align-items: center;
 }
-.main h4{
+.main h4, .main h3{
     color: whitesmoke;
-    text-shadow: 0 0 2px rgb(42, 230, 255),0 0 3px rgb(42, 230, 255), 0 0 5px rgb(255, 0, 0);
-    font-size: 1.6rem;
+    text-shadow: 0 0 3px rgb(9, 50, 55), 1px 1px 3px rgb(28, 155, 172), 1px 1px 5px rgb(0, 183, 255);
+    font-size: 1.7rem;
 }
 
 .hero .hero-article{
-    background-color: rgb(21, 123, 141);
+    /* background-image: linear-gradient(to bottom, rgba(21, 123, 141, 0.67) 80%, rgba(0, 0, 0, 0.482) 20% ); */
+    background-image: linear-gradient(to bottom, rgba(27, 123, 136, 0.75) 70%, rgb(9, 50, 55, 0.4) 100%);
     border-radius: 1rem;
+}
+.hero .hero-article{
+    outline: 3.3px outset rgba(27, 166, 190, 0.334);
 }
 .hero .hero-img img{
     object-fit: contain;
