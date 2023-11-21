@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction";
 import itinerariesActions from "../../store/actions/itinerariesAction";
 // import { DiscussionEmbed } from 'disqus-react';
-import { Accordion } from "react-bootstrap";
+// import { Accordion } from "react-bootstrap";
 import AddItinerary from "../../components/ItinerariesModal/AddItinerary";
 import EditDeleteItinerary from "../../components/ItinerariesModal/EditDeleteItinerary";
 
@@ -105,7 +105,7 @@ export default function CityDetail() {
                             <p><b>Tags:</b>{itinerary.hastag.map((val, key)=>(<a key={key}> {val}</a> ))}  </p>
                           {/* </div> */}
                         </div>
-                        <p><b>Comments:</b> {itinerary.comments}</p>
+                        {/* <p><b>Comments:</b> {itinerary.comments}</p>
                         <Accordion >
                           <Accordion.Item eventKey="0">
                             <Accordion.Header >Comentarios sobre el iti</Accordion.Header>
@@ -120,7 +120,7 @@ export default function CityDetail() {
                               culpa qui officia deserunt mollit anim id est laborum.
                             </Accordion.Body>
                           </Accordion.Item>
-                        </Accordion>
+                        </Accordion> */}
                       </div>
                     </div>
                   </div>
