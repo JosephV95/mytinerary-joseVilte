@@ -21,14 +21,14 @@
 .carouselCard img{
     width: 100%;
     object-fit: cover;
-    height: 18rem;
+    height: 15rem;
     /* object-position: center; */
     /* border-radius: 10px; */
 }
 /*? Se cambiara el tamaño de las imagenes de carousel en mobile donde cambia el tipo de vista de las cards  */
 @media only screen and (max-width: 768px) {
     .carouselCard img{
-        height: 14rem;
+        height: 12rem;
     }
 }
 .carouselCard .text-img{

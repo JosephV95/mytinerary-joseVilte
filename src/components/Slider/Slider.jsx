@@ -22,10 +22,10 @@ export default function Slider() {
   }, []);
   
   return (
-    <div className="container-fluid  my-2 bg-dark">
+    <div className="container-fluid   bg-dark">
       <div className="row justify-content-center">
         <div className="col-md-12  px-1">
-          <Carousel className="pb-3 pt-2">
+          <Carousel className="pb-2 pt-1">
             <Carousel.Item interval={2000}>
               <CarouselItem unarray={allCitiesInStore.slice(0,4)} />
             </Carousel.Item>
