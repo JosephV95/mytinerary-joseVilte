@@ -24,6 +24,20 @@ h2, p{
 }
 .infoItinerary p{
     line-height: 1;
+    margin: 0;
+}
+.infoItinerary{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.infoItinItem{
+    background-color: rgb(12, 121, 97);
+    padding: 9px 20px;
+    width: auto;
+    border-radius: 20px;
+    outline: 3px solid rgb(24, 211, 171);
+    box-shadow: 0 0 5px inset rgb(18, 175, 141), 0 0 6px inset rgb(18, 175, 141);
 }
 .userNameIti{
     -webkit-text-stroke: thin black;

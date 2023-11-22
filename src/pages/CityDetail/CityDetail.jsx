@@ -14,7 +14,7 @@ export default function CityDetail() {
   const cityInStore = useSelector((store) => store.citiesReducer.city);
   const dispatch = useDispatch();
   const itineraryStore = useSelector((store) => store.itinerariesReducer.itineraries);
-  const userLogged = useSelector( store=> store.userReducer.user)
+  const userLogged = useSelector( store=> store.userReducer)
 
   //!  variables necesarias de react-disqus
   // const disqusShortname = 'http-localhost-5173-cities'; // Reemplaza con tu shortname de Disqus
@@ -57,14 +57,16 @@ export default function CityDetail() {
 
       <section>
         <div className="container  " >
-            <h2 className="text-center text-white" id="Itineraries"><i className="fa-solid fa-signs-post"></i> <i>Itineraries</i></h2>
-            <AddItinerary efectoEnProp={()=> setChangeItineraries(true) }/>
+            <h2 className="text-center text-white pb-3" id="Itineraries"><i className="fa-solid fa-signs-post"></i> <i>Itineraries</i></h2>
+            <div hidden={userLogged.isLogged == false}>
+              <AddItinerary efectoEnProp={()=> setChangeItineraries(true) }/>
+            </div>
           {/* <div > */}
             {itineraryStore.length > 0 ? (
               itineraryStore.map((itinerary) => (
                 <div className="row justify-content-center my-3" key={itinerary._id} >
                   <div  //data-aos="flip-down" data-aos-duration="1000"  
-                  className="col-10 col-md-10 rounded-5  overflow-x-hidden position-relative" style={{backgroundColor:"rgb(10, 108, 128)"}}>
+                  className="col-10 col-md-9 rounded-5  overflow-x-hidden position-relative" style={{backgroundColor:"rgb(10, 108, 128)"}}>
                     <div className="row justify-content-center  ">
                       <div
                         className="col-md-5  text-white d-flex flex-column justify-content-between px-3"
@@ -89,20 +91,20 @@ export default function CityDetail() {
                           </div>
                         )}
                       </div>
-                      <div className="col-md-7 text-white py-3 px-4">
+                      <div className="col-md-7 text-white pt-3 px-4  d-flex flex-column gap-3" >
                         <p>{itinerary.desc}</p>
-                        <div className="row  infoItinerary">
-                          <div className="col-sm-4">
-                            <p><b>Price: </b>  {itinerary.price ==0 ? "Free" : "$"+itinerary.price}</p>
-                          </div>
-                          <div className="col-sm-8">
-                            <p><b>Duration:</b> {itinerary.duration}</p>
-                          </div>
-                          <div className="col-sm-4">
-                            <p><b>Likes: </b> <a type="button" onClick={()=>{alert("diste like")}}><i className="fa-regular fa-thumbs-up" style={{fontSize: "21px"}} ></i></a>  {itinerary.likes}</p>
-                          </div>
+                        <div className="infoItinerary">
+                          <span className="infoItinItem">
+                            <p><b><i className="fa-solid fa-coins"></i> Price: </b>  {itinerary.price ==0 ? "Free" : "$"+itinerary.price}</p>
+                          </span> 
+                           <span className="infoItinItem">
+                            <p><b><i className="fa-regular fa-clock"></i> Duration:</b> {itinerary.duration}</p>
+                           </span>
+                          {/* <div className="col-sm-4"> */}
+                            {/* <p><b>Likes: </b> <a type="button" onClick={()=>{alert("diste like")}}><i className="fa-regular fa-thumbs-up" style={{fontSize: "21px"}} ></i></a>  {itinerary.likes}</p> */}
+                          {/* </div> */}
                           {/* <div className="col-sm-8"> */}
-                            <p><b>Tags:</b>{itinerary.hastag.map((val, key)=>(<a key={key}> {val}</a> ))}  </p>
+                            {/* <p><b>Tags:</b>{itinerary.hastag.map((val, key)=>(<a key={key}> {val}</a> ))}  </p> */}
                           {/* </div> */}
                         </div>
                         {/* <p><b>Comments:</b> {itinerary.comments}</p>
@@ -126,7 +128,7 @@ export default function CityDetail() {
                   </div>
                   {/*//todo condicionales que MOSTRARAN el div solo si el Itinerary tiene Autor(ingresa al id) y si es IGUAL al ID del usuario
                   //todo    logueado. Tambien se mostrara si el itinerary NO TIENE un Autor(userCreator) */}
-                  {(itinerary._userCreator?._id === userLogged._id || !itinerary._userCreator) ?(
+                  {(itinerary._userCreator?._id === userLogged.user._id || !itinerary._userCreator) ?(
                     <div className="col-9 col-md-1 ps-1 pe-0"  >
                       <EditDeleteItinerary efectoEnProp={()=> setChangeItineraries(true)} idEnProp={itinerary._id} nameItiProp={itinerary.name}/>
                     </div>
