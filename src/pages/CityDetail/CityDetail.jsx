@@ -19,8 +19,8 @@ export default function CityDetail() {
   //!  variables necesarias de react-disqus
   // const disqusShortname = 'http-localhost-5173-cities'; // Reemplaza con tu shortname de Disqus
   // const disqusConfig = {
-  //   url: 'https://viltejosedev.netlify.app/', // Reemplaza con la URL de tu página
-  //   identifier: 'Mytinerary', // Un identificador único para cada página que tenga comentarios de Disqus
+  //   url: 'http://localhost:5173/cities/'+id, // Reemplaza con la URL de tu página
+  //   identifier: 'Mytinerary'+id, // Un identificador único para cada página que tenga comentarios de Disqus
   //   title: 'My Tinerary', // Reemplaza con el título de tu página
   // };
 
@@ -61,7 +61,7 @@ export default function CityDetail() {
             <div hidden={userLogged.isLogged == false}>
               <AddItinerary efectoEnProp={()=> setChangeItineraries(true) }/>
             </div>
-          {/* <div > */}
+          
             {itineraryStore.length > 0 ? (
               itineraryStore.map((itinerary) => (
                 <div className="row justify-content-center my-4" key={itinerary._id} >
@@ -142,10 +142,17 @@ export default function CityDetail() {
                  <h2 className="text-center">No itineraries yet.</h2>
                </div>
             )}
-          {/* </div> */}
+          
 
-          {/* <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} className="w-100 p-2" style={{background: "#151120ab"}} /> */}
+          
         </div>
+        {/* <div className="container-fluid" style={{background: "#151120ab"}} >
+          <div className="row justify-content-center">
+            <div className="col-10 pt-4 pb-3">
+              <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} className="w-100" />
+            </div>
+          </div>
+        </div> */}
 
       </section>
 
