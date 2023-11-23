@@ -91,7 +91,7 @@ export default function CityDetail() {
                           </div>
                         )}
                       </div>
-                      <div className="col-md-7 text-white pt-3 px-4  d-flex flex-column gap-3" >
+                      <div className="col-md-7 text-white pt-2 px-4 mb-2  d-flex flex-column gap-2 position-relative">
                         <p>{itinerary.desc}</p>
                         <div className="infoItinerary">
                           <span className="infoItinItem">
