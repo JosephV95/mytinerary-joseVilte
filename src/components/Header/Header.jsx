@@ -9,7 +9,7 @@ function Header() {
           <div className="col-12 d-flex justify-content-between">
             <span className="d-flex align-items-center">
               <img src="../MyTineraryLogo.png" alt="MTLogo" />
-              <h3 className="ms-1">My Tinerary</h3>
+              <h3 className="ms-1">MyTinerary</h3>
             </span>
             {/* </div>
           <div className="col-7"> */}
