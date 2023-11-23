@@ -88,7 +88,7 @@ export default function EditDeleteItinerary({efectoEnProp, idEnProp, nameItiProp
               <Form.Group className="mb-3" controlId="input2">
                 <Form.Label>Itinerary image url:</Form.Label>
                 <Form.Control
-                  type="url" placeholder="Enter a valid url" required ref={imageIti} defaultValue={itiForEdit.img}
+                  type="url" placeholder="Enter a valid url" required onChange={()=>{setFormEdited(true)}} ref={imageIti} defaultValue={itiForEdit.img} 
                 />
               </Form.Group>
 
