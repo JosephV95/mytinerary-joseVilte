@@ -12,7 +12,8 @@ const Toast = Swal.mixin({
     }
 })
 
-const urlApi = "http://localhost:4000/api"
+// const urlApi = "http://localhost:4000/api" //todo  esta seria la url para el trabajo local
+const urlApi = "mytinerary-back-viltejose-production.up.railway.app/api" //! url del deploy  del back(le agregue el/api para el correcto funcionamiento)
 
 const get_itineraries = createAsyncThunk('get_itineraries', async(id)=>{
     try {
