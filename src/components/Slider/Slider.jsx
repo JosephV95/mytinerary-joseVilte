@@ -9,12 +9,12 @@ import citiesActions from "../../store/actions/citiesAction";
 
 export default function Slider() {
 
-  let allCitiesInStore = useSelector(store => store.citiesReducer.allCities);
+  let allCitiesInStore = useSelector(store => store.citiesReducer.cities);
   const dispatch = useDispatch()
   useEffect(() => {
-    // getAllCities().then((res) => {dispatch(citiesActions.all_cities(res))}).catch((error) => {console.log(error.message)});
+    dispatch(citiesActions.get_cities());
 
-    dispatch(citiesActions.get_cities())
+    // getAllCities().then((res) => {dispatch(citiesActions.all_cities(res))}).catch((error) => {console.log(error.message)});
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
