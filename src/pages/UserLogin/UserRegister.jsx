@@ -5,7 +5,7 @@ import userActions from "../../store/actions/authActions";
 
 import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from "jwt-decode";
-import { getCountries } from "../../services/CountriesService";
+// import { getCountries } from "../../services/CountriesService";
 import UserIsLogged from "../../services/UserLoggedVerify.js";
 
 export default function UserRegister() {
@@ -20,14 +20,35 @@ export default function UserRegister() {
   const dispatch = useDispatch();
     
   const [validated, setValidated] = useState(false);
-  const [countryData, setcountryData] = useState([]);
+  const countryData = [
+    {name: "Argentina"},
+    {name: "Brazil"},
+    {name: "Canadá"},
+    {name: "Chile"},
+    {name: "Denmark"},
+    {name: "England"},
+    {name: "France"},
+    {name: "Germany"},
+    {name: "Italy"},
+    {name: "Japan"},
+    {name: "Mexico"},
+    {name: "Paraguay"},
+    {name: "Peru"},
+    {name: "Poland"},
+    {name: "Portugal"},
+    {name: "Qatar"},
+    {name: "Spain"},
+    {name: "Uruguay"},
+    {name: "USA"},
+    {name: "Other"}
+  ];
 
   useEffect(()=>{
-    getCountries()
-     .then(res => {
-      // console.log(res)
-      setcountryData(res)
-    })
+    // getCountries()
+    //  .then(res => {
+    //   // console.log(res)
+    //   setcountryData(res)
+    // })
   },[])
 
   //todo  Funcion importada de service que verificara si ya se esta logeado
