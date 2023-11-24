@@ -12,9 +12,11 @@ const Toast = Swal.mixin({
     }
 })
 
+const urlApi = "http://localhost:4000/api"
+
 const get_itineraries = createAsyncThunk('get_itineraries', async(id)=>{
     try {
-        const itinerariesApi = await axios("http://localhost:4000/api/itineraries/city/" + id)
+        const itinerariesApi = await axios(urlApi+"/itineraries/city/" + id)
             .then((res)=>{
                 // console.log(res.data.itineraries);
                 return res.data.itineraries
@@ -27,7 +29,7 @@ const get_itineraries = createAsyncThunk('get_itineraries', async(id)=>{
     }
 })
 const get_itinerary = createAsyncThunk('get_itinerary', async({id})=>{
-    const oneItinerary = await axios.get("http://localhost:4000/api/itineraries/"+id)
+    const oneItinerary = await axios.get(urlApi+"/itineraries/"+id)
     .then((res)=>{
         // console.log(res.data.oneItinerary);
         return res.data.oneItinerary
@@ -36,7 +38,7 @@ const get_itinerary = createAsyncThunk('get_itinerary', async({id})=>{
 })
 const create_itinerary = createAsyncThunk('create_itinerary', async({id, dataNewItinerary}) =>{
     try {
-        await axios.post("http://localhost:4000/api/itineraries?id="+id, dataNewItinerary)
+        await axios.post(urlApi+"/itineraries?id="+id, dataNewItinerary)
         .then((res)=>{
             console.log(res.data);
             Toast.fire({
@@ -50,7 +52,7 @@ const create_itinerary = createAsyncThunk('create_itinerary', async({id, dataNew
 })
 const delete_itinerary = createAsyncThunk('delete_itinerary', async({id})=>{
     try {
-        await axios.delete("http://localhost:4000/api/itineraries?id="+id)
+        await axios.delete(urlApi+"/itineraries?id="+id)
         .then((res)=>{
             console.log(res.data);
             Swal.fire({
@@ -69,7 +71,7 @@ const delete_itinerary = createAsyncThunk('delete_itinerary', async({id})=>{
     }
 })
 const update_itinerary = createAsyncThunk('update_itinerary', async ({id, dataEdit})=>{
-    await axios.put("http://localhost:4000/api/itineraries/"+id, dataEdit)
+    await axios.put(urlApi+"/itineraries/"+id, dataEdit)
     .then((res)=>{
         // console.log(res.data.response);
         Toast.fire({

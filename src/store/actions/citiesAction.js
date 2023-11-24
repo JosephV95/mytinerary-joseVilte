@@ -12,10 +12,12 @@ const Toast = Swal.mixin({
     }
 })
 
+const urlApi = "http://localhost:4000/api"
+
 //* Redux Asincrono   con el await le digo a la funcion que la promesa se debe resolver primero y luego continuar con lo demas
 const get_cities = createAsyncThunk('get_cities', async(queries= "")=>{    //! El asyncThunk trae por defecto el payload, por lo que no se necesita definirlo
     try {
-        const citiesApi = await axios.get("http://localhost:4000/api/cities" + queries)  
+        const citiesApi = await axios.get(urlApi+"/cities" + queries)  
             .then((res) => {
                 // console.log(res.data.allCities);
                 return res.data.allCities   //? En axios la info viene en la respuesta.data
@@ -31,7 +33,7 @@ const get_cities = createAsyncThunk('get_cities', async(queries= "")=>{    //! E
 }) 
 const get_one_city = createAsyncThunk("get_one_city", async(id)=>{
     try {
-        const oneCity = await axios.get("http://localhost:4000/api/cities/" + id)
+        const oneCity = await axios.get(urlApi+"/cities/" + id)
         .then((res)=>{
             // console.log(res.data.oneCity);
             return res.data.oneCity
@@ -48,7 +50,7 @@ const get_one_city = createAsyncThunk("get_one_city", async(id)=>{
 //todo Nuevos actions para el crud 
 const create_city = createAsyncThunk('create_city', async(dataNewCity)=>{
     try {
-        const newCity = await axios.post("http://localhost:4000/api/cities", dataNewCity)
+        const newCity = await axios.post(urlApi+"/cities", dataNewCity)
         .then((res)=> {
             // console.log(res.data);
             Toast.fire({
@@ -66,7 +68,7 @@ const create_city = createAsyncThunk('create_city', async(dataNewCity)=>{
 //! solo en este caso se pasara el id por query (para ver su desarrollo), seria mejor por param 
 const delete_city = createAsyncThunk('delete_city', async (query)=>{
     try {
-        await axios.delete("http://localhost:4000/api/cities?id=" + query)
+        await axios.delete(urlApi+"/cities?id=" + query)
         .then((res)=>{
             Swal.fire({
                 title: "Deleted!",
@@ -81,7 +83,7 @@ const delete_city = createAsyncThunk('delete_city', async (query)=>{
 })
 const update_city = createAsyncThunk('update_city', async({id, dataCityEdited})=>{
     try {
-        await axios.put(`http://localhost:4000/api/cities/${id}`, dataCityEdited)
+        await axios.put(urlApi+`/cities/${id}`, dataCityEdited)
         .then((res)=>{
             console.log(res.data.response);
             Toast.fire({

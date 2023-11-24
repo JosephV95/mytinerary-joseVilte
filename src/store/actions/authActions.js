@@ -12,11 +12,13 @@ const Toast = Swal.mixin({
     //   toast.addEventListener('mouseenter', Swal.stopTimer)
       toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
-  })
+})
+
+const urlApi = "http://localhost:4000/api"
 
 const user_login = createAsyncThunk("user_login", async(userData)=>{
     try {
-        const userLogin =await axios.post("http://localhost:4000/api/user/login", userData)
+        const userLogin =await axios.post( urlApi+"/user/login", userData)
         .then(res => {
             // console.log(res.data.user);
             localStorage.setItem("token", res.data.token) //?Se guarda el token en el localStorage
@@ -47,7 +49,7 @@ const user_login = createAsyncThunk("user_login", async(userData)=>{
 })
 const user_register = createAsyncThunk("user_register", async(userData)=>{
     try {
-        const newUser = await axios.post("http://localhost:4000/api/user/register", userData )
+        const newUser = await axios.post( urlApi+"/user/register", userData )
             .then((res)=>{
                 // console.log(res.data);
                 // alert("Successful registration")
@@ -89,7 +91,7 @@ const user_authenticate = createAsyncThunk("user_authenticate", async()=>{
         let token = localStorage.getItem('token'); //! obtengo el token guardado al loguearse 
 
                 //*  el 2do parametro es 'null'(o podria ser {}) porque no se mandara nada por body, el 3er es el header 
-        const userAuth = await axios.post("http://localhost:4000/api/user/authenticate", null, {
+        const userAuth = await axios.post( urlApi+"/user/authenticate", null, {
                 headers:{
                     'Authorization': 'Bearer ' + token  //! se guardara el token en el Authorization del navegador
                 }
@@ -109,7 +111,7 @@ const user_authenticate = createAsyncThunk("user_authenticate", async()=>{
 
 const user_logout = createAsyncThunk("user_logout", async()=>{
     try {
-        await axios.post("http://localhost:4000/api/user/logout")
+        await axios.post( urlApi+"/user/logout")
         .then((res) => {
             console.log(res.data.message);
         })
@@ -122,7 +124,7 @@ const user_update = createAsyncThunk("user_update", async( {id, updateData}, { r
     //todo  El parametro {rejectWithValue} no es necesario para el correcto funcionamiento del update, pero es una práctica común en Redux Toolkit para manejar errores en acciones asíncronas.
     //! {id, updateData} fue necesario enviarlo asi para que funcione. Al pasar los argumento como un solo objeto tiene ventajas en Claridad y Legibilidad, Flexibilidad; y facilita la Desetructuraci+on.
     try {
-        let updateUser = await axios.put(`http://localhost:4000/api/user/${id}` , updateData)
+        let updateUser = await axios.put( urlApi+`/user/${id}` , updateData)
         .then((res) => {
             // console.log(res.data.upUser)
 
