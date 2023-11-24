@@ -23,15 +23,15 @@ export default function Slider() {
       <div className="row justify-content-center">
         <div className="col-md-12  px-1">
           <Carousel className="pb-2 pt-1">
-            <Carousel.Item interval={2000}>
+            <Carousel.Item interval={4000}>
               <CarouselItem unarray={allCitiesInStore.slice(0,4)} />
             </Carousel.Item>
 
-            <Carousel.Item interval={2000}>
+            <Carousel.Item interval={4000}>
               <CarouselItem unarray={allCitiesInStore.slice(4,8)} />
             </Carousel.Item>
 
-            <Carousel.Item interval={2000}>
+            <Carousel.Item interval={4000}>
               <CarouselItem unarray={allCitiesInStore.slice(8,12)} />
             </Carousel.Item>
           </Carousel>
