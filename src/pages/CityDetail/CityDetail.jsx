@@ -4,7 +4,7 @@ import "./cityDetail.css";
 import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction";
 import itinerariesActions from "../../store/actions/itinerariesAction";
-// import { DiscussionEmbed } from 'disqus-react';
+import { DiscussionEmbed } from 'disqus-react';
 // import { Accordion } from "react-bootstrap";
 import AddItinerary from "../../components/ItinerariesModal/AddItinerary";
 import EditDeleteItinerary from "../../components/ItinerariesModal/EditDeleteItinerary";
@@ -17,12 +17,12 @@ export default function CityDetail() {
   const userLogged = useSelector( store=> store.userReducer)
 
   //!  variables necesarias de react-disqus
-  // const disqusShortname = 'http-localhost-5173-cities'; // Reemplaza con tu shortname de Disqus
-  // const disqusConfig = {
-  //   url: 'http://localhost:5173/cities/'+id, // Reemplaza con la URL de tu página
-  //   identifier: 'Mytinerary'+id, // Un identificador único para cada página que tenga comentarios de Disqus
-  //   title: 'My Tinerary', // Reemplaza con el título de tu página
-  // };
+  const disqusShortname = 'mytinerarydemo'; // Reemplaza con tu shortname de Disqus
+  const disqusConfig = {
+    url: 'https://mytinerarydev.netlify.app/cities/'+id, // Reemplaza con la URL de tu página
+    identifier: 'MyTinerary-'+id, // Un identificador único para cada página que tenga comentarios de Disqus
+    title: 'MyTineraryDemo', // Reemplaza con el título de tu página
+  };
 
   const [changeItineraries, setChangeItineraries] = useState(false)
   useEffect(() => {
@@ -146,13 +146,13 @@ export default function CityDetail() {
 
           
         </div>
-        {/* <div className="container-fluid" style={{background: "#151120ab"}} >
+        <div className="container-fluid" style={{background: "#151120ab"}} >
           <div className="row justify-content-center">
             <div className="col-10 pt-4 pb-3">
-              <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} className="w-100" />
+              <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
             </div>
           </div>
-        </div> */}
+        </div> 
 
       </section>
 
