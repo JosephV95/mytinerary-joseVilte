@@ -21,12 +21,12 @@ export default function EditCity({activarEfecto, numId}) {
     const [cityEdit, setCityEdit]= useState({})
 
     const modalEdit = async()=>{
-      handleShow();
-        
       await dispatch(citiesActions.get_one_city(numId))
       .then((res)=>{
           setCityEdit(res.payload.oneCity)
       })
+      
+      handleShow();
     }
 
     const handleCityEdited = (event)=>{
