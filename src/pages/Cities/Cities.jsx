@@ -101,7 +101,7 @@ export default function Cities() {
                   className="cardCity  bg-dark text-white w-100 p-0 overflow-x-hidden"
                   style={{ minHeight: "11.2rem", maxHeight: "11.7rem" }}
                   onMouseEnter={() => setBgCities(`${city.img}`)}  data-aos="zoom-in-up" data-aos-duration="960" 
-                  data-aos-once="false" // ! esto hara que la animacion ocurra una sola vez
+                  data-aos-once="true" // ! esto hara que la animacion ocurra una sola vez
                 >
                   <Card.Img
                     src={city.img}

@@ -43,7 +43,7 @@ export default function CityDetail() {
             style={{ backgroundImage: `url(${cityInStore.img})`, height: "75vh" }}
           >
             <div className="col-12 col-md-6 heroDetail  text-center text-white d-flex flex-column justify-content-center pt-5" 
-            data-aos="zoom-out" data-aos-duration="700" data-aos-delay="400">
+            data-aos="zoom-out" data-aos-duration="700" data-aos-delay="400" data-aos-once="true" >
               <h2 className="py-4">{cityInStore.city}</h2>
               <p style={{fontSize: "1.1rem", fontStyle:"italic"}}><i className="fa-solid fa-location-dot"></i> <b>{cityInStore.nation}</b></p>
               <p>{cityInStore.description}</p>
