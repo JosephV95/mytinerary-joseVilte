@@ -68,7 +68,7 @@ export default function Cities() {
       <div className="container mb-5">
         <div className="row justify-content-center text-center position-relative  ">
           <div className="col-12  py-3 text-white  heroCities">
-            <h3>Cities</h3>
+            {/* <h3>Cities</h3> */}
             <p>Collection of the most beatiful places and experience.</p>
           </div>
 
@@ -100,7 +100,8 @@ export default function Cities() {
                 <Card
                   className="cardCity  bg-dark text-white w-100 p-0 overflow-x-hidden"
                   style={{ minHeight: "11.2rem", maxHeight: "11.7rem" }}
-                  onMouseEnter={() => setBgCities(`${city.img}`)}  data-aos="zoom-in-up" data-aos-duration="960"
+                  onMouseEnter={() => setBgCities(`${city.img}`)}  data-aos="zoom-in-up" data-aos-duration="960" 
+                  data-aos-once="false" // ! esto hara que la animacion ocurra una sola vez
                 >
                   <Card.Img
                     src={city.img}
