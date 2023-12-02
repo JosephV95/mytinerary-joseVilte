@@ -23,8 +23,8 @@ export default function Cities() {
   const [cityCreated, setCityCreated] = useState(false) //! Estado que indicara que se creo una city y ejecutara de nuevo el useEffect
 
   useEffect(() => {
-    dispatch(citiesActions.get_cities())
     setCityCreated(false) //! Settear en false para que se creen más cities. Pero ocaciona que se vuelva a ejecutar el useEffect (es decir se ejecuta 2 veces al crear city)
+    dispatch(citiesActions.get_cities())
     // setBgCities(citiesInStore[0].img)
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
