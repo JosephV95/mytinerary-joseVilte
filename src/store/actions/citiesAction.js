@@ -13,7 +13,7 @@ const Toast = Swal.mixin({
 })
 
 // const urlApi = "http://localhost:4000/api" //todo  esta seria la url para el trabajo local
-const urlApi = "https://mytinerary-back-viltejose-production.up.railway.app/api" //! url del deploy  del back(le agregue el/api para el correcto funcionamiento)
+const urlApi = "https://mytinerary-back-vilte-jose.vercel.app/api" //! url del deploy  del back(le agregue el/api para el correcto funcionamiento)
 
 //* Redux Asincrono   con el await le digo a la funcion que la promesa se debe resolver primero y luego continuar con lo demas
 const get_cities = createAsyncThunk('get_cities', async(queries= "")=>{    //! El asyncThunk trae por defecto el payload, por lo que no se necesita definirlo
