@@ -4,11 +4,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 .main h4, .main h3{
     color: whitesmoke;
     text-shadow: 0 0 3px rgb(9, 50, 55), 1px 1px 3px rgb(28, 155, 172), 1px 1px 5px rgb(0, 183, 255);
     font-size: 1.7rem;
+}
+.main::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .hero .hero-article{
