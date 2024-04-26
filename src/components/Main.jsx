@@ -28,8 +28,8 @@ function Main() {
         </div>
         <div className="container-fluid">
           <div className="row ">
-            <div className="col-12 px-0" >
-              <h3 className="text-center text-white py-2 fw-bold">Popular MyTineraries!</h3>
+            <div className="col-12 px-0 z-3" >
+              <h3 className="text-center text-white py-2 fw-bold z-3">Popular MyTineraries!</h3>
               <Slider/>
             </div>
           </div>
