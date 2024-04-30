@@ -107,6 +107,13 @@ const user_authenticate = createAsyncThunk("user_authenticate", async()=>{
         return userAuth
     } catch (error) {
         console.log(error.message);
+        return {
+            user: {
+                name: "Fallido",
+                email: "",
+                photo: "../MyTineraryLogo.png"
+            }
+        }
     }
 } )
 
