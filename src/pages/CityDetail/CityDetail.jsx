@@ -139,7 +139,7 @@ export default function CityDetail() {
             ) : (
                <div className="col-12  text-center">
                  <img src="../sorryIco.png" alt="no results" style={{width:'12rem'}} />
-                 <h2 className="text-center">No itineraries yet.</h2>
+                 <h2 className="text-center text-white">No itineraries yet.</h2>
                </div>
             )}
           
