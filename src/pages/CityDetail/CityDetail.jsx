@@ -55,7 +55,7 @@ export default function CityDetail() {
         </div>
       </main>
 
-      <section>
+      <section className="bgCityDetail">
         <div className="container  " >
             <h2 className="text-center text-white pb-3" id="Itineraries"><i className="fa-solid fa-signs-post"></i> <i>Itineraries</i></h2>
             <div hidden={userLogged.isLogged == false}>
