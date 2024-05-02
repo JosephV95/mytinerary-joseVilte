@@ -8,11 +8,9 @@
     0% {
         background-position: start;
     }
-
     50% {
         background-position: center;
     }
-
     100% {
         background-position: end;
     }
@@ -24,7 +22,6 @@
     background-size: cover;
     background-attachment: fixed;
     position: relative;
-
 }
 
 .detailCity::before {
