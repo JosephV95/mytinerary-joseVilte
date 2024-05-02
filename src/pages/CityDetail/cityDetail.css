@@ -1,5 +1,5 @@
 .bgCityDetail {
-    background-image: linear-gradient(169deg, #03232f 31%, #0095cb 60%);
+    background-image: linear-gradient(169deg, #03232f 33%, #0095cb 60%);
     background-size: 300%;
     animation: animBG 30s infinite;
 }
