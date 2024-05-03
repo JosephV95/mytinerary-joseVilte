@@ -2,6 +2,8 @@ import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import Swal from "sweetalert2";
 
+import { urlApi } from "../../utils/urlApiBackend";
+
 const Toast = Swal.mixin({
     toast: true,
     position: 'top',
@@ -11,9 +13,6 @@ const Toast = Swal.mixin({
       toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
 })
-
-// const urlApi = "http://localhost:4000/api" //todo  esta seria la url para el trabajo local
-const urlApi = "https://mytinerary-back-vilte-jose.vercel.app/api" //! url del deploy  del back(le agregue el/api para el correcto funcionamiento)
 
 const get_itineraries = createAsyncThunk('get_itineraries', async(id)=>{
     try {
