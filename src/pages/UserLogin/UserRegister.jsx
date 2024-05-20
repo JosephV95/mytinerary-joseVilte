@@ -93,8 +93,8 @@ export default function UserRegister() {
       <div className="container ">
         <div className="row  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
-            <h1 style={{fontSize: "2.2rem"}} className="mb-3">MyTinerary</h1>
-            <p style={{fontSize: "1.5rem"}}>Join our community and discover incredible cities and be part of their fun activities.</p>
+            <h1 style={{fontSize: "2rem"}} className="mb-3">MyTinerary</h1>
+            <p style={{fontSize: "1.2rem"}}>Join our community and discover incredible cities and be part of their fun activities.</p>
           </div>
           <div className="col-md-7" data-aos="fade">
             <Form className=" py-4 px-5 rounded "   validated={validated} onSubmit={handleSubmit}  style={{backgroundColor: "white"}}>
