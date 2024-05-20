@@ -52,8 +52,8 @@ export default function UserLogin() {
       <div className="container py-2">
         <div className="row justify-content-center  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
-            <h1 style={{fontSize: "2.2rem"}} className="mb-3">MyTinerary</h1>
-            <p style={{fontSize: "1.5rem"}}>Welcome back. Discover new adventures in the most incredible cities in the world.</p>
+            <h1 style={{fontSize: "2rem"}} className="mb-3">MyTinerary</h1>
+            <p style={{fontSize: "1.2rem"}}>Welcome back. Discover new adventures in the most incredible cities in the world.</p>
           </div>
           <div className="col-md-7 rounded"  style={{backgroundColor: "white"}}  data-aos="fade">
             <Form className="py-4 px-5 rounded"   validated={validated} onSubmit={handleSubmit} >
