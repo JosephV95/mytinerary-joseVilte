@@ -55,7 +55,7 @@ export default function UserLogin() {
             <h1 style={{fontSize: "2rem"}} className="mb-3">MyTinerary</h1>
             <p style={{fontSize: "1.2rem"}}>Welcome back. Discover new adventures in the most incredible cities in the world.</p>
           </div>
-          <div className="col-md-7 rounded"  style={{backgroundColor: "white", boxShadow: "0 0 10px darkgray, 0 0 20px whitesmoke"}}  data-aos="fade">
+          <div className="col-md-7 rounded"  style={{backgroundColor: "white", boxShadow: "0 0 10px darkgray, 0 0 20px whitesmoke"}} data-aos="fade">
             <Form className="py-4 px-5 rounded"   validated={validated} onSubmit={handleSubmit} >
               <h3 className="text-center mb-4"><i className="fa-solid fa-user-check" style={{color:"#0bab6d"}}></i> Sign In</h3>
               <fieldset>
