@@ -66,7 +66,7 @@ export default function CityDetail() {
               itineraryStore.map((itinerary) => (
                 <div className="row justify-content-center my-4" key={itinerary._id} >
                   <div data-aos="flip-down" data-aos-duration="700"  data-aos-once="true"
-                  className="col-10 col-md-9 rounded-5  overflow-x-hidden position-relative " style={{backgroundColor:"rgb(10, 108, 128)", boxShadow:"0 5px 5px #073b30, 0 7px 7px #073b30"}}>
+                  className="col-10 col-md-9 rounded-5  overflow-x-hidden position-relative " style={{backgroundColor:"rgb(10, 108, 128)", boxShadow:" 3px 7px 10px #0ed1cb"}}>
                     <div className="row justify-content-center  ">
                       <div
                         className="col-md-5  text-white d-flex flex-column justify-content-between px-3"
