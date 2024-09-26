@@ -5,7 +5,7 @@ import "./main.css";
 function Main() {
   return (
     <>
-      <section className="py-4  main" style={{backgroundImage:"url('https://images.unsplash.com/photo-1606820854416-439b3305ff39?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')", backgroundSize:"cover", backgroundPosition:"center"}}>
+      <section className="py-4  main" > {/*style={{backgroundImage:"url('https://images.unsplash.com/photo-1606820854416-439b3305ff39?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')", backgroundSize:"cover", backgroundPosition:"center"}} */}
         <h4 className="my-4 text-center px-3 fst-italic" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="1000">Find your perfect trip, designed by insiders who know and love their cities!</h4>
         <div className="container" >
           <div className="row hero  justify-content-center align-items-center my-3" data-aos="fade-down" data-aos-duration="1000">
