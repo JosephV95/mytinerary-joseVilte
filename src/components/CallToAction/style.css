@@ -1,15 +1,7 @@
 .buttonCall{
-    background-color: rgba(0, 0, 0, 0.69);
-    width: 19rem;
-    border: outset 3px rgb(0, 217, 255);
     border-radius: 28px;
     font-weight: 800;
-    font-size: 1.25rem;
-    font-style: oblique;
     animation: animCallAction 5s linear infinite ;
-}
-.buttonCall:hover{
-    text-transform: uppercase;
 }
 
 @keyframes animCallAction {
