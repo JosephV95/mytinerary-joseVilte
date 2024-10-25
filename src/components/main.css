@@ -1,6 +1,5 @@
 .main{
     background-color: rgba(189, 227, 240, 0.895);
-    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,10 +7,10 @@
 }
 .main h4, .main h3{
     color: whitesmoke;
-    text-shadow: 0 0 3px rgb(9, 50, 55), 1px 1px 3px rgb(28, 155, 172), 1px 1px 5px rgb(0, 183, 255);
+    /* text-shadow: 0 0 3px rgb(9, 50, 55), 1px 1px 3px rgb(28, 155, 172), 1px 1px 5px rgb(0, 183, 255); */
     font-size: 1.7rem;
 }
-.main::before{
+/* .main::before{
     content: "";
     position: absolute;
     top: 0;
@@ -19,7 +18,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.1);
-}
+} */
 
 .hero .hero-article{
     /* background-image: linear-gradient(to bottom, rgba(21, 123, 141, 0.67) 80%, rgba(0, 0, 0, 0.482) 20% ); */

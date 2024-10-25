@@ -22,13 +22,7 @@ const router = createBrowserRouter([
     {path:'/profile/:id', element: <ProfileUser/>},
     {path:'/user/login', element: <UserLogin />},
     {path:'/user/register', element: <UserRegister />}
-  ]},
-  // {
-  //   path:'/user/register', element: <UserRegister />
-  // },
-  // {
-  //   path:'/user/login', element: <UserLogin />
-  // }
+  ]}
 ])
 
 function App() {
