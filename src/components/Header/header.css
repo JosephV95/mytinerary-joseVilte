@@ -1,12 +1,12 @@
 header{
-    width: 100%;
-    padding: .5rem 0;
-    background-color: rgb(11, 101, 137) ;
-    color: white;
+    /* width: 100%; */
+    /* padding: .5rem 0; */
+    /* background-color: rgb(11, 101, 137) ; */
+    /* color: white; */
     font-family: Georgia, 'Times New Roman', Times, serif;
 
-    z-index: 20;
-    box-shadow: 0 5px 8px rgba(11, 101, 137), 0 5px 12px rgba(11, 101, 137, 0.8) ;
+    /* z-index: 20; */
+    /* box-shadow: 0 5px 8px rgba(11, 101, 137), 0 5px 12px rgba(11, 101, 137, 0.8) ; */
 }
 
 header nav button{
@@ -18,13 +18,18 @@ header nav a{
     padding-right: 1.9rem;
 }
 header nav .active {
-    text-decoration: overline;
+    /* text-decoration: overline; */
     text-transform: uppercase;
 }
 
 header img{
-    color: white;
-    height: 2.5rem;
+    /* color: white; */
+    height: 2rem;
+}
+
+header  .nav-link a{
+    text-align: center;
+    display: block;
 }
 
 @media only screen and (max-width: 510px) {  

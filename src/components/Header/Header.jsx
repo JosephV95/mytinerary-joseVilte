@@ -61,13 +61,13 @@ function Header() {
             <Nav />
           </div> */}
 
-      <Navbar expand="lg " className="bg-body-tertiary p-0">
-        <Container className="bg-success d-flex flex-nowrap">
+      <Navbar expand="lg " className="bg-body-tertiary fixed-top p-0">
+        <Container className="bg-primary d-flex ">
           <Navbar.Toggle aria-controls="basic-navbar-nav " />
           <Navbar.Brand className="d-flex  order-lg-0">
             <PageRouter
               to={"/"}
-              style={{ textDecoration: "none", color: "white" }}
+              style={{ textDecoration: "none", color: "whitesmoke" }}
             >
               <span className="d-flex align-items-center">
                 <img src="../MyTineraryLogo.png" alt="MTLogo" />
@@ -144,7 +144,7 @@ function Header() {
                 <NavRouterLink title={"Home"} url={"/"} />
               </Nav.Link>
               <Nav.Link >
-                <NavRouterLink title={"Cities"} url={'/cities'}/>
+                <NavRouterLink title={"Cities"} url={'/cities'} />
               </Nav.Link>
 
             </Nav>
