@@ -11,9 +11,6 @@ export default function Nav() {
   const navigate = useNavigate();
 
   let userlogedd = useSelector(store => store.userReducer)
-  // useEffect(()=>{
-  //   console.log(userlogedd);
-  // })
 
   const logoutUser = ()=>{
     Swal.fire({
