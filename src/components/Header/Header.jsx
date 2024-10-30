@@ -139,14 +139,13 @@ function Header() {
           
           
           <Navbar.Collapse id="basic-navbar-nav order-lg-2">
-            <Nav className="me-auto">
+            <Nav className="me-auto d-flex">
               <Nav.Link>
                 <NavRouterLink title={"Home"} url={"/"} />
               </Nav.Link>
               <Nav.Link >
                 <NavRouterLink title={"Cities"} url={'/cities'} />
               </Nav.Link>
-
             </Nav>
           </Navbar.Collapse>
         </Container>
