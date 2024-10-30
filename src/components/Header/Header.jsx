@@ -137,9 +137,8 @@ function Header() {
             </button>
           )}
           
-          
           <Navbar.Collapse id="basic-navbar-nav order-lg-2">
-            <Nav className="me-auto d-flex">
+            <Nav className="me-auto ">
               <Nav.Link>
                 <NavRouterLink title={"Home"} url={"/"} />
               </Nav.Link>
