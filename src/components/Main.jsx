@@ -39,6 +39,18 @@ function Main() {
                 </div>
 
               </div>
+              
+              <div className="col-12" style={{overflow: "hidden"}}>
+                <svg
+                  preserveAspectRatio="none"
+                  viewBox="0 0 1200 120"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{ fill: '#0F2849', width: '300%', height: 500, }}
+                >
+                  <path d="M1200 120L0 16.48V0h1200v120z" />
+                </svg>
+              </div>
+
               <div className="cityInHome">
               <div className="col-5 bg-danger mx-0">
                   <h3>titulo 2do</h3>

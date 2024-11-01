@@ -8,9 +8,11 @@ section{
   padding: 2rem 0;
 }
 section{
-  /* background-image: linear-gradient(120deg, rgb(3, 35, 47) 20%, #e0006c 55%, rgba(6, 42, 58, 0.9) 90%); */
-  background-image: linear-gradient(to top, #03232f , #0095cb );
-  background-size: 300%;
+  background-color: rgb(3, 14, 41);
+  min-height: 92vh;
+  background-image: linear-gradient(180deg, #112243 15%, #1f4382 50%, #13264b 90%);
+  /* background-image: radial-gradient(circle, #2a5298 14%, #162f59 59%); */
+
   /* animation: animBG 30s infinite; */
 }
 
