@@ -27,9 +27,28 @@ function Main() {
         </div>
         <div className="container-fluid">
           <div className="row ">
-            <div className="col-12 px-0 z-3" >
+            <div className="col-12 px-0" >
               <h3 className="text-center text-white py-2 fw-bold z-3">Ciudades Populares!</h3>
-              <Slider/>
+
+              {/* <Slider/>*/}
+              
+              <div className="cityInHome">
+                <div className="col-6 bg-primary mx-0">
+                  <h3>titulo city</h3>
+                  <button type="button"> ir al los itinerarios</button>
+                </div>
+
+              </div>
+              <div className="cityInHome">
+              <div className="col-5 bg-danger mx-0">
+                  <h3>titulo 2do</h3>
+                  <button type="button"> ir al los itinerarios</button>
+                </div>
+              </div>
+              <div className="cityInHome"></div>
+              <div className="cityInHome"></div>
+              <div className="cityInHome"></div>
+
             </div>
           </div>
         </div>
