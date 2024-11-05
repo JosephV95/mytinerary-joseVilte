@@ -61,8 +61,8 @@ function Header() {
             <Nav />
           </div> */}
 
-      <Navbar expand="lg " className="bg-body-tertiary fixed-top p-0">
-        <Container className="bg-primary d-flex ">
+      <Navbar expand="lg navjose" className="bg fixed-top py-1 px-0" >
+        <Container className=" d-flex ">
           <Navbar.Toggle aria-controls="basic-navbar-nav " />
           <Navbar.Brand className="d-flex  order-lg-0">
             <PageRouter
