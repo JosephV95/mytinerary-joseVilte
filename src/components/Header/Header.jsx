@@ -63,7 +63,7 @@ function Header() {
 
       <Navbar expand="lg navjose" className="bg fixed-top py-1 px-0" >
         <Container className=" d-flex ">
-          <Navbar.Toggle aria-controls="basic-navbar-nav " />
+          <Navbar.Toggle aria-controls="basic-navbar-nav " style={{color: "whitesmoke"}} />
           <Navbar.Brand className="d-flex  order-lg-0">
             <PageRouter
               to={"/"}

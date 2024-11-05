@@ -8,11 +8,17 @@ header{
     /* box-shadow: 0 5px 8px rgba(11, 101, 137), 0 5px 12px rgba(11, 101, 137, 0.8) ; */
 }
 
+/* Para aplicar efecto de difuminado al bg del nav */
 .navjose{
     background-color: #00000047;
     position: fixed;
     z-index: 10;
-    backdrop-filter: blur(5px); 
+    backdrop-filter: blur(7px); 
+    border-radius: 0 0 15px 15px;
+}
+/* Para cambiar el color del button toggle en responsive */
+.navbar-toggler-icon{
+    filter: invert(1);
 }
 
 
