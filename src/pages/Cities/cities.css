@@ -3,7 +3,7 @@
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    background-color: black;
+    background-color: #1a3667;
     position: relative;
 }
 /*? Se obscurecera un poco el background para mejor lectura del texto */
@@ -14,7 +14,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
 }
 
 /* .heroCities h3,  */
@@ -35,13 +36,13 @@
 .cardCity{
     border: none;
     text-align: center;
-    box-shadow: 5px 5px 8px black;
-    transition-duration: .9s;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    transition: box-shadow 2s ease-in-out;
 }
 
 .cardCity:hover{
-    outline: solid 2px rgb(55, 214, 250);
-    box-shadow: 0 0 9px rgb(104, 226, 254), 0 0 12px rgb(104, 226, 254), 0 0 15px rgb(104, 226, 254);
+    outline: solid 2px rgb(26, 209, 250);
+    box-shadow: 0 0 8px rgb(44, 191, 224), 0 0 14px rgb(44, 226, 254);
 }
 
 .divInfoCity{
