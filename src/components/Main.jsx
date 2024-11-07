@@ -50,7 +50,7 @@ function Main() {
               <div className="cityInHome"></div>
 
 
-              <div className="col-12" style={{overflow: "hidden"}}>
+              {/* <div className="col-12" style={{overflow: "hidden"}}>
                 <svg
                   preserveAspectRatio="none"
                   viewBox="0 0 1200 120"
@@ -59,7 +59,7 @@ function Main() {
                 >
                   <path d="M1200 120L0 16.48V0h1200v120z" />
                 </svg>
-              </div>
+              </div> */}
 
             </div>
           </div>

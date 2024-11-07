@@ -4,8 +4,7 @@ header{
 
 /* Para aplicar efecto de difuminado al bg del nav */
 .navjose{
-    background-color: #00000047;
-    /* position: fixed; */
+    background-color: #0000005c;
     z-index: 10;
     backdrop-filter: blur(7px); 
     border-radius: 0 0 15px 15px;
