@@ -61,10 +61,10 @@ function Header() {
             <Nav />
           </div> */}
 
-      <Navbar expand="lg navjose" className="bg fixed-top py-1 px-0" >
-        <Container className=" d-flex ">
+      <Navbar expand="lg" className="navjose fixed-top py-1 px-0" >
+        <Container className="d-flex">
           <Navbar.Toggle aria-controls="basic-navbar-nav " style={{color: "whitesmoke"}} />
-          <Navbar.Brand className="d-flex  order-lg-0">
+          <Navbar.Brand className="d-flex order-lg-0">
             <PageRouter
               to={"/"}
               style={{ textDecoration: "none", color: "whitesmoke" }}
@@ -137,8 +137,8 @@ function Header() {
             </button>
           )}
           
-          <Navbar.Collapse id="basic-navbar-nav order-lg-2">
-            <Nav className="me-auto ">
+          <Navbar.Collapse id="basic-navbar-nav " className="order-lg-2 justify-content-center ">
+            <Nav className="d-flex gap-3">
               <Nav.Link>
                 <NavRouterLink title={"Home"} url={"/"} />
               </Nav.Link>
