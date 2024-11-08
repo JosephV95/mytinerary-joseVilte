@@ -126,13 +126,13 @@ function Header() {
             </>
           ) : (
             <button
-              className="btn btn-primary ms-2 px-2 order-lg-3"
+              className="btn bg-primary bg-opacity-75 text-white px-2.5 px-lg-3 order-lg-3"
               type="button"
               onClick={() => {
                 navigate("/user/login");
               }}
             >
-              {" "}
+              {""}
               <i className="fa-solid fa-user"></i> Login
             </button>
           )}
@@ -140,10 +140,10 @@ function Header() {
           <Navbar.Collapse id="basic-navbar-nav " className="order-lg-2 justify-content-center ">
             <Nav className="d-flex gap-3">
               <Nav.Link>
-                <NavRouterLink title={"Home"} url={"/"} />
+                <NavRouterLink title={"Inicio"} url={"/"} />
               </Nav.Link>
               <Nav.Link >
-                <NavRouterLink title={"Cities"} url={'/cities'} />
+                <NavRouterLink title={"Ciudades"} url={'/cities'} />
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

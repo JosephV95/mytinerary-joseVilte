@@ -29,6 +29,8 @@ header nav .active {
 }
 header nav .nav-item :hover{
     text-decoration: underline;
+    /* text-decoration: wavy; */
+    text-underline-offset: 3px;
 }
 
 header img{
