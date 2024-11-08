@@ -18,19 +18,11 @@
     backdrop-filter: blur(2px);
 }
 
-/* .heroCities h3,  */
-.heroCities p{
-    text-shadow: 0 0 15px grey, 3px 3px 15px grey;
-    font-weight: bold lighter ;
-    font-style: italic;
-}
-/* .heroCities h3{
-    -webkit-text-stroke: thin black;
-} */
 .heroCities p{
     -webkit-text-stroke: thin black;
-    font-size: 1.29rem;
+    font-size: 1.4rem;
     font-weight: bold;
+    font-style: italic;
 }
 
 .cardCity{

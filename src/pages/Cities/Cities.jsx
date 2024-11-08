@@ -65,7 +65,7 @@ export default function Cities() {
       className="pageCities pt-5"
       style={{ backgroundImage: `url(${bgCities})`, minHeight:"90vh" }}
     >
-      <div className="container mb-5">
+      <div className="container mb-5 pt-3">
         <div className="row justify-content-center text-center position-relative  ">
           <div className="col-12  py-3 text-white  heroCities">
             {/* <h3>Cities</h3> */}
