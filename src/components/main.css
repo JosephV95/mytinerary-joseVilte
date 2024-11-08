@@ -32,3 +32,16 @@
     max-width: 80%;
     border-radius: .5rem;
 } */
+
+.cityDeHome{
+    width: 20% ;
+
+}
+.cityDeHome:hover{
+    /* width: 50%; */
+    animation: alargar 1s both;
+}
+
+@keyframes alargar{
+    100%{width: 50%}
+}
