@@ -81,18 +81,18 @@ function Header() {
               <Dropdown
                 as={ButtonGroup}
                 data-bs-theme="dark"
-                className="border border-success position-relative order-lg-3"
+                className="border border-info position-relative order-lg-3"
               >
                 <Dropdown.Toggle
                   variant=""
-                  className="bg-success bg-opacity-25 px-1 py-1 "
+                  className="bg-info bg-opacity-25 px-1 px-md-2 py-1 text-white border-0"
                 >
                   <img
                     src={userlogedd.user.photo}
                     alt="img"
                     style={{
-                      height: "1.8rem",
-                      width: "1.8rem",
+                      height: "1.9rem",
+                      width: "1.9rem",
                       borderRadius: "50%",
                       display: "inline",
                       objectFit: "cover",
