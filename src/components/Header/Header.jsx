@@ -48,22 +48,12 @@ function Header() {
 
   return (
     <header>
-      {/* // <div className="container ps-1" > */}
-      {/* <div className="row"> */}
-      {/* <div className="col-12 d-flex justify-content-between">
-            <PageRouter to={"/"} style={{textDecoration:"none", color:"white"}}>
-              <span className="d-flex align-items-center">
-                <img src="../MyTineraryLogo.png" alt="MTLogo" />
-                <h3 className="ms-1">MyTinerary</h3>
-              </span>
-            </PageRouter>
-            
-            <Nav />
-          </div> */}
-
-      <Navbar expand="lg" className="navjose fixed-top py-1 px-0" >
+      <Navbar expand="lg" className="navjose fixed-top py-1 px-0">
         <Container className="d-flex">
-          <Navbar.Toggle aria-controls="basic-navbar-nav " style={{color: "whitesmoke"}} />
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav "
+            style={{ color: "whitesmoke" }}
+          />
           <Navbar.Brand className="d-flex order-lg-0">
             <PageRouter
               to={"/"}
@@ -136,21 +126,22 @@ function Header() {
               <i className="fa-solid fa-user"></i> Login
             </button>
           )}
-          
-          <Navbar.Collapse id="basic-navbar-nav " className="order-lg-2 justify-content-center ">
+
+          <Navbar.Collapse
+            id="basic-navbar-nav "
+            className="order-lg-2 justify-content-center "
+          >
             <Nav className="d-flex gap-3">
               <Nav.Link>
                 <NavRouterLink title={"Inicio"} url={"/"} />
               </Nav.Link>
-              <Nav.Link >
-                <NavRouterLink title={"Ciudades"} url={'/cities'} />
+              <Nav.Link>
+                <NavRouterLink title={"Ciudades"} url={"/cities"} />
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* </div> */}
-      {/* </div> */}
     </header>
   );
 }
