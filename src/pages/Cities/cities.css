@@ -19,9 +19,9 @@
 }
 
 .heroCities p{
-    -webkit-text-stroke: thin black;
-    font-size: 1.4rem;
-    font-weight: bold;
+    -webkit-text-stroke: thin #3b80f7;
+    font-size: 1.5rem;
+    font-weight: bolder;
     font-style: italic;
 }
 

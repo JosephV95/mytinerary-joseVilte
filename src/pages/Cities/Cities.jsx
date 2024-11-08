@@ -63,7 +63,7 @@ export default function Cities() {
   return (
     <section
       className="pageCities pt-5"
-      style={{ backgroundImage: `url(${bgCities})`, minHeight:"90vh" }}
+      style={{ backgroundImage: `url(${bgCities})`, minHeight:"92vh" }}
     >
       <div className="container mb-5 pt-3">
         <div className="row justify-content-center text-center position-relative  ">
@@ -135,8 +135,8 @@ export default function Cities() {
               </Col>
             ))
           )  : (
-            <Col  md={6}  className="py-5">
-              <h1  className="text-center text-white my-3 py-5" style={{ fontSize:"4rem", WebkitTextStroke: "thin black"}}>No Results</h1></Col>
+            <Col  md={6}  className="py-5 d-flex justify-content-center">
+              <h1  className="text-center text-white my-3 py-5  position-absolute " style={{ fontSize:"4rem", WebkitTextStroke: "thin #1f4382"}}>No Results</h1></Col>
           )}
         </Row>
       </div>
