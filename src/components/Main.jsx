@@ -65,6 +65,14 @@ function Main() {
               <h3>titulo 2do</h3>
               <button type="button"> Ver los itinerarios</button>
             </div>
+            <div className="cityDeHome bg-success px-0">
+              <h3>titulo 2do</h3>
+              <button type="button"> Ver los itinerarios</button>
+            </div>
+            <div className="cityDeHome bg-warning px-0">
+              <h3>titulo 2do</h3>
+              <button type="button"> Ver los itinerarios</button>
+            </div>
 
             {/* <div className="col-12 col-md-6 bg-danger px-0">
               <div className="col-12" style={{overflow: "hidden"}}>
