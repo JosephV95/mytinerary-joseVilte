@@ -45,9 +45,4 @@
     width: 40%;
     filter: contrast(1.1) ;
     opacity: 1;
-    /* animation: alargar 1s both; */
 }
-
-/* @keyframes alargar{
-    100%{width: 50%}
-} */
