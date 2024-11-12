@@ -95,7 +95,7 @@ export default function Cities() {
                 xs={6}
                 md={3}
                 key={key}
-                className="position-relative d-flex p-2"
+                className="position-relative d-flex p-0 bg-danger"
               >
                 <Card
                   className="cardCity  bg-dark text-white w-100 p-0 overflow-x-hidden"
