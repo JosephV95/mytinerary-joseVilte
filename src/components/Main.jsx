@@ -1,5 +1,4 @@
 import CallToAction from "./CallToAction/CallToAction";
-import Slider from "./Slider/Slider";
 import "./main.css";
 
 function Main() {
@@ -53,9 +52,13 @@ function Main() {
           <div className="row ">
             {/* <Slider/>*/}
 
-            <div className="cityDeHome bg-primary px-0">
-              <h3>titulo city</h3>
-              <button type="button"> ir al los itinerarios</button>
+            <div className="cityDeHome bg-primary p-3 d-flex flex-column justify-content-between">
+              <div className="textoCityHome text-white">
+                <h3>titulo city</h3>
+                <p>Pais</p>
+              </div>
+              <p>descripcions</p>
+              <button type="button" className="btn btn-danger"> ir al los itinerarios</button>
             </div>
             <div className="cityDeHome bg-success px-0">
               <h3>titulo 2do</h3>
