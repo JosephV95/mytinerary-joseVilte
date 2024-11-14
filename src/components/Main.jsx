@@ -1,7 +1,20 @@
+import { useEffect } from "react";
+import citiesActions from "../store/actions/citiesAction";
 import CallToAction from "./CallToAction/CallToAction";
 import "./main.css";
+import { useDispatch, useSelector } from "react-redux";
 
 function Main() {
+
+  let allCitiesInStore = useSelector(store => store.citiesReducer.cities);
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(citiesActions.get_cities());
+    
+    // getAllCities().then((res) => {dispatch(citiesActions.all_cities(res))}).catch((error) => {console.log(error.message)});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <section className=" main">
@@ -52,15 +65,29 @@ function Main() {
           <div className="row ">
             {/* <Slider/>*/}
 
-            <div className="cityDeHome bg-primary p-3 d-flex flex-column justify-content-between">
-              <div className="textoCityHome text-white">
-                <h3>titulo city</h3>
-                <p>Pais</p>
+            {allCitiesInStore.slice(0, 5).map((city, key) => (
+              <div key={key} className="cityDeHome bg-dark p-3 d-flex flex-column justify-content-between" 
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${city.img})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
+               >
+                {/* <img src={city.img} alt={city.city} className="h-100"/> */}
+                <div className="textoCityHome text-white">
+                  <h3>{city.city}</h3>
+                  <i >{city.nation}</i>
+                </div>
+                {/* <p className="text-white">{city.description}</p> */}
+                <div>
+                  <button type="button" className="btn btn-outline-light" >Ver Itinerarios</button>
+                </div>
               </div>
-              <p>descripcions</p>
-              <button type="button" className="btn btn-danger"> ir al los itinerarios</button>
-            </div>
-            <div className="cityDeHome bg-success px-0">
+            ))}
+
+            
+            {/* <div className="cityDeHome bg-success px-0">
               <h3>titulo 2do</h3>
               <button type="button"> Ver los itinerarios</button>
             </div>
@@ -75,7 +102,7 @@ function Main() {
             <div className="cityDeHome bg-warning px-0">
               <h3>titulo 2do</h3>
               <button type="button"> Ver los itinerarios</button>
-            </div>
+            </div> */}
 
             {/* <div className="col-12 col-md-6 bg-danger px-0">
               <div className="col-12" style={{overflow: "hidden"}}>
