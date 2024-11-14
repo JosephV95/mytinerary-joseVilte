@@ -68,10 +68,7 @@ function Main() {
             {allCitiesInStore.slice(0, 5).map((city, key) => (
               <div key={key} className="cityDeHome bg-dark p-3 d-flex flex-column justify-content-between" 
                 style={{
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${city.img})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
+                  '--bg-image-url': `url(${city.img})`
                 }}
                >
                 {/* <img src={city.img} alt={city.city} className="h-100"/> */}
