@@ -35,14 +35,15 @@
 
 .cityDeHome{
     width: 0 ;
-    min-height: 7rem;
+    min-height: 35vh;
     flex-grow: 1;
     /* object-fit: cover; */
     opacity: 0.8;
     transition: .7s ease;
 }
 .cityDeHome:hover{
-    width: 40%;
+    /* width: 40%; */
+    flex-grow: 3;
     filter: contrast(1.1) ;
     opacity: 1;
 }
