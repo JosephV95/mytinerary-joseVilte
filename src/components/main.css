@@ -28,7 +28,7 @@
 @media (min-width: 1024px) {
     .cityDeHome {
         width: 0;
-        height: 35vh;
+        height: 40vh;
         flex-grow: 1;
     }
     .cityDeHome:hover{
