@@ -5,14 +5,13 @@ import "./main.css";
 import { useDispatch, useSelector } from "react-redux";
 
 function Main() {
-
-  let allCitiesInStore = useSelector(store => store.citiesReducer.cities);
-  const dispatch = useDispatch()
+  let allCitiesInStore = useSelector((store) => store.citiesReducer.cities);
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(citiesActions.get_cities());
-    
+
     // getAllCities().then((res) => {dispatch(citiesActions.all_cities(res))}).catch((error) => {console.log(error.message)});
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -21,13 +20,13 @@ function Main() {
         {" "}
         {/*style={{backgroundImage:"url('https://images.unsplash.com/photo-1606820854416-439b3305ff39?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')", backgroundSize:"cover", backgroundPosition:"center"}} */}
         <h4
-          className="my-4 text-center px-3 fst-italic"
+          className="my-4 text-center px-3 "
           data-aos="zoom-out"
-          data-aos-duration="500"
-          data-aos-delay="500"
+          data-aos-duration="700"
+          data-aos-delay="300"
         >
-          Find your perfect trip, designed by insiders who know and love their
-          cities!
+          <span className="fst-italic">Mitinerary:</span> tu aliado para una
+          visita perfecta en cada viaje.
         </h4>
         <div className="container">
           <div
@@ -35,22 +34,18 @@ function Main() {
             data-aos="fade-down"
             data-aos-duration="1000"
           >
-            <div className="hero-article col-md-7 text-center text-white">
+            <div className="hero-article col-md-8 text-center text-white">
               <div className="p-0 pb-3 mt-3">
-                <h3>
-                  Con Mitinerary encontraras el destino perfecto para tu viaje
-                </h3>
                 <p className="pb-1">
-                  MyTinerary te ayudará a descubrir los mejores lugares y asi
-                  aprovechar al máximo tu viaje.
-                </p>
-                <p>
-                  Contamos con una gran cantidad de itinerarios de las distintas
-                  ciudades del mundo, planificar su próximo viaje nunca ha sido
-                  tan fácil.
+                  MyTinerary te ayuda a descubrir los mejores destinos y a
+                  aprovechar al máximo tu viaje. Con una amplia variedad de
+                  itinerarios en ciudades de todo el mundo, planificar tu
+                  próxima aventura nunca ha sido tan fácil
                 </p>
 
-                <CallToAction />
+                <div className="d-flex justify-content-center">
+                  <CallToAction />
+                </div>
               </div>
             </div>
             {/* <div className=" col-md-4 hero-img d-flex justify-content-center p-1">
@@ -66,72 +61,36 @@ function Main() {
             {/* <Slider/>*/}
 
             {allCitiesInStore.slice(0, 5).map((city, key) => (
-              <div key={key} className="cityDeHome bg-dark pt-2 pb-3 ps-3 ps-md-4 py-lg-3 ps-lg-4 d-flex flex-column justify-content-between" 
+              <div
+                key={key}
+                className="cityDeHome bg-dark pt-2 pb-3 ps-3 ps-md-4 py-lg-3 ps-lg-4 d-flex flex-column justify-content-between"
                 style={{
-                  '--bg-image-url': `url(${city.img})`
+                  "--bg-image-url": `url(${city.img})`,
                 }}
-               >
-                {/* <img src={city.img} alt={city.city} className="h-100"/> */}
+              >
                 <div className="textoCityHome text-white">
                   <h3>{city.city}</h3>
-                  <i >{city.nation}</i>
+                  <p className="fst-italic">{city.nation}</p>
                 </div>
-                {/* <p className="text-white">{city.description}</p> */}
                 <div>
-                  <button type="button" className="btn btn-outline-light" >Ver Itinerarios</button>
+                  <button type="button" className="btn btn-outline-light">
+                    Ver Itinerarios
+                  </button>
                 </div>
               </div>
             ))}
-
-            
-            {/* <div className="cityDeHome bg-success px-0">
-              <h3>titulo 2do</h3>
-              <button type="button"> Ver los itinerarios</button>
-            </div>
-            <div className="cityDeHome bg-warning px-0">
-              <h3>titulo 2do</h3>
-              <button type="button"> Ver los itinerarios</button>
-            </div>
-            <div className="cityDeHome bg-success px-0">
-              <h3>titulo 2do</h3>
-              <button type="button"> Ver los itinerarios</button>
-            </div>
-            <div className="cityDeHome bg-warning px-0">
-              <h3>titulo 2do</h3>
-              <button type="button"> Ver los itinerarios</button>
-            </div> */}
-
-            {/* <div className="col-12 col-md-6 bg-danger px-0">
-              <div className="col-12" style={{overflow: "hidden"}}>
-                  <svg
-                    preserveAspectRatio="none"
-                    viewBox="0 0 1200 120"
-                    xmlns="http://www.w3.org/2000/svg"
-                    style={{ fill: '#0F28499f', width: '300%', height: 300, position: "absolute"}}
-                  >
-                    <path d="M1200 120L0 16.48V0h1200v120z" />
-                  </svg>
-                  
-              <h3>titulo 2do</h3>
-              <button type="button"> Ver los itinerarios</button>
-              </div>
-            </div> */}
-            
           </div>
-          <div className="cityInHome"></div>
-          <div className="cityInHome"></div>
-          <div className="cityInHome"></div>
 
-          <div className="col-12" style={{overflow: "hidden"}}>
-                <svg
-                  preserveAspectRatio="none"
-                  viewBox="0 0 1200 120"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{ fill: '#0F28499f', width: '300%', height: 500, }}
-                >
-                  <path d="M1200 120L0 16.48V0h1200v120z" />
-                </svg>
-              </div>
+          {/* <div className="col-12" style={{ overflow: "hidden" }}>
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 1200 120"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ fill: "#0F28499f", width: "300%", height: 500 }}
+            >
+              <path d="M1200 120L0 16.48V0h1200v120z" />
+            </svg>
+          </div> */}
         </div>
       </section>
     </>
