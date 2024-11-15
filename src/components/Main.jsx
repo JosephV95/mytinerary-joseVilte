@@ -62,11 +62,11 @@ function Main() {
           <h3 className="text-center text-white py-2 fw-bold z-3">
             Ciudades Populares!
           </h3>
-          <div className="row ">
+          <div className="row bg-dark">
             {/* <Slider/>*/}
 
             {allCitiesInStore.slice(0, 5).map((city, key) => (
-              <div key={key} className="cityDeHome bg-dark p-3 d-flex flex-column justify-content-between" 
+              <div key={key} className="cityDeHome bg-dark pt-2 pb-3 ps-3 ps-md-4 py-lg-3 ps-lg-4 d-flex flex-column justify-content-between" 
                 style={{
                   '--bg-image-url': `url(${city.img})`
                 }}
