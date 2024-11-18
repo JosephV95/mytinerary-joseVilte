@@ -95,13 +95,14 @@ export default function Cities() {
                 xs={6}
                 md={3}
                 key={key}
-                className="position-relative d-flex p-0 bg-danger"
+                className="position-relative d-flex p-2 colCard"
               >
                 <Card
                   className="cardCity  bg-dark text-white w-100 p-0 overflow-x-hidden"
                   style={{ minHeight: "11.2rem", maxHeight: "11.7rem" }}
-                  onMouseEnter={() => setBgCities(`${city.img}`)}  data-aos="zoom-in-up" data-aos-duration="960" 
-                  data-aos-once="true" // ! esto hara que la animacion ocurra una sola vez
+                  onMouseEnter={() => setBgCities(`${city.img}`)}  
+                  // data-aos="zoom-in-up" data-aos-duration="960" 
+                  // data-aos-once="true" // ! esto hara que la animacion ocurra una sola vez
                 >
                   <Card.Img
                     src={city.img}

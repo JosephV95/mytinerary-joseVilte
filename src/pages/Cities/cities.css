@@ -25,16 +25,23 @@
     font-style: italic;
 }
 
+/** ------------------- Efectos para las cards de cities -------------------  */
 .cardCity{
     border: none;
     text-align: center;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
-    transition: box-shadow 2s ease-in-out;
+    transition: box-shadow .7s ease-in-out;
+    /* filter: grayscale(.4); */
 }
-
-.cardCity:hover{
+.colCard:hover .cardCity{
     outline: solid 2px rgb(26, 209, 250);
-    box-shadow: 0 0 8px rgb(44, 191, 224), 0 0 14px rgb(44, 226, 254);
+    box-shadow: 0 0 8px rgb(44, 191, 224), 0 0 15px rgb(44, 226, 254);
+}
+.cardCity img{
+    filter: grayscale(0.5) brightness(0.9);
+}
+.colCard:hover img{
+    filter: grayscale(0) contrast(1.12) brightness(1.1);
 }
 
 .divInfoCity{
