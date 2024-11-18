@@ -57,7 +57,7 @@ function Main() {
           <h3 className="text-center text-white py-2 fw-bold z-3">
             Ciudades Populares!
           </h3>
-          <div className="row bg-dark">
+          <div className="row ">
             {/* <Slider/>*/}
 
             {allCitiesInStore.slice(0, 5).map((city, key) => (
