@@ -36,16 +36,12 @@ function Main() {
           >
             <div className="hero-article col-md-8 text-center text-white">
               <div className="p-0 pb-3 mt-3">
-                <p className="pb-1">
+                <p className="pb-1 " style={{ fontSize: "1.1rem" }}>
                   MyTinerary te ayuda a descubrir los mejores destinos y a
                   aprovechar al máximo tu viaje. Con una amplia variedad de
                   itinerarios en ciudades de todo el mundo, planificar tu
                   próxima aventura nunca ha sido tan fácil
                 </p>
-
-                <div className="d-flex justify-content-center">
-                  <CallToAction />
-                </div>
               </div>
             </div>
             {/* <div className=" col-md-4 hero-img d-flex justify-content-center p-1">
@@ -54,9 +50,9 @@ function Main() {
           </div>
         </div>
         <div className="container-fluid">
-          <h3 className="text-center text-white py-2 fw-bold z-3">
+          {/* <h3 className="text-center text-white py-2 fw-bold z-3">
             Ciudades Populares!
-          </h3>
+          </h3> */}
           <div className="row ">
             {/* <Slider/>*/}
 
@@ -79,6 +75,10 @@ function Main() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="d-flex justify-content-center">
+            <CallToAction />
           </div>
 
           {/* <div className="col-12" style={{ overflow: "hidden" }}>
