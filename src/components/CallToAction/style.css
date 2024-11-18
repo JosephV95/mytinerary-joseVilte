@@ -5,8 +5,7 @@
 }
 
 @keyframes animCallAction {
-    0%{ box-shadow: 0 0 18px rgb(1, 218, 110), 0 0 18px rgb(1, 218, 110);}
-    /* 30%{ box-shadow: 0 0 18px rgb(176, 50, 243), 0 0 18px rgb(176, 50, 243);} */
-    50%{ box-shadow: 0 0 18px rgb(50, 118, 255), 0 0 18px rgb(50, 118, 255);}
-    100%{ box-shadow: 0 0 18px rgb(1, 218, 110), 0 0 18px rgb(1, 218, 110);}
+    0%{ box-shadow: 0 0 10px rgba(5, 228, 240, 0.8), 0 0 15px rgba(5, 228, 240, 0.8);}
+    50%{ box-shadow: 0 0 10px rgb(50, 118, 255), 0 0 15px rgb(50, 118, 255);}
+    100%{ box-shadow: 0 0 10px rgba(5, 228, 240, 0.8), 0 0 15px rgba(5, 228, 240, 0.8);}
 }
