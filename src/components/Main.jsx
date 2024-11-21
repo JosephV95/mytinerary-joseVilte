@@ -51,9 +51,6 @@ function Main() {
           </div>
         </div>
         <div className="container-fluid">
-          {/* <h3 className="text-center text-white py-2 fw-bold z-3">
-            Ciudades Populares!
-          </h3> */}
           <div className="row ">
             {/* <Slider/>*/}
 
