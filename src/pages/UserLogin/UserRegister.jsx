@@ -7,6 +7,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from "jwt-decode";
 // import { getCountries } from "../../services/CountriesService";
 import UserIsLogged from "../../services/UserLoggedVerify.js";
+import { useNavigate } from "react-router-dom";
 
 export default function UserRegister() {
 
@@ -18,6 +19,7 @@ export default function UserRegister() {
   const userNationRef = useRef();
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
     
   const [validated, setValidated] = useState(false);
   const countryData = [
@@ -89,15 +91,17 @@ export default function UserRegister() {
   }
 
   return (
-    <section  >
-      <div className="container ">
+    <section style={{minHeight:"95vh"}}>
+      <div className="container pt-1">
         <div className="row  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
             <h1 style={{fontSize: "2rem"}} className="mb-3">MyTinerary</h1>
-            <p style={{fontSize: "1.2rem"}}>Join our community and discover incredible cities and be part of their fun activities.</p>
+            <p style={{fontSize: "1.1rem"}}>Join our community and discover incredible cities and be part of their fun activities.</p>
           </div>
-          <div className="col-md-7" data-aos="fade">
-            <Form className=" py-4 px-5 rounded "   validated={validated} onSubmit={handleSubmit}  style={{backgroundColor: "white", boxShadow: "0 0 10px darkgray, 0 0 20px whitesmoke"}}>
+          <div className="col-md-7 col-lg-6 " 
+          // data-aos="fade"
+          >
+            <Form className=" py-4 px-5 rounded-5 "   validated={validated} onSubmit={handleSubmit}  style={{backgroundColor: "white", boxShadow: "0 0 7px #3276ff, 0 0 15px #05e4f0", border:"solid 2px #3276ff"}}>
               <h3 className="text-center mb-4"><i className="fa-solid fa-user-plus" style={{color:"#0bab6d"}}></i> Sign Up</h3>
               <fieldset>
                 <Row>
@@ -183,8 +187,14 @@ export default function UserRegister() {
                   />
                 </div>
               </fieldset>
-              
+            
+              <div className="w-100 mt-1 pt-3 d-flex justify-content-center align-items-center">
+                ¿Ya tienes una cuenta? 
+                <Button type="button" className=" btn btn-primary ms-2"  onClick={()=>{navigate("/user/login")}}>Ingresar</Button>
+              </div>
+
             </Form>
+            
           </div>
         </div>
       </div>

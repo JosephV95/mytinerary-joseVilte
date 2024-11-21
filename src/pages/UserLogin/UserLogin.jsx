@@ -58,7 +58,7 @@ export default function UserLogin() {
           <div className="col-md-7 col-lg-6 rounded-5"  style={{backgroundColor: "white", boxShadow: "0 0 7px #3276ff, 0 0 15px #05e4f0", border:"solid 2px #3276ff"}} 
             // data-aos="fade"
           >
-            <Form className="py-4 px-5 rounded"   validated={validated} onSubmit={handleSubmit} >
+            <Form className="py-4 px-5 "   validated={validated} onSubmit={handleSubmit} >
               <h3 className="text-center mb-4"><i className="fa-solid fa-user-check" style={{color:"#0bab6d"}}></i> Sign In</h3>
               <fieldset>
                 
