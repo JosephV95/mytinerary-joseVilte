@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link as PageRouter } from "react-router-dom";
 import citiesActions from "../store/actions/citiesAction";
 import CallToAction from "./CallToAction/CallToAction";
 import "./main.css";
@@ -9,7 +10,8 @@ function Main() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(citiesActions.get_cities());
-
+    console.log(allCitiesInStore);
+    
     // getAllCities().then((res) => {dispatch(citiesActions.all_cities(res))}).catch((error) => {console.log(error.message)});
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -69,9 +71,14 @@ function Main() {
                   <p className="fst-italic">{city.nation}</p>
                 </div>
                 <div>
-                  <button type="button" className="btn btn-outline-light">
-                    Ver Itinerarios
+                  <button >
+                    
                   </button>
+                  <PageRouter to={"cities/"+ city._id} 
+                      type="button" className="btn btn-outline-light"
+                      onClick={()=>{window.scrollTo(0, 0)}}> 
+                      Ver {city._itineraries ?city._itineraries.length :"0" } Itinerarios
+                      </PageRouter>
                 </div>
               </div>
             ))}
