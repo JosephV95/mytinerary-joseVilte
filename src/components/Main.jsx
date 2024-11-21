@@ -10,7 +10,6 @@ function Main() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(citiesActions.get_cities());
-    console.log(allCitiesInStore);
 
     // getAllCities().then((res) => {dispatch(citiesActions.all_cities(res))}).catch((error) => {console.log(error.message)});
     // eslint-disable-next-line react-hooks/exhaustive-deps
