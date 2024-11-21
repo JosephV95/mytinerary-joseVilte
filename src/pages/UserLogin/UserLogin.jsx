@@ -48,14 +48,16 @@ export default function UserLogin() {
     }
 
   return (
-    <section  > 
-      <div className="container py-2">
+    <section  style={{minHeight:"95vh"}}> 
+      <div className="container pt-4">
         <div className="row justify-content-center  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
             <h1 style={{fontSize: "2rem"}} className="mb-3">MyTinerary</h1>
-            <p style={{fontSize: "1.2rem"}}>Welcome back. Discover new adventures in the most incredible cities in the world.</p>
+            <p style={{fontSize: "1.1rem"}}>Welcome back. Discover new adventures in the most incredible cities in the world.</p>
           </div>
-          <div className="col-md-7 rounded"  style={{backgroundColor: "white", boxShadow: "0 0 10px darkgray, 0 0 20px whitesmoke"}} data-aos="fade">
+          <div className="col-md-7 col-lg-6 rounded-5"  style={{backgroundColor: "white", boxShadow: "0 0 7px #3276ff, 0 0 15px #05e4f0", border:"solid 2px #3276ff"}} 
+            // data-aos="fade"
+          >
             <Form className="py-4 px-5 rounded"   validated={validated} onSubmit={handleSubmit} >
               <h3 className="text-center mb-4"><i className="fa-solid fa-user-check" style={{color:"#0bab6d"}}></i> Sign In</h3>
               <fieldset>
