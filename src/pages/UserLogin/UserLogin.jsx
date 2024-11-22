@@ -53,36 +53,36 @@ export default function UserLogin() {
         <div className="row justify-content-center  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
             <h1 style={{fontSize: "2rem"}} className="mb-3">MyTinerary</h1>
-            <p style={{fontSize: "1.1rem"}}>Welcome back. Discover new adventures in the most incredible cities in the world.</p>
+            <p style={{fontSize: "1.1rem"}}>Descubre nuevas aventuras en las ciudades más increíbles del mundo.</p>
           </div>
           <div className="col-md-7 col-lg-6 rounded-5"  style={{backgroundColor: "white", boxShadow: "0 0 7px #3276ff, 0 0 15px #05e4f0", border:"solid 2px #3276ff"}} 
             // data-aos="fade"
           >
             <Form className="py-4 px-5 "   validated={validated} onSubmit={handleSubmit} >
-              <h3 className="text-center mb-4"><i className="fa-solid fa-user-check" style={{color:"#0bab6d"}}></i> Sign In</h3>
+              <h3 className="text-center mb-4"><i className="fa-solid fa-user-check" style={{color:"#0bab6d"}}></i> Iniciar sesión</h3>
               <fieldset>
                 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Email address:</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" aria-describedby="" pattern=".+com"  ref={userEmailRef} required />
+                  <Form.Label>Email:</Form.Label>
+                  <Form.Control type="email" placeholder="Ingresa tu email" aria-describedby="" pattern=".+com"  ref={userEmailRef} required />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                  <Form.Label htmlFor="inputPassword5">Password:</Form.Label>
+                  <Form.Label htmlFor="inputPassword5">Contraseña:</Form.Label>
                   <Form.Control
                     type="password"
                     pattern=".{6,12}"
                     id="inputPassword5"
-                    aria-describedby="pass" placeholder="Enter Password"  ref={userPasswordRef} required 
+                    aria-describedby="pass" placeholder="Ingresa tu contraseña"  ref={userPasswordRef} required 
                   />
                   <Form.Text id="pass" muted>
-                    The password must be 6-12 characters
+                    La contraseña debe tener entre 6 y 12 caracteres
                   </Form.Text>
                 </Form.Group>
                 <div className="d-flex flex-column align-items-center mt-4">
                 
-                  <Button type="submit" className="me-2 px-4 btn btn-primary">Sign In </Button> 
-                  <p className="py-1 my-1">or</p>
+                  <Button type="submit" className="me-2 px-4 btn btn-primary">Ingresar</Button> 
+                  <p className="py-1 my-1">o</p>
 
                   <GoogleLogin
                   text="signin_with"
@@ -104,8 +104,8 @@ export default function UserLogin() {
               
             </Form>
             <div className="w-100 mb-4 mt-3 pt-3 d-flex justify-content-center align-items-center">
-              You do not have an account? 
-              <Button type="button" className=" btn btn-success ms-2"  onClick={()=>{navigate("/user/register")}}>Sign up</Button>
+              ¿No tienes un cuenta? 
+              <Button type="button" className=" btn btn-success ms-2"  onClick={()=>{navigate("/user/register")}}>Registrarse</Button>
             </div>
 
           </div>
