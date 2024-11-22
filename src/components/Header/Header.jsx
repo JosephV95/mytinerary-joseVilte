@@ -102,14 +102,14 @@ function Header() {
                       className="fa-solid fa-user-pen"
                       style={{ width: "20px" }}
                     ></i>{" "}
-                    Edit Profile
+                    Editar perfil
                   </Dropdown.Item>
                   <Dropdown.Item eventKey="2" onClick={logoutUser}>
                     <i
                       className="fa-solid fa-right-from-bracket"
                       style={{ width: "20px" }}
                     ></i>{" "}
-                    Logout
+                    Cerrar sesión
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
@@ -123,7 +123,7 @@ function Header() {
               }}
             >
               {""}
-              <i className="fa-solid fa-user"></i> Login
+              <i className="fa-solid fa-user"></i> Ingresar
             </button>
           )}
 
