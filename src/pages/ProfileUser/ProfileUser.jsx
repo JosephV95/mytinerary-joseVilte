@@ -48,14 +48,14 @@ export default function ProfileUser() {
   }
 
   return (
-    <section style={{minHeight:"83vh"}}>
-      <Container>
+    <section style={{minHeight:"95vh"}} >
+      <Container className="pt-4">
         <Row  className="justify-content-center">
           <Col md={{ span: 7 }}>
             <Form  className="px-4 py-3 rounded-5 text-white position-relative" onSubmit={handleSubmit}  
-            style={{backgroundColor:"rgb(21, 123, 141)", border:"5px solid rgb(10, 108, 128)", boxShadow: "10px 10px 15px #052a38 " }}
-            data-aos="flip-up" data-aos-duration="1500" >
-              <h3 className="text-center mb-3"><i className="fa-solid fa-pen-to-square" style={{color:"#2dfb6b"}}></i> Edit Profile</h3>
+            style={{backgroundColor:"rgba(21, 123, 141, 0.7)", border:"5px solid rgb(10, 108, 128)", boxShadow: "10px 10px 15px #052a38 " }}
+            data-aos="fade-down" data-aos-duration="700" >
+              <h3 className="text-center mb-3"><i className="fa-solid fa-pen-to-square" style={{color:"#2dfb6b"}}></i> Editar Perfil</h3>
              
              <Row className="justify-content-center mb-4">
               <div className="border border-light border-2 rounded-circle" style={{width:"200px", height:"200px", 
@@ -66,7 +66,7 @@ export default function ProfileUser() {
                 <Row>
                   {/* //todo  Se utilizara defaultValue en vez de solo value, para no lanzar errores por consola  */}
                   <Form.Group className="mb-3" as={Col} md="6">
-                      <Form.Label htmlFor="inputName">Name:</Form.Label>
+                      <Form.Label htmlFor="inputName">Nombre:</Form.Label>
                       <Form.Control
                         type="text"
                         id="inputName"
@@ -75,7 +75,7 @@ export default function ProfileUser() {
                         aria-describedby="pass" defaultValue={userInStore.name} ref={upUserName} onChange={()=>{setFormEdited(true)}} />
                   </Form.Group>
                   <Form.Group className="mb-3" as={Col} md="6">
-                        <Form.Label htmlFor="inputLastname">Lastname:</Form.Label>
+                        <Form.Label htmlFor="inputLastname">Apellido:</Form.Label>
                         <Form.Control
                           type="text"
                           id="inputLastname"
@@ -86,13 +86,13 @@ export default function ProfileUser() {
                 </Row>
 
                 <Form.Group className="mb-3">
-                      <Form.Label htmlFor="photoUrl">User photo: </Form.Label>
+                      <Form.Label htmlFor="photoUrl">Foto de Usuario (url de la imagen): </Form.Label>
                       <Form.Control type="url" id="photoUrl" placeholder="Image url"  
                       defaultValue={userStore.photo} onChange={changePhoto} ref={upUserPhoto}/>
                 </Form.Group>
 
                 <div className="d-flex justify-content-center mt-4 text-white">
-                  <Button type="submit" variant="success" disabled={!formEdited} style={{backgroundColor:"#20b769"}}><i className="fa-solid fa-floppy-disk" style={{fontSize:"1.28rem"}}></i> Update</Button>
+                  <Button type="submit" variant="success" disabled={!formEdited} style={{backgroundColor:"#20b769"}}><i className="fa-solid fa-floppy-disk" style={{fontSize:"1.28rem"}}></i> Guardar</Button>
                 </div>
               </fieldset>
             </Form>

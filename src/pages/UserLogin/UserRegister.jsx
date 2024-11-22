@@ -7,6 +7,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from "jwt-decode";
 // import { getCountries } from "../../services/CountriesService";
 import UserIsLogged from "../../services/UserLoggedVerify.js";
+import { useNavigate } from "react-router-dom";
 
 export default function UserRegister() {
 
@@ -18,6 +19,7 @@ export default function UserRegister() {
   const userNationRef = useRef();
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
     
   const [validated, setValidated] = useState(false);
   const countryData = [
@@ -89,16 +91,18 @@ export default function UserRegister() {
   }
 
   return (
-    <section  >
-      <div className="container ">
+    <section style={{minHeight:"95vh"}}>
+      <div className="container pt-1">
         <div className="row  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
             <h1 style={{fontSize: "2rem"}} className="mb-3">MyTinerary</h1>
-            <p style={{fontSize: "1.2rem"}}>Join our community and discover incredible cities and be part of their fun activities.</p>
+            <p style={{fontSize: "1.1rem"}}>Únete a nuestra comunidad y descubre ciudades increíbles y forma parte de sus divertidas actividades.</p>
           </div>
-          <div className="col-md-7" data-aos="fade">
-            <Form className=" py-4 px-5 rounded "   validated={validated} onSubmit={handleSubmit}  style={{backgroundColor: "white", boxShadow: "0 0 10px darkgray, 0 0 20px whitesmoke"}}>
-              <h3 className="text-center mb-4"><i className="fa-solid fa-user-plus" style={{color:"#0bab6d"}}></i> Sign Up</h3>
+          <div className="col-md-7 col-lg-6 " 
+          // data-aos="fade"
+          >
+            <Form className=" py-4 px-5 rounded-5 "   validated={validated} onSubmit={handleSubmit}  style={{backgroundColor: "white", boxShadow: "0 0 7px #3276ff, 0 0 15px #05e4f0", border:"solid 2px #3276ff"}}>
+              <h3 className="text-center mb-4"><i className="fa-solid fa-user-plus" style={{color:"#0bab6d"}}></i> Registrarse</h3>
               <fieldset>
                 <Row>
                   <Form.Group className="mb-3" as={Col} md="6">
@@ -108,7 +112,7 @@ export default function UserRegister() {
                     <Form.Control
                       id="firstName"
                       type="text"
-                      placeholder="First name" required 
+                      placeholder="Nombre" required 
                       ref={userNameRef}
                     />
                   </Form.Group>
@@ -119,19 +123,19 @@ export default function UserRegister() {
                     <Form.Control
                       id="lastName"
                       type="text"
-                      placeholder="Last name" required 
+                      placeholder="Apellido" required 
                       ref={userLastnameRef}
                     />
                   </Form.Group>
                 </Row>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Email address:</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" aria-describedby=""  required pattern=".+com" ref={userEmailRef}/>
+                  <Form.Label>Email:</Form.Label>
+                  <Form.Control type="email" placeholder="random@ejemplo.com" aria-describedby=""  required pattern=".+com" ref={userEmailRef}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                  <Form.Label htmlFor="inputPassword5">Password:</Form.Label>
+                  <Form.Label htmlFor="inputPassword5">Contraseña:</Form.Label>
                   <Form.Control
                     type="password"
                     // minLength={6}
@@ -142,22 +146,22 @@ export default function UserRegister() {
                     aria-describedby="pass" placeholder="Password" required ref={userPasswordRef}
                   />
                   <Form.Text id="pass" muted>
-                    The password must be 6-12 characters
+                    La contraseña debe tener entre 6 y 12 caracteres
                   </Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3">
                   <Form.Label htmlFor="photoUrl">
-                    User photo:
+                    Foto de Usuario (url de la imagen):
                   </Form.Label>
-                  <Form.Control type="url" id="photoUrl" placeholder="Image url" required  ref={userPhotoRef}/>
+                  <Form.Control type="url" id="photoUrl" placeholder="Ingresar Url" required  ref={userPhotoRef}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3">
                   <Form.Label htmlFor="selectCountry">
-                    Select country
+                    Selecionar Nacionalidad
                   </Form.Label>
-                  <Form.Select id="selectCountry" required placeholder="Hola" ref={userNationRef}>
+                  <Form.Select id="selectCountry" required  ref={userNationRef}>
                     {countryData.map((country, key)=>(
                       <option value={country.name}  key={key}>{country.name}</option>
                     ))}
@@ -165,8 +169,8 @@ export default function UserRegister() {
                 </Form.Group>
                 
                 <div className="d-flex flex-column align-items-center mt-3">
-                  <Button type="submit" className="mt-2 px-5 btn btn-success">Register</Button>
-                  <p className="py-1 my-0">or</p>
+                  <Button type="submit" className="mt-2 px-5 btn btn-success">Registrarse</Button>
+                  <p className="py-1 my-0">o</p>
                   <GoogleLogin
                     text="signup_with"
                     theme="filled_blue"
@@ -183,8 +187,14 @@ export default function UserRegister() {
                   />
                 </div>
               </fieldset>
-              
+            
+              <div className="w-100 mt-1 pt-3 d-flex justify-content-center align-items-center">
+                ¿Ya tienes una cuenta? 
+                <Button type="button" className=" btn btn-primary ms-2"  onClick={()=>{navigate("/user/login")}}>Inicia sesión</Button>
+              </div>
+
             </Form>
+            
           </div>
         </div>
       </div>

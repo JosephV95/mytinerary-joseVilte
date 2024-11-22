@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link as PageRouter } from "react-router-dom";
 import citiesActions from "../store/actions/citiesAction";
 import CallToAction from "./CallToAction/CallToAction";
 import "./main.css";
@@ -50,9 +51,6 @@ function Main() {
           </div>
         </div>
         <div className="container-fluid">
-          {/* <h3 className="text-center text-white py-2 fw-bold z-3">
-            Ciudades Populares!
-          </h3> */}
           <div className="row ">
             {/* <Slider/>*/}
 
@@ -68,10 +66,16 @@ function Main() {
                   <h3>{city.city}</h3>
                   <p className="fst-italic">{city.nation}</p>
                 </div>
-                <div>
-                  <button type="button" className="btn btn-outline-light">
-                    Ver Itinerarios
-                  </button>
+                <div className="w-100">
+                  <PageRouter
+                    to={"cities/" + city._id}
+                    type="button" className="btn btn-outline-light "
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    Ver {city._itineraries ? city._itineraries.length : "0"} Itinerarios
+                  </PageRouter>
                 </div>
               </div>
             ))}

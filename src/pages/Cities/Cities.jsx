@@ -95,7 +95,7 @@ export default function Cities() {
                 xs={6}
                 md={3}
                 key={key}
-                className="position-relative d-flex p-2 colCard"
+                className="position-relative d-flex p-2 px-md-1 px-lg-2 colCard"
               >
                 <Card
                   className="cardCity  bg-dark text-white w-100 p-0 overflow-x-hidden"
@@ -112,13 +112,13 @@ export default function Cities() {
                   <Card.ImgOverlay className="d-flex position-absolute overflow-hidden">
                     <div className="bg-dark bg-opacity-75 position-absolute top-0 start-0 w-100 text-center">
                       <Card.Title className="m-0 ">{city.city}</Card.Title>
-                      <Card.Text><i className="fa-solid fa-location-dot " style={{fontSize:"12.8px"}}></i> {city.nation}</Card.Text>
+                      <Card.Text className="fst-italic"><i className="fa-solid fa-location-dot" style={{fontSize:"12.5px"}}></i> {city.nation}</Card.Text>
                     </div>
                     
                     <div className="divInfoCity position-absolute bottom-0 w-100 h-60 px-2 pb-1">
                       <PageRouter to={city._id} 
-                      className="buttonCities btn btn-outline-light border-2 px-2 mb-2" onClick={()=>{window.scrollTo(0, 0)}}> 
-                      <i className="fa-solid fa-mountain-sun"></i> View City</PageRouter>
+                      className="buttonCities btn btn-outline-light border-2 px-2  mb-2" onClick={()=>{window.scrollTo(0, 0)}}> 
+                      <i className="fa-solid fa-mountain-sun"></i> Ver <span className="fw-bolder">{city._itineraries ? city._itineraries.length : "0"}</span> Itinerario{city._itineraries && city._itineraries.length !== 1 ? "s" : ""}</PageRouter>
                       <ButtonGroup aria-label="Basic example" className="w-100" hidden={userLogged == false}>
                         {/* //? Componente que contiene el button con el form para Editar. Se le pasa la misma Prop que en Add City y otra con el ID */}
                         <EditCity activarEfecto={()=>setCityCreated(true)} numId={city._id} /> 
