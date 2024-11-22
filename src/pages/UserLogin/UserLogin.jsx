@@ -49,13 +49,14 @@ export default function UserLogin() {
 
   return (
     <section  style={{minHeight:"95vh"}}> 
-      <div className="container pt-4">
-        <div className="row justify-content-center  align-items-center">
+      <div className="container pt-1 pt-md-4">
+        <div className="row justify-content-center px-2  align-items-center">
           <div className="col-md-5" style={{margin: "auto", textAlign: "center", color: "whitesmoke"}}>
             <h1 style={{fontSize: "2rem"}} className="mb-3">MyTinerary</h1>
             <p style={{fontSize: "1.1rem"}}>Descubre nuevas aventuras en las ciudades más increíbles del mundo.</p>
           </div>
-          <div className="col-md-7 col-lg-6 rounded-5"  style={{backgroundColor: "white", boxShadow: "0 0 7px #3276ff, 0 0 15px #05e4f0", border:"solid 2px #3276ff"}} 
+          <div className="col-md-7 col-lg-6 rounded-5"  
+            style={{backgroundColor: "white", boxShadow: "0 0 5px #3276ff, 0 0 15px #5096ff", border:"solid 2px #5096ff"}} 
             // data-aos="fade"
           >
             <Form className="py-4 px-5 "   validated={validated} onSubmit={handleSubmit} >
