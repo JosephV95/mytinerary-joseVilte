@@ -101,7 +101,7 @@ export default function CityDetail() {
                            <span className="infoItinItem">
                             <p><b><i className="fa-regular fa-clock"></i> Duration:</b> {itinerary.duration}</p>
                            </span>
-                           <ButtonLike id={itinerary.name.length} likes={itinerary.name.length} ></ButtonLike>
+                           <ButtonLike id={itinerary._id} likes={itinerary.name.length} ></ButtonLike>
                         </div>
                       </div>
                     </div>
