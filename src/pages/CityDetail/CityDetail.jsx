@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../store/actions/citiesAction";
 import itinerariesActions from "../../store/actions/itinerariesAction";
 import { DiscussionEmbed } from 'disqus-react';
-// import { Accordion } from "react-bootstrap";
 import AddItinerary from "../../components/ItinerariesModal/AddItinerary";
 import EditDeleteItinerary from "../../components/ItinerariesModal/EditDeleteItinerary";
+import ButtonLike from "../../components/ButtonLike/ButtonLike";
 
 export default function CityDetail() {
   const { id } = useParams();
@@ -57,6 +57,7 @@ export default function CityDetail() {
 
       <section className="bgCityDetail">
         <div className="container  " >
+        
             <h2 className="text-center text-white pb-3" id="Itineraries"><i className="fa-solid fa-signs-post"></i> <i>Itineraries</i></h2>
             <div hidden={userLogged.isLogged == false}>
               <AddItinerary efectoEnProp={()=> setChangeItineraries(true) }/>
@@ -100,29 +101,8 @@ export default function CityDetail() {
                            <span className="infoItinItem">
                             <p><b><i className="fa-regular fa-clock"></i> Duration:</b> {itinerary.duration}</p>
                            </span>
-                          {/* <div className="col-sm-4"> */}
-                            {/* <p><b>Likes: </b> <a type="button" onClick={()=>{alert("diste like")}}><i className="fa-regular fa-thumbs-up" style={{fontSize: "21px"}} ></i></a>  {itinerary.likes}</p> */}
-                          {/* </div> */}
-                          {/* <div className="col-sm-8"> */}
-                            {/* <p><b>Tags:</b>{itinerary.hastag.map((val, key)=>(<a key={key}> {val}</a> ))}  </p> */}
-                          {/* </div> */}
+                           <ButtonLike id={itinerary.name.length} likes={itinerary.name.length} ></ButtonLike>
                         </div>
-                        {/* <p><b>Comments:</b> {itinerary.comments}</p>
-                        <Accordion >
-                          <Accordion.Item eventKey="0">
-                            <Accordion.Header >Comentarios sobre el iti</Accordion.Header>
-                            <Accordion.Body>
-                              <span><b>{itinerary.name}</b></span>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                              aliquip ex ea commodo consequat. Duis aute irure dolor in
-                              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                              culpa qui officia deserunt mollit anim id est laborum.
-                            </Accordion.Body>
-                          </Accordion.Item>
-                        </Accordion> */}
                       </div>
                     </div>
                   </div>
