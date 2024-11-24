@@ -101,7 +101,11 @@ export default function CityDetail() {
                            <span className="infoItinItem">
                             <p><b><i className="fa-regular fa-clock"></i> Duration:</b> {itinerary.duration}</p>
                            </span>
+                           
                            <ButtonLike id={itinerary._id} likes={itinerary.name.length} ></ButtonLike>
+                           <div className="bg-dark rounded p-0 bg-opacity-75">
+                             <button type="button" className="btn btn-outline-info fw-bold fst-italic border-2">Reserve a place</button>
+                           </div>
                         </div>
                       </div>
                     </div>
