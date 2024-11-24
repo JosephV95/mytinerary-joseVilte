@@ -56,7 +56,7 @@ export default function CityDetail() {
       </main>
 
       <section className="bgCityDetail">
-        <div className="container  " >
+        <div className="container pb-3" >
         
             <h2 className="text-center text-white pb-3" id="Itineraries"><i className="fa-solid fa-signs-post"></i> <i>Itineraries</i></h2>
             <div hidden={userLogged.isLogged == false}>
@@ -67,15 +67,15 @@ export default function CityDetail() {
               itineraryStore.map((itinerary) => (
                 <div className="row justify-content-center my-4" key={itinerary._id} >
                   <div data-aos="flip-down" data-aos-duration="700"  data-aos-once="true"
-                  className="col-10 col-md-9 rounded-5  overflow-x-hidden position-relative " style={{backgroundColor:"rgb(10, 108, 128)", boxShadow:" 3px 7px 10px #0ed1cb"}}>
-                    <div className="row justify-content-center  ">
+                    className="cardItinerary col-10 col-md-9 rounded-5  overflow-x-hidden position-relative " >
+                    <div className="row justify-content-center ">
                       <div
-                        className="col-md-5  text-white d-flex flex-column justify-content-between px-3"
+                        className="col-md-5 cardItinerary__image position-relative text-white d-flex flex-column justify-content-between px-3"
                         style={{
                           backgroundImage: `url(${itinerary.img})`,
                           backgroundPosition: "center",
                           backgroundSize: "cover",
-                          minHeight: "14rem",
+                          minHeight: "14rem"
                         }}
                       >
                         <div>
