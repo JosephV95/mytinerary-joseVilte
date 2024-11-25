@@ -7,9 +7,9 @@ export default function Footer() {
       <div className="row align-items-center">
         <div className="col-sm-2 col-md-4">
           <div className=" text-center">
-            <ul className="nav d-flex  flex-column justify-content-center align-items-center ">
-              <NavRouterLink title={"Home"} url={"/"} />
-              <NavRouterLink title={"Cities"} url={"/cities"} />
+            <ul className="nav d-flex  flex-column justify-content-center align-items-center fs-5 ">
+              <NavRouterLink title={"Home"} url={"/"}/>
+              <NavRouterLink title={"Cities"} url={"/cities"}/>
             </ul>
           </div>
         </div>
